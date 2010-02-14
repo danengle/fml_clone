@@ -1,4 +1,5 @@
 FmlClone::Application.routes.draw do |map|
+
   root :to => "posts#index"
   resource :user_session
   match 'logout' => 'user_sessions#destroy', :as => 'logout'
@@ -6,10 +7,21 @@ FmlClone::Application.routes.draw do |map|
   match 'account/activate/:activation_code' => 'users#activate', :as => 'activate'
   resources :users
   resources :categories
-  resources :posts
+  resources :posts do
+    resources :comments do
+      member do
+        get :reply
+      end
+    end
+  end
   match 'admin' => 'admin/categories#index', :as => 'admin'
   namespace :admin do
-    resources :posts
+    resources :posts do
+      member do
+        post :publish
+        post :unpublish
+      end
+    end
     resources :categories
     resources :users
   end

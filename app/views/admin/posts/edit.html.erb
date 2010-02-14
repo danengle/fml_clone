@@ -1,0 +1,24 @@
+<h3>Review post</h3>
+
+<% form_for([:admin,@post], :html => { :class => 'jNice' }) do |f| %>
+  <%= f.error_messages %>
+  <fieldset>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+  
+  </fieldset>
+<% end %>
+<fieldset>
+  <legend>Available Actions</legend>
+
+  <% if @post.published? -%>
+    <p>Published on <%= @post.published_at.to_s(:long) %></p>
+    <%= button_to "Unpublish this post", unpublish_admin_post_path(@post), :class => 'like_button' %>
+  <% else -%>
+    <%= button_to "Publish this post", publish_admin_post_path(@post), :class => 'like_button' %>
+  <% end -%>
+</fieldset>
+
+<%= link_to 'Back', admin_posts_path %>

@@ -1,0 +1,24 @@
+<h3>Editing User</h3>
+<% form_for [:admin,@user] do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :login %>
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :role %>
+    <%= f.select :role, User::ROLES.map{|r| [r,r]} %>
+    
+  </p>
+  <p>
+    <%= f.submit "Update Profile" %>
+  </p>
+<% end %>

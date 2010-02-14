@@ -1,8 +1,8 @@
 /* -------------
- * Buttons
- * ------------- */
+* Buttons
+* ------------- */
 
-button {
+button, .like_button {
 	margin: 0px;
 	padding: 0px 0px;
 	border: none;
@@ -13,7 +13,15 @@ button {
 	float: left;
 	overflow: visible;
 }
-
+.like_button {
+	margin:4px 0;
+	padding:6px;
+	background-color:#efefef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	overflow:auto;
+	border:2px solid #e1e1e1;
+}
 *:first-child+html button[type]{width: 1;} /* IE7 */
 
 button span {
@@ -35,8 +43,8 @@ button span span {
 }
 
 /* -------------
- * Inputs
- * ------------- */
+* Inputs
+* ------------- */
 .jNiceInputWrapper {
 	background: transparent url(../../elements/input_left.gif) no-repeat left top;
 	height: 23px;
@@ -80,8 +88,8 @@ button span span {
 }
 
 /* -------------
- * Radios
- * ------------- */
+* Radios
+* ------------- */
 .jRadioWrapper {float: left; width: 25px;}
 .jNiceRadio {
 	background: transparent url(/images/admin/radio.gif) no-repeat center top;
@@ -94,8 +102,8 @@ button span span {
 
 
 /* -------------
- * Checkboxes
- * ------------- */
+* Checkboxes
+* ------------- */
 .jNiceCheckbox {
 	background: transparent url(/images/admin/checkbox.gif) no-repeat center top;
 	vertical-align: middle;
@@ -107,14 +115,14 @@ button span span {
 }
 
 /* -------------
- * Checked - Used for both Radio and Checkbox
- * ------------- */
+* Checked - Used for both Radio and Checkbox
+* ------------- */
 .jNiceChecked { background-position: center bottom;}
 
 
 /* -------------
- * Selects
- * ------------- */
+* Selects
+* ------------- */
 .jNiceSelectWrapper {
 	width: 280px;
 	position:relative;
@@ -180,6 +188,6 @@ button span span {
 .jNiceSelectWrapper ul a.selected { background: #f0f7fa; color: #c66653; }
 
 /* -------------
- * Hidden - used to hide the original form elements
- * ------------- */
+* Hidden - used to hide the original form elements
+* ------------- */
 .jNiceHidden {display: none;}

@@ -1,0 +1,12 @@
+<p>
+  By <%= admin_post_creator_link(@post) %>
+</p>
+<p>
+  <%= f.label :category_id, "Category:" %>
+  <%= f.select :category_id, Category.find(:all).map{|c| [c.name, c.id]} %>
+</p>
+<p>
+  <%= f.label :body, "Body:" %>
+  <%= f.text_area :body %>
+</p>
+

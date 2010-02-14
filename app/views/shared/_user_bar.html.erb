@@ -1,6 +1,7 @@
 <div id="user_bar">
 <% unless @current_user.blank? %>
   Hello, <%= current_user.login %>. <%= link_to "logout", logout_path %>
+  <% if admin? %> | <%= link_to 'administration', admin_path %><% end %>
 <% else %>
   <% form_for UserSession.new, :url => user_session_path do |f| %>
     <%= f.error_messages %>

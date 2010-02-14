@@ -22,7 +22,7 @@ body {
 .rounded_box {
 	margin:4px 0;
     padding:6px;
-    background-color:#efefef;
+    background-color:#f3f3f3;
     -moz-border-radius:8px;
 	-webkit-border-radius:8px;
 	overflow:auto;
@@ -49,19 +49,26 @@ body {
 
 /*** Header ***/
 #header {
-	padding-top:12px;
+	padding-top:5px;
 }
 #header h1 {
 	margin-top:0;
+	margin-bottom:2px;
+	font-size:1.2em;
 }
 #navigation {
 	overflow:auto;
-	margin:8px 0 12px 0;
+	margin:2px 0 6px 0;
+	font-size:.9em;
 }
 #navigation li {
 	float:left;
 	padding:4px 8px;
 	list-style-type:none;
+}
+#navigation li.flush_left { padding-left:0px; margin-left:0px;}
+#header h1 a, #header h1 a:visited, #navigation li a, #navigation li a:visited {
+	color:#222;
 }
 #main {
 	width:79%;
@@ -100,7 +107,6 @@ body {
 .side_box ul li {
 	list-style-type:none;
 }
-
 
 /*** Posts ***/
 #post_body {

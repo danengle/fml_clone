@@ -1,0 +1,28 @@
+<p>
+  <b>Post:</b>
+  <%= @comment.post_id %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @comment.parent_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @comment.user_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @comment.name %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @comment.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

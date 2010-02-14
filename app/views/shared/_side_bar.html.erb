@@ -1,5 +1,39 @@
 <div id="side_bar">
-  <div id="categories" class="side_box top_box">
+  <div id="account_box" class="side_box top_box">
+    <% if logged_in? %>
+      <h5>Hello, <%= current_user.login %></h5>
+      <ul>
+        <li><%= link_to "View Profile", "#" %></li>
+        <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+        <li><%= link_to "My Messages", "#" %></li>
+        <% if current_user.admin? -%>
+          <li><%= link_to "Site Admin", admin_path %></li>
+        <% end -%>
+      </ul>
+    <% else %>
+      <h5>Login</h5>
+      <% form_for UserSession.new, :url => user_session_path do |f| %>
+        <%= f.error_messages %>
+        <p>
+          <%= f.label :login, "Username/Email" %><br />
+          <%= f.text_field :login %>
+        </p>
+        <p>
+          <%= f.label :password %><br />
+          <%= f.password_field :password %>
+        </p>
+        <p>
+          <%= f.submit "Login" %>
+        </p>
+        <div id="login_bottom">
+          <%= f.check_box :remember_me %><%= f.label :remember_me %>
+          <%= link_to "Forgot your password?", "#" %>
+          <%= link_to "Sign up!", new_user_path %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div id="categories" class="side_box">
     <h5>Categories</h5>
     <ul>
       <% Category.all.sort {|a,b| a.name <=> b.name }.each do |category| %>

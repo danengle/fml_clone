@@ -1,0 +1,47 @@
+<% if @new_posts.blank? %>
+  <h3>No new posts to review</h3>
+<% else %>
+<h3><%= @new_posts.size %> Posts Need Review</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>User</th>
+    <th>Category</th>
+    <th>Created</th>
+    <th>Excerpt</th>
+    <th>Actions</th>
+  </tr>
+  <% @new_posts.each do |post| %>
+    <tr class="<%= cycle('','odd') %>">
+      <td><%= post.id %></td>
+      <td><%= post.display_name %></td>
+      <td><%= post.category.name %></td>
+      <td> <%= post.created_at.to_s(:short) %></td>
+      <td><%= truncate(post.body, :length => 25) %></td>
+      <td><%= link_to "Review", edit_admin_post_path(post) %></td>
+    </tr>
+  <% end %>
+</table>
+<% end %>
+<h3><%= @posts.size %> Published Posts</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>User</th>
+    <th>Category</th>
+    <th>Body</th>
+    <th>Published at</th>
+    <th colspan="2">Actions</th>
+  </tr>
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.id %></td>
+    <td><%=h post.display_name %></td>
+    <td><%=h post.category.name %></td>
+    <td><%=h truncate(post.body, :length => 25) %></td>
+    <td><%=h published_time(post) %></td>
+    <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
+    <td><%= link_to 'Destroy', [:admin,post], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>

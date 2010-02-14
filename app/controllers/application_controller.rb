@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !current_user.blank?
   end
-  
+  helper_method :logged_in?
   private
 
   def current_user_session

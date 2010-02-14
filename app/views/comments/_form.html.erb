@@ -1,0 +1,16 @@
+<div id="comment_form">
+  <% logger.info { "\npost = #{@post.inspect}" } %>
+  <% logger.info { "\ncomment = #{@comment.inspect}" } %>
+  <% form_for [@post,Comment.new] do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :body, "Make a comment:" %><br />
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
+  <% end %>
+  <div class="clear"></div>
+</div>
