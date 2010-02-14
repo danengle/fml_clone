@@ -2,12 +2,14 @@
 <html>
 <head>
   <title>Categories: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'scaffold', 'styles' %>
   <%= javascript_include_tag 'jquery-1.4.1.js', 'rails', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+<%= render "shared/user_bar" %>  
 <h2><%= link_to "FML Clone", root_path %></h2>
+
 <p class="notice"><%= notice %></p>
 
 <%= yield %>

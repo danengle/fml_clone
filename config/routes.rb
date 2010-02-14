@@ -1,7 +1,13 @@
 FmlClone::Application.routes.draw do |map|
-  resources :categories
-
   root :to => "posts#index"
+  resource :user_session
+  match 'logout' => 'user_sessions#destroy', :as => 'logout'
+  resource :account, :controller => "users"
+  match 'account/activate/:activation_code' => 'users#activate', :as => 'activate'
+  resources :users
+  
+  resources :categories
+  
   resources :posts
 
   # The priority is based upon order of creation:

@@ -1,0 +1,18 @@
+#user_bar {
+	float:right;
+	font-size:.8em;
+}
+#user_bar .login_field {
+	float:left;
+	padding:0 3px;
+}
+#user_bar .login_field input{
+	width:90px;
+}
+#login_bottom {
+	clear:both;
+}
+#user_bar .login_field #user_session_submit {
+	margin-top:18px;
+	width:50px;
+}

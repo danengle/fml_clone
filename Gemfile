@@ -20,3 +20,4 @@ gem "mysql"
 # group :test do
 #   gem "webrat"
 # end
+#gem 'authlogic',      '~> 2.1.3'
