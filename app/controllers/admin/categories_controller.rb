@@ -1,4 +1,6 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < ApplicationController
+  before_filter :admin_required
+  layout 'admin'
   # GET /categories
   # GET /categories.xml
   def index
@@ -41,7 +43,7 @@ class CategoriesController < ApplicationController
   # POST /categories.xml
   def create
     @category = Category.new(params[:category])
-
+    
     respond_to do |format|
       if @category.save
         format.html { redirect_to(@category, :notice => 'Category was successfully created.') }

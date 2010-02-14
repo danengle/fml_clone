@@ -1,0 +1,11 @@
+<div id="post_<%= post.id %>" class="rounded_box post">
+  <p><%= post.body %></p>
+  <div class="post_footer">
+    <%= link_to post.id, post %>
+    <span class="created_by">By <%= post.user.blank? ? "anonymouse" : post.user.login %></span>
+    <span class="published_at">on <%= post.published_at.to_s(:short) %></span>
+    <div class="votes">
+      <p><%= link_to "Thumbs Up!", "#", :method => :post %> | <%= link_to "Thumbs Down!", "#", :method => :post %>)</p>
+    </div>
+  </div>
+</div>

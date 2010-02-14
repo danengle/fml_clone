@@ -1,8 +1,10 @@
 class PostsController < ApplicationController
+  
+  before_filter :admin_required, :only => [:edit, :update, :destroy]
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.all
+    @posts = Post.where({:published => true})
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,7 +43,7 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
-
+    @post.user = current_user if logged_in?
     respond_to do |format|
       if @post.save
         format.html { redirect_to(@post, :notice => 'Post was successfully created.') }

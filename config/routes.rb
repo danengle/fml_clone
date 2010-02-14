@@ -5,11 +5,14 @@ FmlClone::Application.routes.draw do |map|
   resource :account, :controller => "users"
   match 'account/activate/:activation_code' => 'users#activate', :as => 'activate'
   resources :users
-  
   resources :categories
-  
   resources :posts
-
+  match 'admin' => 'admin/categories#index', :as => 'admin'
+  namespace :admin do
+    resources :posts
+    resources :categories
+    resources :users
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   include AASM
   acts_as_authentic
 
+  has_many :posts
+  
   aasm_column :state
   aasm_initial_state :initial => :pending
   aasm_state :passive

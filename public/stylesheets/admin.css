@@ -1,0 +1,14 @@
+#header {
+    height:20px;
+}
+#navigation ul {
+    padding-bottom:10px;
+}
+#navigation li {
+    float:left;
+    display:block;
+    padding: 0 8px;
+}
+#body {
+    clear:both;
+}

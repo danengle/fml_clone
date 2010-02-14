@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100214003613) do
+ActiveRecord::Schema.define(:version => 20100214193944) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -59,8 +59,19 @@ ActiveRecord::Schema.define(:version => 20100214003613) do
     t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
+    t.boolean  "admin",                             :default => false,     :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "post_id",    :null => false
+    t.integer  "user_id"
+    t.boolean  "up_vote",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["post_id", "up_vote"], :name => "index_votes_on_post_id_and_up_vote"
 
 end

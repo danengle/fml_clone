@@ -1,0 +1,10 @@
+<div id="side_bar">
+  <div id="categories" class="side_box top_box">
+    <h5>Categories</h5>
+    <ul>
+      <% Category.all.sort {|a,b| a.name <=> b.name }.each do |category| %>
+        <li><%= link_to category.name, category %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

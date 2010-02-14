@@ -2,17 +2,27 @@
 <html>
 <head>
   <title>Categories: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold', 'styles' %>
+  <%= stylesheet_link_tag 'reset', 'base', 'common', 'styles' %>
   <%= javascript_include_tag 'jquery-1.4.1.js', 'rails', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-<%= render "shared/user_bar" %>  
-<h2><%= link_to "FML Clone", root_path %></h2>
-
-<p class="notice"><%= notice %></p>
-
-<%= yield %>
+  <div id="header" class="centered">
+    <%= render "shared/user_bar" %>
+    <h1><%= link_to "FML Clone", root_path %></h1>
+  </div>
+  <div id="content" class="centered">
+    <div id="main">
+      <% flash.each_pair do |key, value| -%>
+        <p class="msg <%= key %>"><%= value %></p>
+      <% end -%>
+      <%= yield %>
+    </div>
+    <%= render 'shared/side_bar' %>
+  </div>
+  <div id="footer" class="centered">
+    <p>copyright 2009 Dan Engle</p>
+  </div>
 
 </body>
 </html>
