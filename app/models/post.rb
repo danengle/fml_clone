@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :comments
+  has_many :votes
+  
   scope :published,
     where(["state = ? and published_at < ?", 'published', Time.now]).order('published_at desc')
   scope :need_review,

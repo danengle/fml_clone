@@ -49,4 +49,48 @@ class PostsController < ApplicationController
     end
   end
 
+  def up_vote
+    @post = Post.find(params[:id])
+    vote = @post.votes.new(:up_vote => true)
+    vote.user = current_user if logged_in?
+    if vote.save
+      flash[:notice] = "Thanks for voting!"
+    else
+      flash[:notice] = "Could not save your vote, sorry."
+    end
+    redirect_to :back
+  end
+  
+  def down_vote
+    @post = Post.find(params[:id])
+    vote = @post.votes.new(:up_vote => false)
+    vote.user = current_user if logged_in?
+    if vote.save
+      flash[:notice] = "Thanks for voting!"
+    else
+      flash[:notice] = "Could not save your vote, sorry."
+    end
+    redirect_to :back
+  end
+  
+  #TODO fix this random post generator
+  def random
+    @post = Post.published.where(['id >= ?', rand(Post.count)]).first
+    @comment = @post.comments.new
+    render :action => 'show'
+  end
+  
+  def top_rated
+    @time_period = case params[:time_period]
+    when 'week'
+      Time.now.beginning_of_week
+    when 'month'
+      Time.now.beginning_of_month
+    when 'year'
+      Time.now.beginning_of_year
+    else
+      Time.now - 10.years
+    end
+    @posts = Post.published.where(['published_at >= ?', @time_period]).order('up_vote_counter desc')
+  end
 end

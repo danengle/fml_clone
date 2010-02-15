@@ -1,9 +1,13 @@
 FmlClone::Application.routes.draw do |map|
+  resources :votes
+
 
   root :to => "posts#index"
   resource :user_session
   match 'logout' => 'user_sessions#destroy', :as => 'logout'
+  match 'login' => 'user_session#new', :as => 'login'
   resource :account, :controller => "users"
+  match 'signup' => 'users#new', :as => 'signup'
   match 'account/activate/:activation_code' => 'users#activate', :as => 'activate'
   resources :users
   resources :categories
@@ -13,7 +17,17 @@ FmlClone::Application.routes.draw do |map|
         get :reply
       end
     end
+    member do
+      post :up_vote
+      post :down_vote
+    end
+    collection do
+      get :top_rated
+      get :random
+    end
   end
+  # TODO get this working so posts/top_rated/:time_period is the url
+  # match 'posts/top_rated/:time_period' => 'posts#top_rated', :as => 'top_rated'
   match 'admin' => 'admin/categories#index', :as => 'admin'
   namespace :admin do
     resources :posts do

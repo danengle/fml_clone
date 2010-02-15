@@ -1,0 +1,10 @@
+<div class="main_top">
+<h1><%= @posts.size %> Results</h1>
+<span>
+  Refine by <%= link_to "week", top_rated_posts_path(:time_period => 'week') %>,
+  <%= link_to "month", top_rated_posts_path(:time_period => 'month') %>,
+  <%= link_to "year", top_rated_posts_path(:time_period => 'year') %>,
+  <%= link_to "all", top_rated_posts_path(:time_period => 'all') %>
+</span>
+</div>
+<%= render @posts %>
