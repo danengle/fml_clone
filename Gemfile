@@ -20,6 +20,6 @@ gem "mysql"
 # group :test do
 #   gem "webrat"
 # end
-gem 'authlogic',      '~> 2.1.3'
-gem 'aasm', '~> 2.1.5'
+gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
+gem 'aasm', :git => "git://github.com/rubyist/aasm.git"
 gem 'will_paginate', '~> 3.0.pre'
