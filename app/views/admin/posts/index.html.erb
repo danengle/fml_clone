@@ -23,7 +23,7 @@
   <% end %>
 </table>
 <% end %>
-<h3><%= @posts.size %> Published Posts</h3>
+<h3><%= @posts.size %> Posts</h3>
 <table>
   <tr>
     <th>ID</th>
@@ -40,8 +40,8 @@
     <td><%=h post.category.name %></td>
     <td><%=h truncate(post.body, :length => 25) %></td>
     <td><%=h published_time(post) %></td>
-    <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
-    <td><%= link_to 'Destroy', [:admin,post], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="actions"><%= link_to 'Edit', edit_admin_post_path(post) %></td>
+    <td class="actions"><%= link_to 'Destroy', [:admin,post], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

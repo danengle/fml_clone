@@ -13,15 +13,7 @@ button, .like_button {
 	float: left;
 	overflow: visible;
 }
-.like_button {
-	margin:4px 0;
-	padding:6px;
-	background-color:#efefef;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	overflow:auto;
-	border:2px solid #e1e1e1;
-}
+
 *:first-child+html button[type]{width: 1;} /* IE7 */
 
 button span {

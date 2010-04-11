@@ -2,14 +2,23 @@ TODO
 	admin section
 		user editor
 		post editor/publisher
-	add ability to comment
+		add ability to change publish time
+		site setings
+			up/down vote text
+			templates
+	*add ability to comment
 		add reply to comments
 		follow comments
 	add voting ability
 	add search
-	get navigation bar working
+	*get navigation bar working
+	add password reset
 	rss feed
 	add moderation
 	api
 	users can edit their profiles
 	blog
+	get will_paginate working
+	get breadcrumbs working
+	login with oauth/facebook
+	

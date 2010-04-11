@@ -28,7 +28,7 @@ FmlClone::Application.routes.draw do |map|
   end
   # TODO get this working so posts/top_rated/:time_period is the url
   # match 'posts/top_rated/:time_period' => 'posts#top_rated', :as => 'top_rated'
-  match 'admin' => 'admin/categories#index', :as => 'admin'
+  match 'admin' => 'admin/posts#index', :as => 'admin'
   namespace :admin do
     resources :posts do
       member do

@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 .bundle
 db/*.sqlite3
 log/*.log
 tmp/**/*
+=======
+*.sw?
+*~
+.DS_Store
+.idea
+coverage
+pkg
+rdoc
+>>>>>>> 690137c5e5eb68ea36edbb029fd22a043fe63de5

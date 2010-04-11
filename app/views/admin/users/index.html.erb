@@ -3,19 +3,19 @@
   <tr>
     <th>ID</th>
     <th>Login</th>
-    <th>Name</th>
+    <th>Full Name</th>
     <th>State</th>
-    <th>Role</th>
+    <th>Admin</th>
     <th>Actions</th>
   </tr>
   <% @users.each do |user| %>
     <tr>
       <td><%= user.id %></td>
       <td><%= user.login %></td>
-      <td><%= user.name %></td>
+      <td><%= user.full_name %></td>
       <td><%= user.state %></td>
-      <td><%= user.role %></td>
-      <td><%= link_to "edit", edit_admin_user_path(user) %></td>
+      <td><%= user.admin? %></td>
+      <td class="actions"><%= link_to "edit", edit_admin_user_path(user) %></td>
     </tr>
   <% end %>
 </table>

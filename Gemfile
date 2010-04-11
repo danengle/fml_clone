@@ -2,7 +2,7 @@
 source 'http://gemcutter.org'
 
 
-gem "rails", "3.0.0.beta"
+gem "rails", "3.0.0.beta2"
 
 ## Bundle edge rails:
 # gem "rails", :git => "git://github.com/rails/rails.git"
@@ -20,4 +20,6 @@ gem "mysql"
 # group :test do
 #   gem "webrat"
 # end
-#gem 'authlogic',      '~> 2.1.3'
+gem 'authlogic',      '~> 2.1.3'
+gem 'aasm', '~> 2.1.5'
+gem 'will_paginate', '~> 3.0.pre'

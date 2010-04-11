@@ -73,10 +73,16 @@ class Admin::CategoriesController < ApplicationController
 
   # DELETE /categories/1
   # DELETE /categories/1.xml
+  # TODO get destroy link in admin/categories/index working
   def destroy
     @category = Category.find(params[:id])
 
-    @category.destroy
+    if @category.can_destroy?
+      @category.destroy
+      flash[:notice] = "Successfully destroyed category."
+    else
+      flash[:error] = "This category can't be destroyed. There are #{@category.posts.size} posts with this category."
+    end
 
     respond_to do |format|
       format.html { redirect_to(categories_url) }

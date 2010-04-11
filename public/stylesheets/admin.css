@@ -12,3 +12,34 @@
 #body {
     clear:both;
 }
+.like_button {
+	margin:4px 0;
+	padding:6px;
+	background-color:#efefef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	overflow:auto;
+	border:2px solid #e1e1e1;
+}
+.new_object_link {
+	float:right;
+	margin:4px 0;
+	padding:6px;
+	background-color:#efefef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	overflow:auto;
+	border:2px solid #e1e1e1;
+	color:#333;
+	text-decoration:none;
+}
+.actions a {
+	padding:2px 6px;
+	background-color:#efefef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	overflow:auto;
+	border:2px solid #e1e1e1;
+	color:#333;
+	text-decoration:none;
+}

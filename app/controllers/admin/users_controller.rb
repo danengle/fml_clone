@@ -5,7 +5,7 @@ class Admin::UsersController < ApplicationController
   layout 'admin'
   
   def index
-    @users = User.paginate(:page => params[:page])
+    @users = User.all
   end
   
   def edit

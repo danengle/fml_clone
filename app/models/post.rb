@@ -6,8 +6,8 @@ class Post < ActiveRecord::Base
   validates_presence_of :category_id, :body
   belongs_to :category
   belongs_to :user
-  has_many :comments
-  has_many :votes
+  has_many :comments, :dependent => :destroy
+  has_many :votes, :dependent => :destroy
   
   scope :published,
     where(["state = ? and published_at < ?", 'published', Time.now]).order('published_at desc')
