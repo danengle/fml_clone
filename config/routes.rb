@@ -5,7 +5,7 @@ FmlClone::Application.routes.draw do |map|
   root :to => "posts#index"
   resource :user_session
   match 'logout' => 'user_sessions#destroy', :as => 'logout'
-  match 'login' => 'user_session#new', :as => 'login'
+  match 'login' => 'user_sessions#new', :as => 'login'
   resource :account, :controller => "users"
   match 'signup' => 'users#new', :as => 'signup'
   match 'account/activate/:activation_code' => 'users#activate', :as => 'activate'

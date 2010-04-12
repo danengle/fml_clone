@@ -4,3 +4,23 @@
 .msg.info {border:2px solid #B8E2FB; background-color:#E8F6FF;}
 .msg.notice {border:2px solid #BBDF8D; background-color:#EAF7D9;}
 .msg.error {border:2px solid #FFAEAE; background-color:#FEEBEB;}
+
+#errorExplanation {
+	-moz-border-radius:8px;-webkit-border-radius:8px;
+	padding:6px;
+	border:2px solid #FFAEAE; background-color:#FEEBEB;
+	margin-bottom:6px;
+}
+#errorExplanation h2 {
+	margin:4px 0;
+}
+#errorExplanation ul {
+	margin:.5em .5em .5em 2em;
+}
+.fieldHasErrors {
+	border:2px solid #FFAEAE;
+}
+
+.form_div {
+	margin-bottom:6px;
+}

@@ -3,7 +3,7 @@
   <div class="post_footer">
     <%= link_to post.id, post %>
     <span class="created_by">By <%= post.user.blank? ? "anonymouse" : post.user.login %></span>
-    <span class="published_at">on <%= post.published_at.to_s(:short) %>.</span>
+    <span class="published_at">on <%= post.published_at.to_s %>.</span>
     <div class="votes">
       <p><%= link_to "Thumbs Up!", up_vote_post_path(post), :method => :post %>  (<%= post.up_vote_counter %>) <%= link_to "Thumbs Down!", down_vote_post_path(post), :method => :post %> (<%= post.down_vote_counter %>)</p>
     </div>

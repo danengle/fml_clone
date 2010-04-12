@@ -215,18 +215,27 @@ body {
 #main #post_form_h1 {
 	margin-top:0;
 }
+.edit_user .field {
+	margin:0 0 12px 0;
+}
 .edit_user label {
 	float:left;
-	width:140px;
+	width:190px;
 	text-align:right;
 	padding:2px 8px 0 0;
 }
 .edit_user input[type="submit"] {
-	margin-left:145px;
+	margin-left:315px;
 	font-size:13px;
 }
 .pagination {
 	float:right;
+}
+#rem_submit {
+	font-size:.8em;
+}
+#new_user_session div {
+	margin-bottom:4px;
 }
 .pagination a, .pagination span {
 	padding:2px 7px;
@@ -236,4 +245,27 @@ body {
 }
 .pagination_div {
 	font-size:13px;
+}
+#account_box h5 span {
+	float:right;
+	font-size:.8em;
+}
+.pagination .disabled, .pagination em, .pagination a {
+	background-color:#F3f3f3;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+.pagination em {
+	padding:2px 7px;
+	font-style:normal;
+}
+#login_bottom {
+	font-size:.8em;
+	margin-top:6px;
+}
+#user_session_remember_me {
+	margin-right:4px;
+}
+#user_session_submit {
+	font-size:.8em;
 }

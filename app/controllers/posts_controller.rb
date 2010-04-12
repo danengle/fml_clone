@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.published.paginate(:page => params[:page])
+    @posts = Post.published.paginate(:page => params[:page], :per_page => 3)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     @post.user = current_user if logged_in?
     respond_to do |format|
       if @post.save
-        format.html { redirect_to(@post, :notice => 'Post was successfully created.') }
+        format.html { redirect_to(root_path, :notice => 'Thank you for you submission. It will have to be reviewed before you see it appear on the site.') }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }
