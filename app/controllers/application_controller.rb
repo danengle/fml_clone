@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user
   
   before_filter :get_current_user
+  before_filter :get_preferences
   
   def get_current_user
     current_user
@@ -14,7 +15,7 @@ class ApplicationController < ActionController::Base
   
   def access_denied
     store_location
-    flash[:notice] = "You are not authorized to access this page"
+    flash[:notice] = "You are not authorized to access that page"
     logger.info { "User attempted unathorized access to #{request.request_uri}" }
     logger.info { "session[:return_to] = #{session[:return_to]}" }
     redirect_to root_path # figure out best way to use :back
@@ -67,5 +68,13 @@ class ApplicationController < ActionController::Base
   def redirect_back_or_default(default)
     redirect_to(session[:return_to] || default)
     session[:return_to] = nil
+  end
+  
+  def get_preferences
+    preferences = Preference.find(:all)
+    @preferences = {}
+    preferences.each do |p|
+      @preferences[p.key.to_sym] = p.value
+    end
   end
 end

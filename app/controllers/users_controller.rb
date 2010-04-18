@@ -18,9 +18,8 @@ class UsersController < ApplicationController
       @user.reset_perishable_token!
       UserMailer.activation_email(@user).deliver
       logger.info { "before flash!" }
-      flash[:notice] = "Account registered! Please check your email to activate your account."
+      flash[:notice] = "Account registered! Please check your email to activate your account and then you can login."
       redirect_to root_path
-      logger.info { "after redirect" }
     else
       render :action => :new
     end
@@ -46,8 +45,8 @@ class UsersController < ApplicationController
   
   def activate
     user = User.find_by_perishable_token(params[:activation_code])
-    logger.info { "User: #{user.login}" }
-    logger.info { "first when is #{(!params[:activation_code].blank?) && user && !user.active?}" }
+    #logger.info { "User: #{user.login}" }
+    #logger.info { "first when is #{(!params[:activation_code].blank?) && user && !user.active?}" }
     case
     when (!params[:activation_code].blank?) && user && !user.active?
       user.activate!
@@ -60,5 +59,22 @@ class UsersController < ApplicationController
       flash[:error]  = "We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in."
       redirect_back_or_default new_account_url
     end
+  end
+  
+  def new_activation_email
+    if request.post?
+      @user = User.find_by_email(params[:email])
+      @user.reset_perishable_token!
+      UserMailer.activation_email(@user).deliver
+      flash[:notice] = "Check your email for a new activation link"
+      redirect_back_or_default root_path
+    else
+      @user = User.new
+    end
+  end
+  
+  #TODO add some checks for users who are already activated and non existent emails
+  def send_activation_email
+    
   end
 end

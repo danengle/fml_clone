@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100214225104) do
+ActiveRecord::Schema.define(:version => 20100418194501) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",       :null => false
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(:version => 20100214225104) do
     t.string   "state",             :default => "unread", :null => false
     t.integer  "up_vote_counter",   :default => 0,        :null => false
     t.integer  "down_vote_counter", :default => 0,        :null => false
+  end
+
+  create_table "preferences", :force => true do |t|
+    t.string   "key",                          :null => false
+    t.string   "value",                        :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "modifiable", :default => true
   end
 
   create_table "user_sessions", :force => true do |t|

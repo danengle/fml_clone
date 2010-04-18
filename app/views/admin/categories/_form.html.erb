@@ -1,7 +1,6 @@
-<% form_for(@category) do |f| %>
+<% form_for([:admin,@category]) do |f| %>
   <%= f.error_messages %>
-
-  <div class="field">
+  <div>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>

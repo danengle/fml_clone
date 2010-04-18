@@ -1,0 +1,19 @@
+<%= link_to 'New Preference', new_admin_preference_path, :class => 'new_object_link' %>
+<h3>Site Preferences</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+    <th>Modifiable</th>
+    <th colspan="2">Actions</th>
+  </tr>
+  <% @preferences.each do |preference| %>
+    <tr>
+      <td><%= preference.key %></td>
+      <td><%= preference.value %></td>
+      <td><%= preference.modifiable %></td>
+      <td class="actions"><%= link_to 'Edit', edit_admin_preference_path(preference) %></td>
+      <td class="actions"><%= link_to 'Destroy', [:admin,preference], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>

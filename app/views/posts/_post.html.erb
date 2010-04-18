@@ -1,11 +1,11 @@
 <div id="post_<%= post.id %>" class="rounded_box post">
-  <p><%= post.body %></p>
+  <p class="post_body"><%= link_to post.body, post %></p>
   <div class="post_footer">
     <%= link_to post.id, post %>
     <span class="created_by">By <%= post.user.blank? ? "anonymouse" : post.user.login %></span>
     <span class="published_at">on <%= post.published_at.to_s %>.</span>
     <div class="votes">
-      <p><%= link_to "Thumbs Up!", up_vote_post_path(post), :method => :post %>  (<%= post.up_vote_counter %>) <%= link_to "Thumbs Down!", down_vote_post_path(post), :method => :post %> (<%= post.down_vote_counter %>)</p>
+      <p><%= link_to @preferences[:thumbs_up], up_vote_post_path(post), :method => :post %>  (<%= post.up_vote_counter %>) <%= link_to @preferences[:thumbs_down], down_vote_post_path(post), :method => :post %> (<%= post.down_vote_counter %>)</p>
     </div>
   </div>
 </div>

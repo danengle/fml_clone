@@ -9,6 +9,8 @@ FmlClone::Application.routes.draw do |map|
   resource :account, :controller => "users"
   match 'signup' => 'users#new', :as => 'signup'
   match 'account/activate/:activation_code' => 'users#activate', :as => 'activate'
+  match 'account/new_activation_email' => 'users#new_activation_email', :as => 'new_activation_email'
+  match 'account/send_activation_email' => 'users#send_activation_email', :as => 'send_activation_email'
   resources :users
   resources :categories
   resources :posts do
@@ -38,6 +40,7 @@ FmlClone::Application.routes.draw do |map|
     end
     resources :categories
     resources :users
+    resources :preferences
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

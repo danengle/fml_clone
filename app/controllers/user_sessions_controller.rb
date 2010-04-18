@@ -1,10 +1,6 @@
 class UserSessionsController < ApplicationController
-  before_filter :require_no_user, :only => [:new, :create]
+  before_filter :require_no_user, :only => [:create]
   before_filter :require_user, :only => :destroy
-
-  def new
-    @user_session = UserSession.new
-  end
 
   def create
     @user_session = UserSession.new(params[:user_session])
@@ -12,7 +8,8 @@ class UserSessionsController < ApplicationController
       flash[:notice] = "Login successful!"
       redirect_back_or_default root_path
     else
-      render :action => :new
+      flash[:error] = "Oops! You must have entered your username or password incorrectly."
+      redirect_back_or_default root_path
     end
   end
 

@@ -111,13 +111,26 @@ body {
 /*** Posts ***/
 #post_body {
     width:98%;
-    height:250px;
+    height:150px;
+}
+#new_post .actions {
+	float:right;
+	margin:12px 10px 8px 0;
+}
+#post_category {
+	margin-bottom:8px;
 }
 .post {
     margin:0 0 13px 0;
 }
 .post p {
 	font-size:15px;
+}
+.post .post_body a {
+	text-decoration:none;
+}
+.post .post_body a:visited,.post .post_body a:link {
+	color:#000;
 }
 .post_footer {
 	font-size:14px;
@@ -268,4 +281,20 @@ body {
 }
 #user_session_submit {
 	font-size:.8em;
+}
+form .field {
+	margin:0 0 6px;
+}
+form .field label {
+	float:left;
+	width:175px;
+	margin:0 0 6px;
+	text-align:right;
+	padding:4px 8px 0 0;
+}
+#main h3 {
+	margin:6px 0 8px 16px;
+}
+#new_user .actions {
+	margin:8px 0 16px 195px;
 }

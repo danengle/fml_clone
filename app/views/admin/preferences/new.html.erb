@@ -1,0 +1,8 @@
+<h3>New Preference</h3>
+<%= form_for [:admin,@preference] do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

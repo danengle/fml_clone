@@ -1,6 +1,6 @@
 <h3>Review post</h3>
 
-<% form_for([:admin,@post], :html => { :class => 'jNice' }) do |f| %>
+<%= form_for([:admin,@post], :html => { :class => 'jNice' }) do |f| %>
   <%= f.error_messages %>
   <fieldset>
   <%= render :partial => 'form', :locals => {:f => f} %>

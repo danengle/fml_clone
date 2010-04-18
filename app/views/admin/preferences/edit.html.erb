@@ -1,0 +1,17 @@
+<h3>Editing Preference</h3>
+<%= form_for([:admin, @preference], :html => { :class => 'jNice' }) do |f| %>
+  <fieldset>
+  <%= f.error_messages %>
+  <div class="flat_field">
+    <%= f.label :key, "Name:" %>
+    <%= @preference.key %>
+  </div>
+  <div class="flat_field">
+    <%= f.label :value, "Value:" %>
+    <%= f.text_field :value %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+  </fieldset>
+<% end %>

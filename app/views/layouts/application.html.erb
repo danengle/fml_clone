@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Categories: <%= controller.action_name %></title>
+  <title><%= @preferences[:site_title] %></title>
   <%= stylesheet_link_tag 'reset', 'base', 'common', 'styles' %>
   <%= javascript_include_tag 'jquery-1.4.1.js', 'rails', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
   <div id="header" class="centered">
-    <h1><%= link_to "FML Clone", root_path %></h1>
+    <h1><%= link_to @preferences[:site_title], root_path %></h1>
     <%= render :partial => 'shared/navigation' %>
   </div>
   <div id="content" class="centered">

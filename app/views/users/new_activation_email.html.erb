@@ -1,0 +1,12 @@
+<div class="rounded_box">
+  <p>Didn't get your activation email? Enter your email address to have another sent.</p>
+  <%= form_for send_activation_email_path do |f| %>
+    <div>
+      <label>Email Address:</label>
+      <%= text_field_tag :email %>
+    </div>
+    <div>
+      <%= f.submit "Send activation email" %>
+    </div>
+  <% end %>
+</div>

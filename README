@@ -4,7 +4,7 @@ TODO
 		post editor/publisher
 		add ability to change publish time
 		site setings
-			up/down vote text
+			up/down vote text, need to make some unchangeable
 			templates
 	*add ability to comment
 		add reply to comments
@@ -18,7 +18,7 @@ TODO
 	api
 	users can edit their profiles
 	blog
-	get will_paginate working
+	*get will_paginate working
 	get breadcrumbs working
 	login with oauth/facebook
-	
+	add a follow me on twitter link, put username in admin

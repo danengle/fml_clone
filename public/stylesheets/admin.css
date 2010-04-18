@@ -43,3 +43,11 @@
 	color:#333;
 	text-decoration:none;
 }
+form div {
+	margin:0 0 6px;
+}
+#main form fieldset div.flat_field label {
+	float:left;
+	width:120px;
+	clear:both;
+}
