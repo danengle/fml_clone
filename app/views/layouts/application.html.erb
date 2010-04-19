@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag 'reset', 'base', 'common', 'styles' %>
   <%= javascript_include_tag 'jquery-1.4.1.js', 'rails', 'application' %>
   <%= csrf_meta_tag %>
+  <%= auto_discovery_link_tag :atom, "http://localhost:3000/posts.atom" %>
 </head>
 <body>
   <div id="header" class="centered">

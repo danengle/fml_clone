@@ -1,6 +1,17 @@
 <%= form_for(@post) do |f| %>
-  <%= f.error_messages %>
-
+  <% unless @post.errors.blank? %>
+    <div id="errorExplanation">
+      <h2>Oops! There was a problem saving your post.</h2>
+      <p>Please correct the following before continuing...</p>
+      <ul>
+        <% @post.errors.each_pair do |field, error| %>
+          <% error.each do |e| %>
+            <li><%= field %> <%= e %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div id="post_category" class="field">
     <%= f.label :category_id, "Choose a category:" %>
     <%= f.select :category_id, Category.all.map {|c| [c.name, c.id] } %>

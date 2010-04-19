@@ -1,0 +1,30 @@
+<div class="rounded_box">
+  <%= form_tag save_password_path do %>
+    <%= error_messages_for @user %>
+    <% unless @user.errors.blank? %>
+      <div id="errorExplanation">
+        <h2>Oops! Your new password doesn't want to save</h2>
+        <p>Please correct the following before continuing...</p>
+        <ul>
+          <% @user.errors.each_pair do |field, error| %>
+            <% error.each do |e| %>
+              <li><%= field %> <%= e %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= hidden_field_tag 'reset_code', @user.perishable_token %>
+    <div class="field">
+      <label for="password">New Password:</label>
+      <%= password_field_tag 'p[password]' %>
+    </div>
+    <div class="field">
+      <label for="password">Password Confirmation:</label>
+      <%= password_field_tag 'p[password_confirmation]' %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Change password" %>
+    </div>
+  <% end %>
+</div>

@@ -61,6 +61,7 @@ class UsersController < ApplicationController
     end
   end
   
+  #TODO add some checks for users who are already activated and non existent emails
   def new_activation_email
     if request.post?
       @user = User.find_by_email(params[:email])
@@ -73,8 +74,11 @@ class UsersController < ApplicationController
     end
   end
   
-  #TODO add some checks for users who are already activated and non existent emails
-  def send_activation_email
-    
+  def reset_password
+    if request.post?
+      @user = User.find_by_email(params[:email])
+      @user.reset_perishable_token!
+      UserMailer
+    end
   end
 end

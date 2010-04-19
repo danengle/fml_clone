@@ -1,0 +1,14 @@
+<div class="rounded_box">
+  <h3>Request password reset</h3>
+  <p>Forgot your password? No problem, just enter you email below and we'll send you a link to reset your password.</p>
+  <%= form_tag send_password_reset_path do %>
+
+    <div class="field">
+      <label>Email Address:</label>
+      <%= text_field_tag :email %>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Send password reset link!" %>
+    </div>
+  <% end %>
+</div>

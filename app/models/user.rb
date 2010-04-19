@@ -49,4 +49,9 @@ class User < ActiveRecord::Base
     self.deleted_at = nil
   end
 
+  def new_password(new_password)
+    self.password = new_password[:password]
+    self.password_confirmation = new_password[:password_confirmation]
+    self.save
+  end
 end

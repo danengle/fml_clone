@@ -11,6 +11,11 @@ FmlClone::Application.routes.draw do |map|
   match 'account/activate/:activation_code' => 'users#activate', :as => 'activate'
   match 'account/new_activation_email' => 'users#new_activation_email', :as => 'new_activation_email'
   match 'account/send_activation_email' => 'users#send_activation_email', :as => 'send_activation_email'
+  match 'account/new_password' => 'password#new', :as => 'new_password'
+  match 'account/send_password_reset' => 'password#create', :as => 'send_password_reset'
+  match 'account/reset_password/:reset_code' => 'password#edit', :as => 'reset_password'
+  match 'account/save_password' => 'password#update', :as => 'save_password'
+  
   resources :users
   resources :categories
   resources :posts do
