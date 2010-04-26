@@ -12,7 +12,6 @@
 <% end %>
 <fieldset>
   <legend>Available Actions</legend>
-
   <% if @post.published? -%>
     <p>Published on <%= @post.published_at.to_s(:long) %></p>
     <%= button_to "Unpublish this post", unpublish_admin_post_path(@post), :class => 'like_button' %>

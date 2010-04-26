@@ -44,7 +44,14 @@ FmlClone::Application.routes.draw do |map|
       end
     end
     resources :categories
-    resources :users
+    resources :users do
+      member do
+        post :activate
+        post :suspend
+        post :unsuspend
+        post :delete
+      end
+    end
     resources :preferences
   end
   # The priority is based upon order of creation:

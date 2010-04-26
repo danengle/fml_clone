@@ -2,26 +2,12 @@ class CommentsController < ApplicationController
 
   before_filter :require_user
   before_filter :get_post
-  # GET /comments/new
-  # GET /comments/new.xml
-  def new
-    @comment = Comment.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @comment }
-    end
-  end
-
-  # GET /comments/1/edit
-  def edit
-    @comment = Comment.find(params[:id])
-  end
 
   # POST /comments
   # POST /comments.xml
   def create
     @comment = @post.comments.new(params[:comment])
+    @comment.user = current_user
     # @comment.user = current_user
     respond_to do |format|
       if @comment.save
@@ -29,6 +15,7 @@ class CommentsController < ApplicationController
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
         flash[:error] = 'There was an error creating your comment.'
+        logger.info { "*** #{@comment.errors}" }
         format.html { redirect_to(@post ) }
         format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
       end

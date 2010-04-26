@@ -15,7 +15,8 @@ class Admin::PreferencesController < ApplicationController
   # GET /preferences/1
   # GET /preferences/1.xml
   def show
-    @preference = Preference.find(params[:id])
+    @preference_category = PreferenceCategory.find_by_name(params[:id].humanize)
+    @preferences = @preference_category.preferences
     
     respond_to do |format|
       format.html # show.html.erb

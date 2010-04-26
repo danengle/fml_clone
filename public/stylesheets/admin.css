@@ -51,3 +51,15 @@ form div {
 	width:120px;
 	clear:both;
 }
+.user_actions form {
+	display:block;
+	float:left;
+	margin-right:8px;
+}
+#main table tr th {
+	padding:3px 0 0 8px;
+}
+
+#main table tr td.actions {
+	padding:0 4px 0 0;
+}

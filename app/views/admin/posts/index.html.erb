@@ -26,20 +26,22 @@
 <h3><%= @posts.size %> Posts</h3>
 <table>
   <tr>
-    <th>ID</th>
+    <th class="first_column">ID</th>
     <th>User</th>
     <th>Category</th>
     <th>Body</th>
     <th>Published at</th>
+    <th>Votes</th>
     <th colspan="2">Actions</th>
   </tr>
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.id %></td>
-    <td><%=h post.display_name %></td>
+    <td><%=h link_to_user(post) %></td>
     <td><%=h post.category.name %></td>
     <td><%=h truncate(post.body, :length => 25) %></td>
-    <td><%=h published_time(post) %></td>
+    <td><%=h post.published? ? published_time(post) : post.state %></td>
+    <td><%= post.up_vote_counter %> / <%= post.down_vote_counter %></td>
     <td class="actions"><%= link_to 'Edit', edit_admin_post_path(post) %></td>
     <td class="actions"><%= link_to 'Destroy', [:admin,post], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

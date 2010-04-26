@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.xml
   def show
+    @stuff = request
     @post = Post.find(params[:id])
     respond_with(@post)
   end
@@ -38,6 +39,7 @@ class PostsController < ApplicationController
     end
   end
 
+  #TODO move up_vote and down_vote to votes_controller
   def up_vote
     @post = Post.find(params[:id])
     vote = @post.votes.new(:up_vote => true)
@@ -45,7 +47,7 @@ class PostsController < ApplicationController
     if vote.save
       flash[:notice] = "Thanks for voting!"
     else
-      flash[:notice] = "Could not save your vote, sorry."
+      flash[:error] = vote.errors.blank? ? "Could not save your vote, sorry." : vote.errors[:post_id].first
     end
     redirect_to :back
   end
@@ -57,7 +59,7 @@ class PostsController < ApplicationController
     if vote.save
       flash[:notice] = "Thanks for voting!"
     else
-      flash[:notice] = "Could not save your vote, sorry."
+      flash[:error] = vote.errors.blank? ? "Could not save your vote, sorry." : vote.errors[:post_id].first
     end
     redirect_to :back
   end

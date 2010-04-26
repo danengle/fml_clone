@@ -1,11 +1,15 @@
 class Admin::UsersController < ApplicationController
 
   before_filter :admin_required
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  before_filter :find_user, :only => [:show, :suspend, :unsuspend, :delete, :purge]
   layout 'admin'
   
   def index
     @users = User.all
+  end
+  
+  def show
+    redirect_to edit_admin_user_path(@user)
   end
   
   def edit
@@ -27,17 +31,24 @@ class Admin::UsersController < ApplicationController
 
   def suspend
     @user.suspend!
-    redirect_to users_path
+    redirect_to edit_admin_user_path(@user), :notice => 'User has been suspended.'
   end
 
   def unsuspend
     @user.unsuspend!
-    redirect_to users_path
+    redirect_to edit_admin_user_path(@user), :notice => 'User has been unsuspended.'
   end
 
-  def destroy
-    @user.delete!
-    redirect_to users_path
+  def delete
+    logger.info { "@user == current_user = #{@user == current_user}" }
+    if @user == current_user
+      flash[:error] = "You can't delete yourself!"
+      redirect_to edit_admin_user_path(current_user)
+    else
+      @user.delete!
+      flash[:notice] = 'User has been deleted.'
+      redirect_to admin_users_path
+    end
   end
 
   def purge

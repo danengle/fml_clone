@@ -1,4 +1,6 @@
-<% form_for([:admin,@category]) do |f| %>
+<% form_for([:admin,@category], :html => { :class => 'jNice' }) do |f| %>
+  <fieldset>
+    <legend>Category</legend>
   <%= f.error_messages %>
   <div>
     <%= f.label :name %><br />
@@ -7,4 +9,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  </fieldset>
 <% end %>

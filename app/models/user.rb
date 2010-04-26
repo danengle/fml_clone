@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   acts_as_authentic
 
   has_many :posts
+  before_destroy :stop_bad_delete
+  before_update :stop_bad_admin_transistion
   
   aasm_column :state
   aasm_initial_state :initial => :pending
@@ -53,5 +55,13 @@ class User < ActiveRecord::Base
     self.password = new_password[:password]
     self.password_confirmation = new_password[:password_confirmation]
     self.save
+  end
+  
+  def stop_bad_delete
+    User.count(:all, :conditions => ['state = ?', 'active']) > 1
+  end
+  
+  def stop_bad_admin_transistion
+    
   end
 end

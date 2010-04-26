@@ -1,5 +1,7 @@
 class VotesController < ApplicationController
 
+  # This is currently not being used, look in posts_controller
+
   # POST /votes
   # POST /votes.xml
   def create
@@ -13,7 +15,7 @@ class VotesController < ApplicationController
         format.html { redirect_to :back }
         format.xml  { render :xml => @vote, :status => :created, :location => @vote }
       else
-        flash[:error] = 'Could not save your vote'
+        flash[:error] = 'Could not save your vote!!!!!!!'
         format.html { redirect_to(@post) }
         format.xml  { render :xml => @vote.errors, :status => :unprocessable_entity }
       end

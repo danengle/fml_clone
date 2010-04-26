@@ -17,10 +17,19 @@
   <p>
     <%= f.label :admin, "Admin?" %>
     <%= f.check_box :admin %>
-    
   </p>
   <p>
     <%= f.submit "Update Profile" %>
   </p>
   </fieldset>
 <% end %>
+
+<fieldset>
+  <legend>Available Actions</legend>
+  <% if current_user == @user %>
+    <p>You can't change your own state</p>
+  <% else %>
+    <p>This user is currently <%= @user.state %> (activated on <%= @user.activated_at %>). The current available actions are...</p>
+    <%= current_user_actions %>
+  <% end %>
+</fieldset>

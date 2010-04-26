@@ -1,4 +1,5 @@
 TODO
+	add activity tracker model
 	admin section
 		user editor
 		post editor/publisher
@@ -7,6 +8,17 @@ TODO
 		site setings
 			up/down vote text, need to make some unchangeable
 			templates
+		ad space config
+		make deleted users uneditable
+		remove deleted users from users list
+		mouseover buttons changes color
+		add user stats
+			number of posts
+			number of votes
+			comments
+			last login
+			favorites
+			recent activity
 	*add ability to comment
 		add reply to comments
 		follow comments
@@ -23,3 +35,8 @@ TODO
 	login with oauth/facebook
 	add a follow me on twitter link, put username in admin
 	add ability to favorite
+	limit non logged in users to vote twice
+	unify css color declarations
+	view posts by category
+	make email accetable for logging in
+	make sure all code is in rails3 http://guides.rails.info/3_0_release_notes.html
