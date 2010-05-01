@@ -8,6 +8,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments, :dependent => :destroy
   has_many :votes, :dependent => :destroy
+  has_many :favorites, :dependent => :destroy
   
   scope :published,
     where(["state = ? and published_at < ?", 'published', Time.now]).order('published_at desc')

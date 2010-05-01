@@ -6,6 +6,7 @@
         <li><%= link_to "View Profile", "#" %></li>
         <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
         <li><%= link_to "My Messages", "#" %></li>
+        <li><%= link_to "Favorites", user_favorites_path(current_user) %></li>
         <% if current_user.admin? -%>
           <li><%= link_to "Site Admin", admin_path %></li>
         <% end -%>
@@ -22,9 +23,9 @@
           <%= f.label :password %><br />
           <%= f.password_field :password %>
         </div>
-        <div>
+        <div class="login_stuff">
           <%= f.check_box :remember_me %><%= f.label :remember_me, "Remember me?", :id => 'rem_submit' %>
-          <%= f.submit "Login" %>
+          <%= f.submit "Login", :class => 'awesome_button' %>
         </div>
         <div id="login_bottom">
           <%= link_to "Forgot your password?", new_password_path %><br />

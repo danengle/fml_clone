@@ -1,4 +1,5 @@
-<div class="rounded_box">
+<div class="rounded_box box_background">
+  <h3>Create your new password</h3>
   <%= form_tag save_password_path do %>
     <%= error_messages_for @user %>
     <% unless @user.errors.blank? %>
@@ -24,7 +25,7 @@
       <%= password_field_tag 'p[password_confirmation]' %>
     </div>
     <div class="actions">
-      <%= submit_tag "Change password" %>
+      <%= submit_tag "Change password", :class => 'awesome_button' %>
     </div>
   <% end %>
 </div>

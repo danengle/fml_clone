@@ -1,6 +1,7 @@
 body {
 	background-color:#c9d8ed;
 	height:100%;
+	font:90% arial,sans-serif;
 }
 .clear {
 	clear:both;
@@ -22,12 +23,26 @@ body {
 .rounded_box {
 	margin:4px 0;
     padding:6px;
-    background-color:#f3f3f3;
+/*    background-color:#f3f3f3;*/
     -moz-border-radius:8px;
 	-webkit-border-radius:8px;
 	overflow:auto;
 }
-
+.rounded_top {
+	-moz-border-radius-topleft:8px;
+	-webkit-border-top-left-radius:8px;
+	-moz-border-radius-topright:8px;
+	-webkit-border-top-right-radius:8px;
+}
+.rounded_bottom {
+	-moz-border-radius-bottomleft:8px;
+	-webkit-border-bottom-left-radius:8px;
+	-moz-border-radius-bottomright:8px;
+	-webkit-border-bottom-right-radius:8px;
+}
+.box_background {
+	background-color:#f3f3f3;
+}
 #user_bar {
 	float:right;
 	font-size:.8em;
@@ -125,7 +140,29 @@ body {
 }
 .post p {
 	font-size:15px;
+	margin-bottom:0;
+	padding-bottom:8px;
 }
+.post .post_header {
+	background-color:#aaa;
+	height:1.55em;
+	font:85% arial,sans-serif;
+	padding:2px;
+}
+.post .post_header div {
+	padding:4px 4px 2px 4px;
+}
+.post .post_body, .post .post_footer {
+	padding:4px;
+}
+.post .post_header .right_side {
+	float:right;
+	padding:0;
+}
+.post .post_header .left_side {
+	float:left;
+}
+
 .post .post_body a {
 	text-decoration:none;
 }
@@ -134,9 +171,11 @@ body {
 }
 .post_footer {
 	font-size:14px;
+	overflow:auto;
 }
 .votes {
 	float:right;
+	
 }
 .votes p {
 	font-size:13px;
@@ -297,4 +336,57 @@ form .field label {
 }
 #new_user .actions {
 	margin:8px 0 16px 195px;
+}
+
+.votes .button_to {
+	float:right;
+}
+.votes .button_to input,
+.pagination .disabled,
+.pagination em,
+.pagination a, .awesome_button {
+	-moz-border-radius:3px 3px 3px 3px;
+	-webkit-border-radius:3px;
+	background:-moz-linear-gradient(center top , #F9F9F9, #E3E3E3) repeat scroll 0 0 transparent;
+	border:1px solid #BBBBBB;
+	color:#000000;
+	cursor:default;
+	font:70% arial,sans-serif;
+	margin:0 8px 0 0;
+	outline:medium none;
+	padding:3px 6px;
+	text-align:center;
+	vertical-align:middle;
+	white-space:nowrap;
+}
+.button_to div input.up_vote_button {
+	margin:0;
+}
+input.awesome_button {
+	padding:2px 4px;
+	margin-right:0;
+}
+.login_stuff {
+	overflow:auto;
+}
+
+.post_body {
+	background:-moz-linear-gradient(center top , #F9F9F9, #E3E3E3) repeat scroll 0 0 transparent;
+	border-left:1px solid #BBBBBB;
+	border-right:1px solid #BBBBBB;
+}
+.post_footer {
+	background:-moz-linear-gradient(center top , #E3E3E3, #F9F9F9) repeat scroll 0 0 transparent;
+	border-left:1px solid #BBBBBB;
+	border-right:1px solid #BBBBBB;
+	border-bottom:1px solid #BBBBBB;
+}
+.pagination .disabled,
+.pagination em,
+.pagination a {
+	margin:0;
+/*	padding:3px 5px;*/
+}
+.votes .button_to input:hover,.pagination a:hover {
+	cursor:pointer;
 }

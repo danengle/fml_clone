@@ -1,11 +1,33 @@
-<div id="post_<%= post.id %>" class="rounded_box post">
-  <p class="post_body"><%= link_to post.body, post %></p>
-  <div class="post_footer">
+<div id="post_<%= post.id %>" class="post box">
+  <div class="post_header rounded_top">
+    <div class="right_side">
+      <span class="share_twitter">
+        <%= link_to image_tag('tw0.png'), "#" %>
+      </span>
+      <span class="share_facebook">
+        <%= link_to image_tag('fb0.png'), "#" %>
+      </span>
+      <span class="favorite_post">
+        <% if logged_in? && current_user.favorite?(post) %>
+          <%= image_tag('fav1.png') %>
+        <% else %>
+          <%= link_to image_tag('fav0.png'), favorite_post_path(post) %>
+        <% end %>
+      </span>
+    </div>
+    <div class="left_side">
+      <%= post.published_at.to_s(:long) %>
+    </div>
+  </div>
+  <div class="post_body box_background">
+    <p><%= link_to post.body, post %></p>
+  </div>
+  <div class="post_footer box_background rounded_bottom">
     <%= link_to post.id, post %>
     <span class="created_by">By <%= post.user.blank? ? "anonymouse" : post.user.login %></span>
-    <span class="published_at">on <%= post.published_at.to_s %>.</span>
     <div class="votes">
-      <p><%= link_to @preferences[:thumbs_up], up_vote_post_path(post), :method => :post %>  (<%= post.up_vote_counter %>) <%= link_to @preferences[:thumbs_down], down_vote_post_path(post), :method => :post %> (<%= post.down_vote_counter %>)</p>
+      <%= button_to "#{@preferences[:thumbs_up]} (#{post.up_vote_counter})", up_vote_post_path(post), {:class => 'up_vote_button'} %>
+      <%= button_to "#{@preferences[:thumbs_down]} (#{post.down_vote_counter})", down_vote_post_path(post) %>
     </div>
   </div>
 </div>

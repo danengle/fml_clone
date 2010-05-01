@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   acts_as_authentic
 
   has_many :posts
+  has_many :favorites, :dependent => :destroy
+  
   before_destroy :stop_bad_delete
   before_update :stop_bad_admin_transistion
   
@@ -63,5 +65,9 @@ class User < ActiveRecord::Base
   
   def stop_bad_admin_transistion
     
+  end
+  
+  def favorite?(post)
+    self.favorites.exists?(:post_id => post.id)
   end
 end

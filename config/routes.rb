@@ -15,8 +15,12 @@ FmlClone::Application.routes.draw do |map|
   match 'account/send_password_reset' => 'password#create', :as => 'send_password_reset'
   match 'account/reset_password/:reset_code' => 'password#edit', :as => 'reset_password'
   match 'account/save_password' => 'password#update', :as => 'save_password'
+  match 'posts/:post_id/favorite' => 'favorites#create', :as => 'favorite_post'
   
-  resources :users
+  resources :users do
+    resources :favorites
+  end
+  
   resources :categories
   resources :posts do
     resources :comments do
