@@ -1,0 +1,12 @@
+<%= render :partial => @post %>
+
+<div id="comments">
+  <h4>Reply to comment</h4>
+  <%= render :partial => @comment %>
+
+  <% if logged_in? -%>
+    <%= render 'comments/comment_reply' %>
+  <% else -%>
+    <p>You must be logged in to comment. <%= link_to "Login", login_path %> or <%= link_to "Sign up", signup_path %></p>
+  <% end -%>
+</div>

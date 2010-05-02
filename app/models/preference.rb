@@ -4,4 +4,5 @@ class Preference < ActiveRecord::Base
   validates_uniqueness_of :key
   validates_presence_of :key, :value
   
+  scope :general, where({:preference_category_id => 1})
 end

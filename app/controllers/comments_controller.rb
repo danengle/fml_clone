@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        format.html { redirect_to(@comment, :notice => 'Comment was successfully updated.') }
+        format.html { redirect_to(@comment, :notice => 'Thanks for commenting!') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -39,6 +39,8 @@ class CommentsController < ApplicationController
   end
 
   def reply
+    @post = Post.find(params[:post_id])
+    @comment = Comment.find(params[:id])
     
   end
   

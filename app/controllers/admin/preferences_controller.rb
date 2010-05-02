@@ -5,7 +5,7 @@ class Admin::PreferencesController < ApplicationController
   # GET /preferences
   # GET /preferences.xml
   def index
-    @preferences = Preference.all
+    @preferences = Preference.general.all
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @preferences }

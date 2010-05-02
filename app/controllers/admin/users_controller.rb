@@ -14,6 +14,7 @@ class Admin::UsersController < ApplicationController
   
   def edit
     @user = User.find(params[:id])
+    @posts = @user.posts.all
   end
   
   def update

@@ -41,7 +41,7 @@ TODO
 	make email accetable for logging in
 	make sure all code is in rails3 http://guides.rails.info/3_0_release_notes.html
 	figure out why error messages is not working in reset_password
-	
+	when logging out from admin section, redirect to home so "not authorized" message does not show up
 	
 	SETTINGS TO IMPLEMENT
 	anonymous name
