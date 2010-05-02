@@ -5,6 +5,7 @@ class Admin::PreferencesController < ApplicationController
   # GET /preferences
   # GET /preferences.xml
   def index
+    @preference_category = PreferenceCategory.find_by_name('general')
     @preferences = Preference.general.all
     respond_to do |format|
       format.html # index.html.erb
@@ -84,5 +85,16 @@ class Admin::PreferencesController < ApplicationController
       format.html { redirect_to(admin_preferences_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def bulk_update
+    @preference_category = PreferenceCategory.find_by_name(params[:preference_category])
+    params[:preferences].each do |pref|
+      preference = Preference.find_by_key(pref[0])
+      preference.value = pref[1]
+      preference.save
+    end
+    flash[:notice] = "Preferences updated."
+    redirect_to admin_preference_path(@preference_category.name.downcase)
   end
 end

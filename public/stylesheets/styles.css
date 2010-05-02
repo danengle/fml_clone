@@ -401,3 +401,6 @@ input.awesome_button {
 .votes .button_to input:hover,.pagination a:hover {
 	cursor:pointer;
 }
+#footer ul li {
+	list-style-type:none;
+}

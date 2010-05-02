@@ -55,8 +55,8 @@
         <td><%=h truncate(post.body, :length => 25) %></td>
         <td><%=h post.published? ? published_time(post) : post.state %></td>
         <td><%= post.up_vote_counter %> / <%= post.down_vote_counter %></td>
-        <td class="actions"><%= link_to 'Edit', edit_admin_post_path(post) %></td>
-        <td class="actions"><%= link_to 'Destroy', [:admin,post], :confirm => 'Are you sure?', :method => :delete %></td>
+        <td class="actions"><%= link_to 'Edit', edit_admin_post_path(post), :class => 'goto_link' %></td>
+        <td class="actions"><%= link_to 'Destroy', [:admin,post], :confirm => 'Are you sure?', :method => :delete, :class => 'delete_link' %></td>
       </tr>
     <% end %>
     </table>

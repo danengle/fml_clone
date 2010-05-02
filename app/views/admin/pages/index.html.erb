@@ -1,0 +1,20 @@
+<%= link_to 'New Page', new_admin_page_path, :class => 'new_object_link new_link' %>
+<h3>Listing pages</h3>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Slug</th>
+    <th colspan="2">Actions</th>
+  </tr>
+
+<% @pages.each do |page| %>
+  <tr>
+    <td><%= page.title %></td>
+    <td><%= page.slug %></td>
+    <td class="actions"><%= link_to 'Edit', edit_admin_page_path(page), :class => 'goto_link' %></td>
+    <td class="actions"><%= link_to 'Destroy', [:admin,page], :confirm => 'Are you sure?', :method => :delete, :class => 'delete_link' %></td>
+  </tr>
+<% end %>
+</table>
+

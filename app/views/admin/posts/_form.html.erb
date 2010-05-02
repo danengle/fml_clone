@@ -5,7 +5,7 @@
   <%= f.label :category_id, "Category:" %>
   <%= f.select :category_id, Category.find(:all).map{|c| [c.name, c.id]} %>
 </div>
-<div>
+<div class="clear_both">
   <%= f.label :body, "Body:" %>
   <%= f.text_area :body %>
 </div>

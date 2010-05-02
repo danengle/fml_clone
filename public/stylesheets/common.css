@@ -1,9 +1,9 @@
 .msg { padding:8px; margin-bottom:2px; -moz-border-radius:8px;-webkit-border-radius:8px;}
-.msg.warning {border:2px solid #F2DD8C; background-color:#FFF5CC;}
+.msg.warning, .goto_link:hover {border:2px solid #F2DD8C; background-color:#FFF5CC;}
 .msg.warning a {color:#df0000;} .msg.warning a:hover, .msg.warning a:active, .msg.warning a:focus {color:#303030;}
-.msg.info {border:2px solid #B8E2FB; background-color:#E8F6FF;}
-.msg.notice {border:2px solid #BBDF8D; background-color:#EAF7D9;}
-.msg.error {border:2px solid #FFAEAE; background-color:#FEEBEB;}
+.msg.info, .new_link:hover {border:2px solid #B8E2FB; background-color:#E8F6FF;}
+.msg.notice, .action_link:hover {border:2px solid #BBDF8D; background-color:#EAF7D9;}
+.msg.error, .delete_link:hover {border:2px solid #FFAEAE; background-color:#FEEBEB;}
 
 #errorExplanation {
 	-moz-border-radius:8px;-webkit-border-radius:8px;
@@ -20,7 +20,6 @@
 .fieldHasErrors {
 	border:2px solid #FFAEAE;
 }
-
 .form_div {
 	margin-bottom:6px;
 }

@@ -1,0 +1,30 @@
+<%= form_for([:admin,@page], :html => { :class => 'jNice' }) do |f| %>
+  <fieldset>
+  <% if @page.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+    <ul>
+    <% @page.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %>
+    <%= f.text_field :slug %>
+  </div>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  </fieldset>
+<% end %>

@@ -1,3 +1,6 @@
+.clear_both {
+	clear:both;
+}
 #header {
     height:20px;
 }
@@ -46,6 +49,9 @@
 form div {
 	margin:0 0 6px;
 }
+.submit_post {
+	margin-top:8px;
+}
 #main form fieldset div.flat_field label {
 	float:left;
 	width:120px;
@@ -65,4 +71,39 @@ form div {
 }
 #pub_date {
 	float:left;
+}
+#preferences li {
+	margin:2px 0 12px 0;
+}
+#preferences label {
+	float:left;
+	width:25%;
+	text-align:right;
+	margin:2px 24px 0 0;
+}
+.pref_submit input {
+	margin-left:30%;
+}
+.comment_sibling {
+	padding-left:22px;
+}
+#post_comments li {
+	overflow:auto;
+	border-bottom:1px solid #ddd;
+}
+#post_comments form {
+	float:right;
+}
+#post_comments li p {
+	width:80%;
+	margin:2px;
+	padding-top:2px;
+}
+#post_comments .like_button {
+	padding:2px;
+	margin:2px 0 2px 0;
+	height:22px;
+}
+form .actions {
+	clear:both;
 }
