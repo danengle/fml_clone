@@ -63,3 +63,6 @@ form div {
 #main table tr td.actions {
 	padding:0 4px 0 0;
 }
+#pub_date {
+	float:left;
+}

@@ -7,6 +7,7 @@ class Admin::PostsController < ApplicationController
   def index
     @new_posts = Post.need_review.all
     @posts = Post.reviewed.all
+    @future_posts = Post.future_posts.all
     
     respond_to do |format|
       format.html # index.html.erb
@@ -78,6 +79,7 @@ class Admin::PostsController < ApplicationController
 
   def publish
     @post = Post.find(params[:id])
+    @post.published_at = params[:publish_at]
     @post.publish!
     flash[:notice] = "Post #{@post.id} has been published."
     redirect_to edit_admin_post_path(@post)

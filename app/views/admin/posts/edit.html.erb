@@ -16,6 +16,12 @@
     <p>Published on <%= @post.published_at.to_s(:long) %></p>
     <%= button_to "Unpublish this post", unpublish_admin_post_path(@post), :class => 'like_button' %>
   <% else -%>
-    <%= button_to "Publish this post", publish_admin_post_path(@post), :class => 'like_button' %>
+    <%= form_tag publish_admin_post_path(@post) do %>
+      <div id="published_at">
+      <label for="publish_at">Publish Date:</label><span>YYYY-MM-DD HH:MM</span>
+      <%= text_field_tag 'publish_at', @post.published_at.blank? ? '' : @post.published_at %>
+      </div>
+      <%= submit_tag "Publish this post", :class => 'like_button' %>
+    <% end %>
   <% end -%>
 </fieldset>

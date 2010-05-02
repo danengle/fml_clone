@@ -10,8 +10,13 @@ class Post < ActiveRecord::Base
   has_many :votes, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
   
-  scope :published,
+  # FIXME for some reason this returns posts with a publish date on same day but with time in future
+  scope :published, lambda {
     where(["state = ? and published_at < ?", 'published', Time.now]).order('published_at desc')
+  }
+  scope :future_posts, lambda {
+    where(["state = ? and published_at > ?", 'published', Time.now]).order('published_at desc')
+  }
   scope :need_review,
     where({:state => 'unread'}).order('created_at desc')
   scope :reviewed,
@@ -24,7 +29,7 @@ class Post < ActiveRecord::Base
   aasm_initial_state :unread
   aasm_state :unread
   aasm_state :viewed
-  aasm_state :published, :enter => :set_published_at
+  aasm_state :published
   aasm_state :denied
   aasm_state :deleted
   
@@ -50,10 +55,6 @@ class Post < ActiveRecord::Base
 
   def currently_published?
     self.published? && self.published_at <= Time.now
-  end
-  
-  def set_published_at
-    self.published_at = Time.now
   end
 
   def display_name
