@@ -36,7 +36,7 @@
           <p><%= comment.body %> -<%= link_to comment.user.login, edit_admin_user_path(comment.user) %> on <%= comment.created_at.to_s(:long) %></p>
           <%= button_to "delete", admin_post_comment_path(@post, comment), :method => :delete, :class => 'like_button delete_link' %>
         </li>
-        <% comment.siblings.each do |reply| %>
+        <% comment.children.each do |reply| %>
           <li class="comment_sibling">
             <p><%= reply.body %> -<%= link_to reply.user.login, edit_admin_user_path(reply.user) %> on <%= reply.created_at.to_s(:long) %></p>
             <%= button_to "delete", admin_post_comment_path(@post, reply), :method => :delete, :class => 'like_button delete_link' %>

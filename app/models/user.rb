@@ -70,4 +70,11 @@ class User < ActiveRecord::Base
   def favorite?(post)
     self.favorites.exists?(:post_id => post.id)
   end
+  
+  def favorite_posts
+    posts = []
+    self.favorites.each{|f| posts << f.post }
+    posts = posts.sort{|a,b| b.published_at <=> a.published_at }
+    posts
+  end
 end

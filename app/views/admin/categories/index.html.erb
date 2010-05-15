@@ -1,4 +1,4 @@
-<%= link_to 'New category', new_admin_category_path, :class => 'new_object_link' %>
+<%= link_to 'New category', new_admin_category_path, :class => 'new_object_link new_link' %>
 <h3>Listing categories</h3>
 
 <table>
@@ -10,8 +10,8 @@
 <% @categories.each do |category| %>
   <tr>
     <td><%=h category.name %> (<%= category.posts.size %>)</td>
-    <td class="actions"><%= link_to 'Edit', edit_admin_category_path(category) %></td>
-    <td class="actions"><%= link_to 'Destroy', [:admin,category], :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="actions"><%= link_to 'Edit', edit_admin_category_path(category), :class => 'goto_link' %></td>
+    <td class="actions"><%= link_to 'Destroy', [:admin,category], :confirm => 'Are you sure?', :method => :delete, :class => 'delete_link' %></td>
   </tr>
 <% end %>
 </table>

@@ -1,8 +1,9 @@
 class FavoritesController < ApplicationController
-  before_filter :require_user
+  before_filter :require_user, :except => :index
   
   def index
-    # @posts = Post
+    @user = User.find(params[:user_id])
+    @posts = @user.favorite_posts.paginate(:page => params[:page])
   end
   
   def create

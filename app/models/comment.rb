@@ -23,6 +23,10 @@ class Comment < ActiveRecord::Base
   end
   
   def siblings
-    Comment.siblings(self.id).all
+    Comment.siblings(self.parent_id).all
+  end
+  
+  def children
+    Comment.where(:parent_id => self.id)
   end
 end

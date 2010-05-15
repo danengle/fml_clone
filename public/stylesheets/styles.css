@@ -145,10 +145,14 @@ body {
 	padding-bottom:8px;
 }
 .post .post_header {
-	background-color:#aaa;
+	background-color:#A3BEE1;
+	background:-moz-linear-gradient(center top , #A3BEE1, #7CA2D5) repeat scroll 0 0 transparent;
 	height:1.55em;
 	font:85% arial,sans-serif;
 	padding:2px;
+	border-top:1px solid #BBBBBB;
+	border-left:1px solid #BBBBBB;
+	border-right:1px solid #BBBBBB;
 }
 .post .post_header div {
 	padding:4px 4px 2px 4px;
@@ -264,6 +268,7 @@ body {
 .main_top {
 	overflow:auto;
 	margin-top:0;
+	border:1px solid #bbb;
 }
 #main .main_top h1 {
 	float:left;
@@ -401,6 +406,25 @@ input.awesome_button {
 .votes .button_to input:hover,.pagination a:hover {
 	cursor:pointer;
 }
+#footer ul {
+	margin:12px 0;
+	overflow:auto;
+}
 #footer ul li {
 	list-style-type:none;
+	display:block;
+	float:left;
+	margin-right:24px;
+}
+#footer ul li a {
+	color:#555;
+	text-decoration:none;
+	font-size:80%;
+}
+#page_box {
+	margin-top:0;
+	border:1px solid #bbb;
+}
+#page_box div {
+	padding:4px;
 }

@@ -2,8 +2,9 @@
 
 <div id="comments">
   <h4><%= Comment.count(:conditions => "post_id = #{@post.id}") %> Comments</h4>
+  <% unless @post.parent_comments.blank? %>
   <%= render :partial => @post.parent_comments %>
-
+  <% end %>
   <% if logged_in? -%>
     <%= render 'comments/form' %>
   <% else -%>
