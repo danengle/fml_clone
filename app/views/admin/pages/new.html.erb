@@ -1,4 +1,7 @@
-<h3>New page</h3>
-
-<%= render 'form' %>
-
+<h3>New Page</h3>
+<%= form_for [:admin,@page] do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <div class="form_button">
+    <%= f.submit "Create", :class => 'awesome_button submit_button' %>
+  </div>
+<% end %>

@@ -15,17 +15,6 @@ class Admin::PostsController < ApplicationController
     end
   end
 
-  # GET /posts/1
-  # GET /posts/1.xml
-  def show
-    @post = Post.find(params[:id])
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @post }
-    end
-  end
-
   # GET /posts/new
   # GET /posts/new.xml
   def new
@@ -77,12 +66,15 @@ class Admin::PostsController < ApplicationController
     end
   end
 
+  #TODO figure out a better way to catch date errors
   def publish
     @post = Post.find(params[:id])
-    @post.published_at = params[:publish_at]
-    @post.publish!
-    flash[:notice] = "Post #{@post.id} has been published."
-    redirect_to edit_admin_post_path(@post)
+    if @post.publish(params[:date])
+      flash[:notice] = "Post #{@post.id} has been scheduled for publishing."
+      redirect_to edit_admin_post_path(@post)
+    else
+      render 'edit'
+    end
   end
   
   def unpublish

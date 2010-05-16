@@ -19,6 +19,9 @@ TODO
 			last login
 			favorites
 			recent activity
+		add description field to settings
+		rename preferences to settings?
+		need to have a text field for settings for ad banners (and others I'm sure)
 	*add ability to comment
 		add reply to comments
 		follow comments

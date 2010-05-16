@@ -66,10 +66,23 @@ a:hover, a:active, a:focus { color:$orange; }
 	padding:8px;
 	width: $nav-width;
 	float:left;
+	a {
+		display:block;
+		padding:6px;
+	}
 	li {
 		background-color:$lightgrey;
-		padding:6px;
-
+		padding:0;
+		ul {
+			li {
+				list-style-type:none;
+				background-color: $off-white;
+				border-top:1px solid $lightgrey;
+				a {
+					padding:2px 0 2px 10px;
+				}
+			}
+		}
 	}
 	.lonely_link {
 		border:1px solid $lightgrey2;
@@ -94,6 +107,7 @@ a:hover, a:active, a:focus { color:$orange; }
 	}
 	.navigation_separator {
 		background-color:transparent;
+		height:12px;
 	}
 }
 
@@ -143,7 +157,7 @@ a:hover, a:active, a:focus { color:$orange; }
 			margin-left:3px;
 		}
 	}
-	#post_footer {
+	#box_footer {
 		background-color: $lightgrey;
 		padding:4px;
 	}
@@ -270,7 +284,7 @@ table {
 				width:99%;
 				height:125px;
 			}
-			#post_footer {
+			#box_footer {
 				overflow:auto;
 				input {
 					float:right;
@@ -281,8 +295,44 @@ table {
 			}
 		}
 	}
+.new_obj_link {
+	float:right;
+}
+.submit_button {
+	background:-moz-linear-gradient(center top , #007DAA, #00698F) repeat scroll 0 0 transparent;
+	color: $white;
+	border:1px solid #00a1db;
+	padding:4px 5px;
+}
 
-
+#preferences {
+	span {
+		font-size:11px;
+		font-style:italic;
+		color:#777;
+	}
+}
+.editable {
+	margin:10px 0;
+	label {
+		width:25%;
+		display:block;
+		float:left;
+		text-align:right;
+		padding:4px 16px 0 0;
+	}
+	input {
+		width:35%;
+	}
+	textarea {
+		width:35.5%;
+		height:125px;
+	}
+}
+.form_button {
+	width:140px;
+	margin-left:27%;
+}
 #footer {
 	clear:both;
 }

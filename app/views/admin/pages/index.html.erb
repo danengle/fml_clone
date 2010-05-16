@@ -1,20 +1,22 @@
-<%= link_to 'New Page', new_admin_page_path, :class => 'new_object_link new_link' %>
-<h3>Listing pages</h3>
-
-<table>
+<%= link_to 'New Page', new_admin_page_path, :class => 'new_obj_link awesome_button' %>
+<h2>Listing Pages</h2>
+<table class="small_round">
   <tr>
+    <th class="first_column">ID</th>
     <th>Title</th>
     <th>Slug</th>
-    <th colspan="2">Actions</th>
   </tr>
-
-<% @pages.each do |page| %>
-  <tr>
-    <td><%= page.title %></td>
-    <td><%= page.slug %></td>
-    <td class="actions"><%= link_to 'Edit', edit_admin_page_path(page), :class => 'goto_link' %></td>
-    <td class="actions"><%= link_to 'Destroy', [:admin,page], :confirm => 'Are you sure?', :method => :delete, :class => 'delete_link' %></td>
-  </tr>
-<% end %>
+  <% @pages.each do |page| %>
+    <tr class="border_bottom <%= cycle('odd', 'even') %>">
+      <td class="first_column"><%= page.id %></td>
+      <td>
+        <%= page.title %>
+        <div class="actions">
+          <%= link_to "Edit", edit_admin_page_path(page) %>
+        </div>
+      </td>
+      <td><%= page.slug %></td>
+    </tr>
+  <% end %>
 </table>
 

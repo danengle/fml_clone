@@ -5,23 +5,27 @@
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
 }
-/* line 14, ../../../app/stylesheets/common.scss */
-.msg .warning {
+
+/* line 15, ../../../app/stylesheets/common.scss */
+.warning {
   border: 2px solid #f2dd8c;
   background-color: #fff5cc;
 }
-/* line 18, ../../../app/stylesheets/common.scss */
-.msg .info {
+
+/* line 19, ../../../app/stylesheets/common.scss */
+.info {
   border: 2px solid #b8e2fb;
   background-color: #e8f6ff;
 }
-/* line 22, ../../../app/stylesheets/common.scss */
-.msg .notice {
-  border: 2px solid #eaf7d9;
-  background-color: #bbdf8d;
+
+/* line 23, ../../../app/stylesheets/common.scss */
+.notice {
+  border: 2px solid #bbdf8d;
+  background-color: #eaf7d9;
 }
-/* line 26, ../../../app/stylesheets/common.scss */
-.msg .error {
+
+/* line 27, ../../../app/stylesheets/common.scss */
+.error {
   border: 2px solid #ffaeae;
   background-color: #feebeb;
 }

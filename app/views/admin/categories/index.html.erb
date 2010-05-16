@@ -1,17 +1,24 @@
-<%= link_to 'New category', new_admin_category_path, :class => 'new_object_link new_link' %>
-<h3>Listing categories</h3>
-
-<table>
+<%= link_to 'New category', new_admin_category_path, :class => 'new_obj_link awesome_button' %>
+<h2>Categories</h2>
+<table class="small_round">
   <tr>
+    <th class="first_column">ID</th>
     <th>Name</th>
-    <th colspan="2">Actions</th>
+    <th>Slug</th>
+    <th>Posts</th>
   </tr>
 
 <% @categories.each do |category| %>
-  <tr>
-    <td><%=h category.name %> (<%= category.posts.size %>)</td>
-    <td class="actions"><%= link_to 'Edit', edit_admin_category_path(category), :class => 'goto_link' %></td>
-    <td class="actions"><%= link_to 'Destroy', [:admin,category], :confirm => 'Are you sure?', :method => :delete, :class => 'delete_link' %></td>
+  <tr class="border_bottom <%= cycle('odd', 'even') %>">
+    <td class="first_column"><%= category.id %></td>
+    <td>
+      <%= category.name %>
+      <div class="actions">
+        <%= link_to "Edit", edit_admin_category_path(category) %>
+      </div>
+    </td>
+    <td><%= category.slug %></td>
+    <td><%= link_to category.posts.size, "#" %></td>
   </tr>
 <% end %>
 </table>

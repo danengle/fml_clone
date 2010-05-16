@@ -1,14 +1,27 @@
-<%= link_to 'New Preference', new_admin_preference_path, :class => 'new_object_link' %>
-<h3><%= @preference_category.name %> Preferences</h3>
+<h3><%= @preference_category.name %> Settings</h3>
 <%= form_tag bulk_update_admin_preferences_path do %>
+  <% unless @errors.blank? %>
+    <div id="errorExplanation">
+      <h2>Oops! There was a problem saving your settings.</h2>
+      <p>Please correct the following before continuing...</p>
+      <ul>
+        <% @errors.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <ul id="preferences">
     <% @preferences.each do |pref| %>
-      <li>
-        <label><%= pref.display_name %>:</label>
-        <%= text_field_tag "preferences[#{pref.key}]", pref.value %>
+      <li class="editable">
+        <label><%= pref.display_name %></label>
+        <%= text_field_tag "preferences[#{pref.key}]", pref.value, :class => has_errors?(pref) ? 'fieldHasErrors' : '' %>
+        <% unless pref.description.blank? %>
+        <span><%= pref.description %></span>
+        <% end %>
       </li>
     <% end %>
-    <li class="pref_submit"><%= submit_tag "Update Preferences", :class => 'like_button action_link' %></li>
+    <li class="form_button"><%= submit_tag "Update Preferences", :class => 'submit_button small_round' %></li>
   </ul>
   <%= hidden_field_tag 'preference_category', @preference_category.name %>
 <% end %>

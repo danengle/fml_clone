@@ -2,8 +2,8 @@ $darkyellow: #F2DD8C;
 $lightyellow: #FFF5CC;
 $darkblue: #B8E2FB;
 $lightblue: #E8F6FF;
-$lightgreen: #BBDF8D;
-$darkgreen: #EAF7D9;
+$lightgreen: #EAF7D9;
+$darkgreen: #BBDF8D;
 $darkred:#FFAEAE;
 $lightred:#FEEBEB;
 
@@ -11,22 +11,22 @@ $lightred:#FEEBEB;
 	padding:8px;
 	margin-bottom:2px;
 	-moz-border-radius:8px;-webkit-border-radius:8px;
-	.warning {
-		border:2px solid $darkyellow;
-		background-color: $lightyellow;
-	}
-	.info {
-		border:2px solid $darkblue;
-		background-color: $lightblue;
-	}
-	.notice {
-		border:2px solid $darkgreen;
-		background-color: $lightgreen;
-	}
-	.error {
-		border:2px solid $darkred;
-		background-color: $lightred;
-	}
+}
+.warning {
+	border:2px solid $darkyellow;
+	background-color: $lightyellow;
+}
+.info {
+	border:2px solid $darkblue;
+	background-color: $lightblue;
+}
+.notice {
+	border:2px solid $darkgreen;
+	background-color: $lightgreen;
+}
+.error {
+	border:2px solid $darkred;
+	background-color: $lightred;
 }
 #errorExplanation {
 	-moz-border-radius:8px;-webkit-border-radius:8px;

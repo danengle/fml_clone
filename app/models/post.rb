@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   aasm_column :state
   
   validates_presence_of :category_id, :body
+  validates_presence_of :published_at, :if => Proc.new {|post| self.published? }
   belongs_to :category
   belongs_to :user
   has_many :comments, :dependent => :destroy
@@ -31,7 +32,8 @@ class Post < ActiveRecord::Base
   aasm_state :unread
   aasm_state :viewed
   aasm_state :published
-  aasm_state :denied
+  #TODO save the datetime when a post is denied/unpublished. Make a unpublish event?
+  aasm_state :denied, :enter => :clear_published_at
   aasm_state :deleted
   
   aasm_event :read do
@@ -39,7 +41,7 @@ class Post < ActiveRecord::Base
   end
   
   aasm_event :publish do
-    transitions :to => :published, :from => [:viewed, :denied]
+    transitions :to => :published, :from => [:viewed, :denied], :guard => Proc.new{|post| !post.published_at.blank? }
   end
   
   aasm_event :deny do
@@ -59,7 +61,7 @@ class Post < ActiveRecord::Base
   end
 
   def display_name
-    user.blank? ? 'anonymous' : user.login
+    user.blank? ? @preferences[:anonymous_display_name] : user.login
   end
 =begin  
   def up_votes
@@ -75,6 +77,40 @@ class Post < ActiveRecord::Base
   end
   
   def scheduled_to_be_published?
-    self.state == 'published' && self.published_at > Time.now
+    self.published? && self.published_at > Time.now
+  end
+  
+  def clear_published_at
+    self.published_at = nil
+  end
+  
+  def publish(datetime)
+    datetime.each_pair do |key,value|
+      case key
+      when 'year'
+        errors.add(:published_at, "year must be 4 digits.") unless value.length == 4
+        next unless value.length == 4
+        errors.add(:published_at, "year is too far in the past.") if value.to_i < (Time.now - 1.year).year
+        errors.add(:published_at, "year is too far in the future.") if value.to_i > (Time.now + 1.year).year
+      when 'month'
+        errors.add(:published_at, "month is not a valid month.") unless value.to_i >= 1 && value.to_i <= 12
+      when 'date'
+        errors.add(:published_at, "date is not a valid date.") unless value.to_i >= 1 && value.to_i <= 31
+      when 'hour'
+        errors.add(:published_at, "hour is not a valid hour.") unless value.to_i >= 1 && value.to_i <= 23
+      when 'minute'
+        errors.add(:published_at, "minute is not a valid minute.") unless value.to_i >= 0 && value.to_i < 60
+      else # this shouldn't happen
+      end
+    end
+    begin
+      date = DateTime.new(datetime[:year].to_i, datetime[:month].to_i, datetime[:date].to_i, datetime[:hour].to_i, datetime[:minute].to_i)
+    rescue Exception => e
+      errors.add(:published_at, "date is really messed up!")
+    ensure
+      return false unless errors.blank?
+    end
+    self.published_at = date
+    self.publish!
   end
 end

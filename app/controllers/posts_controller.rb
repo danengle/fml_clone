@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
   def index
-    @posts = Post.published.paginate(:page => params[:page], :per_page => 3)
+    @posts = Post.published.paginate(:page => params[:page], :per_page => @preferences[:posts_per_page])
     respond_with(@posts)
   end
 

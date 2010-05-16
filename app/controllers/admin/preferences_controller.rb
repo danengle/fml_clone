@@ -8,7 +8,7 @@ class Admin::PreferencesController < ApplicationController
     @preference_category = PreferenceCategory.find_by_name('general')
     @preferences = Preference.general.all
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render 'show' }
       format.xml  { render :xml => @preferences }
     end
   end
@@ -17,7 +17,7 @@ class Admin::PreferencesController < ApplicationController
   # GET /preferences/1.xml
   def show
     @preference_category = PreferenceCategory.find_by_name(params[:id].humanize)
-    @preferences = @preference_category.preferences
+    @preferences = @preference_category.preferences.positioned.all
     
     respond_to do |format|
       format.html # show.html.erb
@@ -25,37 +25,9 @@ class Admin::PreferencesController < ApplicationController
     end
   end
 
-  # GET /preferences/new
-  # GET /preferences/new.xml
-  def new
-    @preference = Preference.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @preference }
-    end
-  end
-
   # GET /preferences/1/edit
   def edit
     @preference = Preference.find(params[:id])
-  end
-
-  # POST /preferences
-  # POST /preferences.xml
-  def create
-    @preference = Preference.new(params[:preference])
-
-    respond_to do |format|
-      if @preference.save
-        flash[:notice] = 'Preference was successfully created.'
-        format.html { redirect_to(admin_preferences_path) }
-        format.xml  { render :xml => @preference, :status => :created, :location => @preference }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @preference.errors, :status => :unprocessable_entity }
-      end
-    end
   end
 
   # PUT /preferences/1
@@ -75,26 +47,25 @@ class Admin::PreferencesController < ApplicationController
     end
   end
   
-  # DELETE /preferences/1
-  # DELETE /preferences/1.xml
-  def destroy
-    @preference = Preference.find(params[:id])
-    @preference.delete!
-    flash[:notice] = "Preference deleted."
-    respond_to do |format|
-      format.html { redirect_to(admin_preferences_url) }
-      format.xml  { head :ok }
-    end
-  end
-  
   def bulk_update
     @preference_category = PreferenceCategory.find_by_name(params[:preference_category])
+    @preferences = @preference_category.preferences.positioned.all
+    @errors = []
     params[:preferences].each do |pref|
       preference = Preference.find_by_key(pref[0])
       preference.value = pref[1]
-      preference.save
+      unless preference.save
+        preference.errors.each_pair do |key, value|
+          @errors << "#{preference.display_name} #{value[0]}"
+        end
+      end
     end
-    flash[:notice] = "Preferences updated."
-    redirect_to admin_preference_path(@preference_category.name.downcase)
+    if @errors.blank?
+      flash[:notice] = "Preferences updated."
+      redirect_to admin_preference_path(@preference_category.name.downcase)
+    else
+      render 'show'
+    end
+    
   end
 end

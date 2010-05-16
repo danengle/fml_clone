@@ -1,37 +1,19 @@
 class Admin::CategoriesController < ApplicationController
   before_filter :admin_required
   layout 'admin'
+  respond_to :html, :xml, :json
   # GET /categories
   # GET /categories.xml
   def index
     @categories = Category.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @categories }
-    end
-  end
-
-  # GET /categories/1
-  # GET /categories/1.xml
-  def show
-    @category = Category.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @category }
-    end
+    respond_with(@categories)
   end
 
   # GET /categories/new
   # GET /categories/new.xml
   def new
     @category = Category.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @category }
-    end
+    respond_with(@categories)
   end
 
   # GET /categories/1/edit
@@ -62,7 +44,7 @@ class Admin::CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
-        format.html { redirect_to(@category, :notice => 'Category was successfully updated.') }
+        format.html { redirect_to(admin_categories_path, :notice => 'Category was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -85,7 +67,7 @@ class Admin::CategoriesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { redirect_to(categories_url) }
+      format.html { redirect_to(admin_categories_url) }
       format.xml  { head :ok }
     end
   end

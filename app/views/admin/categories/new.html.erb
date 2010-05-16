@@ -1,3 +1,8 @@
-<h3>New category</h3>
+<h3>New Category</h3>
 
-<%= render 'form' %>
+<%= form_for([:admin,@category]) do |f| %>
+<%= render :partial => 'form', :locals => {:f => f} %>
+<div class="form_button">
+  <%= f.submit "Create", :class => 'awesome_button submit_button' %>
+</div>
+<% end %>

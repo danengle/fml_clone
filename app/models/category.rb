@@ -4,5 +4,9 @@ class Category < ActiveRecord::Base
   validates_presence_of :name
   validates_uniqueness_of :name
   
+  before_save :generate_slug
   
+  def generate_slug
+    self.slug = self.name.to_slug
+  end
 end

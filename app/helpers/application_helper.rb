@@ -44,13 +44,13 @@ module ApplicationHelper
   def admin_side_bar_links
     case controller_name
     when 'preferences'
-      PreferenceCategory.all.map{|pc| {:text => pc.name, :path => admin_preference_path(pc.name.underscore.gsub(/ /,'_'))}}
+      PreferenceCategory.all.map{|pc| {:text => pc.name, :path => admin_preference_path(pc.slug)}}
     else
       [{:text => controller_name, :path => admin_path}]
     end
   end
   
-  def current_post_actions
-    
+  def has_errors?(pref)
+    @errors && @errors.any? {|msg| msg =~ /^#{pref.display_name}/}
   end
 end

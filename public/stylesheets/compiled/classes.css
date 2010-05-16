@@ -63,3 +63,8 @@
   vertical-align: middle;
   white-space: nowrap;
 }
+
+/* line 52, ../../../app/stylesheets/classes.scss */
+ul li {
+  list-style-type: none;
+}

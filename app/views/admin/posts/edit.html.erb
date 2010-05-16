@@ -2,8 +2,17 @@
   <h3>Edit Post</h3>
   <div id="main_content">
     <div id="main_content_body">
+    <% if @post.errors.any? %>
+    <div id="errorExplanation">
+      <h2>Whoops! Something went wrong there...</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
       <%= form_for([:admin,@post]) do |f| %>
-        <%= f.error_messages %>
         <div id="post_main">
           <div id="post_header" class="medium_round_top ltr_border">
             <%= f.select :category_id, Category.all.map { |c| [c.name, c.id]} %>
@@ -13,7 +22,7 @@
           <div id="body" class="lr_border">
             <%= f.text_area :body %>
           </div>
-          <div id="post_footer" class="medium_round_bottom lbr_border">
+          <div id="box_footer" class="medium_round_bottom lbr_border">
             <%= f.submit "Update", :class => 'awesome_button' %>
           </div>
         </div>
@@ -55,7 +64,7 @@
             <li>Published On: <%= @post.published? ? @post.published_at.to_s(:long) : "Not Published" %></li>
           <% end %>
           <% if @post.currently_published? || @post.scheduled_to_be_published? %>
-            <li><%= button_to "Unpublish Post", "#", :class => 'awesome_button' %></li>
+            <li id="publish_form"><%= button_to "Unpublish Post", unpublish_admin_post_path(@post), :class => 'awesome_button' %></li>
           <% else %>
             <li id="publish_form">
               <%= form_tag publish_admin_post_path(@post) do %>
