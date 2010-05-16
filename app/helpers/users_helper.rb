@@ -4,7 +4,7 @@ module UsersHelper
     # TODO make obj.class work instead of casting to string
     case obj.class.to_s
     when "Post"
-      return obj.display_name if obj.display_name == 'anonymous'
+      return @preferences[:anonymous_display_name] if obj.user.blank?
       link_to obj.display_name, edit_admin_user_path(obj.user)
     when "User"
       'Make link_to_user(User) work'

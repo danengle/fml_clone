@@ -1,6 +1,6 @@
 <h2>Edit Posts</h2>
 <% if @new_posts.blank? %>
-  <h3>No new posts to review</h3>
+  <p>No new posts to review</p>
 <% else %>
 <table class="small_round add_margin">
   <caption class="medium_round_top"><%= @new_posts.size %> Posts Need Review</caption>
@@ -40,7 +40,7 @@
       <th>Publishing at</th>
     </tr>
   <% @future_posts.each do |post| %>
-    <tr>
+    <tr class="border_bottom<%= cycle(' odd', ' even') %>">
       <td class="first_column"><%= post.id %></td>
       <td>
         <%=h truncate(post.body, :length => 25) %>
@@ -48,9 +48,9 @@
           <%= link_to "Edit", edit_admin_post_path(post) %>
         </div>
       </td>
-      <td><%=h link_to_user(post) %></td>
-      <td><%=h post.category.name %></td>
-      <td><%=h post.published? ? published_time(post) : post.state %></td>
+      <td><%= link_to_user(post) %></td>
+      <td><%= post.category.name %></td>
+      <td><%= post.published? ? published_time(post) : post.state %></td>
     </tr>
   <% end %>
   </table>
@@ -60,8 +60,8 @@
   <tr>
     <th class="first_column">ID</th>
     <th>Post</th>
-    <th>Category</th>
     <th>Author</th>
+    <th>Category</th>
     <th class="centered">Votes</th>
     <th class="centered"><%= image_tag 'comment-grey-bubble.png' %></th>
     <th>Date</th>
@@ -75,8 +75,8 @@
         <%= link_to "Edit", edit_admin_post_path(post) %>
       </div>
     </td>
-    <td><%= post.category.name %></td>
     <td><%= link_to_user(post) %></td>
+    <td><%= post.category.name %></td>
     <td class="centered"><%= post.up_vote_counter %> / <%= post.down_vote_counter %></td>
     <td class="centered"><%= post.comments.count %></td>
     <td><%= post.published? ? published_time(post) : post.state %></td>

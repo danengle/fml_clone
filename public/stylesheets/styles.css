@@ -1,7 +1,7 @@
 body {
-	background-color:#c9d8ed;
+	background-color:#DCE6F4;
 	height:100%;
-	font:90% arial,sans-serif;
+	font:85% arial,sans-serif;
 }
 .clear {
 	clear:both;
@@ -140,13 +140,14 @@ body {
     margin:0 0 13px 0;
 }
 .post p {
-	font-size:15px;
+	font-size:14px;
 	margin-bottom:0;
-	padding-bottom:8px;
+	padding:1px 2px 8px 2px;
 }
 .post .post_header {
 	background-color:#A3BEE1;
-	background:-moz-linear-gradient(center top , #A3BEE1, #7CA2D5) repeat scroll 0 0 transparent;
+/*	background:-moz-linear-gradient(center top , #A3BEE1, #7CA2D5) repeat scroll 0 0 transparent;*/
+	background:-moz-linear-gradient(center top , #C9D9EE, #B5CBE8) repeat scroll 0 0 transparent;
 	height:1.55em;
 	font:85% arial,sans-serif;
 	padding:2px;
