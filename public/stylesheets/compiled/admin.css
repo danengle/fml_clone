@@ -1,0 +1,285 @@
+/* line 12, ../../../app/stylesheets/admin.scss */
+body {
+  background-color: #f9f9f9;
+  font-size: 14px;
+}
+
+/* line 16, ../../../app/stylesheets/admin.scss */
+h1 {
+  font-size: 1.6em;
+}
+
+/* line 17, ../../../app/stylesheets/admin.scss */
+h2 {
+  font-size: 1.4em;
+}
+
+/* line 18, ../../../app/stylesheets/admin.scss */
+h3 {
+  font-size: 1.3em;
+}
+
+/* line 19, ../../../app/stylesheets/admin.scss */
+h4 {
+  font-size: 1.2em;
+}
+
+/* line 20, ../../../app/stylesheets/admin.scss */
+h5 {
+  font-size: 1.1em;
+}
+
+/* line 21, ../../../app/stylesheets/admin.scss */
+a, a:visited {
+  color: #21759b;
+}
+
+/* line 22, ../../../app/stylesheets/admin.scss */
+a:hover, a:active, a:focus {
+  color: #d54e21;
+}
+
+/* line 23, ../../../app/stylesheets/admin.scss */
+.ltr_border {
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+  border-top: 1px solid #bbbbbb;
+}
+
+/* line 28, ../../../app/stylesheets/admin.scss */
+.lr_border {
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+}
+
+/* line 32, ../../../app/stylesheets/admin.scss */
+.lbr_border {
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+/* line 37, ../../../app/stylesheets/admin.scss */
+.full_border {
+  border: 1px solid #bbbbbb;
+}
+
+/* line 40, ../../../app/stylesheets/admin.scss */
+#top_bar {
+  background-color: #464646;
+  padding: 8px;
+  overflow: auto;
+}
+/* line 44, ../../../app/stylesheets/admin.scss */
+#top_bar a {
+  color: #e4e4e4;
+}
+/* line 47, ../../../app/stylesheets/admin.scss */
+#top_bar h1 {
+  float: left;
+}
+/* line 49, ../../../app/stylesheets/admin.scss */
+#top_bar h1 a {
+  color: #ddd;
+}
+/* line 52, ../../../app/stylesheets/admin.scss */
+#top_bar h1 a:visited {
+  color: #ddd;
+}
+/* line 56, ../../../app/stylesheets/admin.scss */
+#top_bar #info {
+  float: right;
+}
+
+/* line 61, ../../../app/stylesheets/admin.scss */
+#navigation {
+  margin: 0;
+  padding: 8px;
+  width: 145px;
+  float: left;
+}
+/* line 66, ../../../app/stylesheets/admin.scss */
+#navigation li {
+  background-color: #e4e4e4;
+  padding: 6px;
+}
+/* line 71, ../../../app/stylesheets/admin.scss */
+#navigation .lonely_link {
+  border: 1px solid #bbbbbb;
+}
+/* line 74, ../../../app/stylesheets/admin.scss */
+#navigation .first_link {
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+  border-top: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
+}
+/* line 80, ../../../app/stylesheets/admin.scss */
+#navigation .inside_link {
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
+  border-top: 1px solid #f9f9f9;
+}
+/* line 86, ../../../app/stylesheets/admin.scss */
+#navigation .last_link {
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
+  border-top: 1px solid #f9f9f9;
+}
+/* line 92, ../../../app/stylesheets/admin.scss */
+#navigation .navigation_separator {
+  background-color: transparent;
+}
+
+/* line 97, ../../../app/stylesheets/admin.scss */
+#content {
+  margin: 0 8px 0 163px;
+  padding-top: 8px;
+  overflow: auto;
+}
+
+/* line 102, ../../../app/stylesheets/admin.scss */
+#main_content {
+  width: 100%;
+  float: left;
+  clear: left;
+  margin-right: -400px;
+}
+/* line 107, ../../../app/stylesheets/admin.scss */
+#main_content #main_content_body, #main_content #post_comments {
+  margin-right: 260px;
+}
+
+/* line 111, ../../../app/stylesheets/admin.scss */
+#third_column {
+  width: 245px;
+  float: right;
+  position: relative;
+  clear: right;
+  display: block;
+}
+
+/* line 119, ../../../app/stylesheets/admin.scss */
+#post_main #post_header {
+  background-color: #e4e4e4;
+  padding: 4px;
+}
+/* line 122, ../../../app/stylesheets/admin.scss */
+#post_main #post_header select, #post_main #post_header label {
+  float: right;
+}
+/* line 125, ../../../app/stylesheets/admin.scss */
+#post_main #post_header label {
+  padding-top: 2px;
+  padding-right: 4px;
+}
+/* line 130, ../../../app/stylesheets/admin.scss */
+#post_main #body {
+  background-color: #e4e4e4;
+}
+/* line 132, ../../../app/stylesheets/admin.scss */
+#post_main #body textarea {
+  margin-left: 3px;
+}
+/* line 136, ../../../app/stylesheets/admin.scss */
+#post_main #post_footer {
+  background-color: #e4e4e4;
+  padding: 4px;
+}
+
+/* line 141, ../../../app/stylesheets/admin.scss */
+.tc_box {
+  margin: 0 0 12px 0;
+}
+/* line 144, ../../../app/stylesheets/admin.scss */
+.tc_box .tc_header {
+  background-color: #e4e4e4;
+  padding: 6px;
+}
+/* line 148, ../../../app/stylesheets/admin.scss */
+.tc_box .tc_body {
+  padding: 6px;
+}
+/* line 151, ../../../app/stylesheets/admin.scss */
+.tc_box .tc_footer {
+  padding: 6px;
+}
+
+/* line 155, ../../../app/stylesheets/admin.scss */
+#footer {
+  clear: both;
+}
+
+/* line 158, ../../../app/stylesheets/admin.scss */
+table {
+  width: 100%;
+  border: 1px solid #bbbbbb;
+}
+/* line 162, ../../../app/stylesheets/admin.scss */
+table tr th {
+  background-color: #e4e4e4;
+  color: #333333;
+  padding: 5px 0;
+}
+/* line 167, ../../../app/stylesheets/admin.scss */
+table tr td {
+  padding-top: 4px;
+  vertical-align: top;
+}
+/* line 171, ../../../app/stylesheets/admin.scss */
+table tr .first_column {
+  padding-left: 5px;
+}
+/* line 176, ../../../app/stylesheets/admin.scss */
+table .border_bottom td {
+  border-bottom: 1px solid #e4e4e4;
+}
+/* line 180, ../../../app/stylesheets/admin.scss */
+table .odd {
+  background-color: #f9f9f9;
+}
+/* line 183, ../../../app/stylesheets/admin.scss */
+table .even {
+  background-color: white;
+}
+/* line 186, ../../../app/stylesheets/admin.scss */
+table .pagination_links {
+  text-align: center;
+  background-color: #e4e4e4;
+  height: 26px;
+}
+/* line 191, ../../../app/stylesheets/admin.scss */
+table .pagination_links .pagination_info {
+  float: right;
+  padding-right: 12px;
+  padding-top: 2px;
+}
+
+/* line 199, ../../../app/stylesheets/admin.scss */
+.pagination a, .pagination span, .pagination em {
+  padding: 3px 6px;
+  border: 1px solid #BBBBBB;
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px;
+  background-color: #f9f9f9;
+  text-decoration: none;
+}
+
+/* line 211, ../../../app/stylesheets/admin.scss */
+#main_content form #post_body {
+  width: 99%;
+  height: 175px;
+}
+/* line 215, ../../../app/stylesheets/admin.scss */
+#main_content form #post_footer {
+  overflow: auto;
+}
+/* line 217, ../../../app/stylesheets/admin.scss */
+#main_content form #post_footer input {
+  float: right;
+  background: -moz-linear-gradient(center top, #007daa, #00698f) repeat scroll 0 0 transparent;
+  color: white;
+  border: 1px solid #00a1db;
+}

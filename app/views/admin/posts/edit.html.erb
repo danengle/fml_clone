@@ -1,48 +1,39 @@
-<h3>Review post</h3>
-
-<%= form_for([:admin,@post], :html => { :class => 'jNice' }) do |f| %>
-  <%= f.error_messages %>
-  <fieldset>
-    <%= render :partial => 'form', :locals => {:f => f} %>
-    <div class="clear_both">
-      <%= f.submit 'Update', :class => 'submit_post' %>
-    </div>
-  </fieldset>
-<% end %>
-<fieldset>
-  <legend>Available Actions</legend>
-  <% if @post.published? -%>
-    <p>Published on <%= @post.published_at.to_s(:long) %></p>
-    <%= button_to "Unpublish this post", unpublish_admin_post_path(@post), :class => 'like_button delete_link' %>
-  <% else -%>
-    <%= form_tag publish_admin_post_path(@post) do %>
-      <div id="published_at">
-      <label for="publish_at">Publish Date:</label><span>YYYY-MM-DD HH:MM</span>
-      <%= text_field_tag 'publish_at', @post.published_at.blank? ? '' : @post.published_at %>
-      </div>
-      <%= submit_tag "Publish this post", :class => 'like_button action_link' %>
-    <% end %>
-  <% end -%>
-</fieldset>
-
-<fieldset>
-  <legend><%= @post.comments.size %> Comments</legend>
-  <% if @post.comments.blank? %>
-    <p>This post does not have any comments yet.</p>
-  <% else %>
-    <ul id="post_comments">
-      <% @post.comments.parent_comments.each do |comment| %>
-        <li>
-          <p><%= comment.body %> -<%= link_to comment.user.login, edit_admin_user_path(comment.user) %> on <%= comment.created_at.to_s(:long) %></p>
-          <%= button_to "delete", admin_post_comment_path(@post, comment), :method => :delete, :class => 'like_button delete_link' %>
-        </li>
-        <% comment.children.each do |reply| %>
-          <li class="comment_sibling">
-            <p><%= reply.body %> -<%= link_to reply.user.login, edit_admin_user_path(reply.user) %> on <%= reply.created_at.to_s(:long) %></p>
-            <%= button_to "delete", admin_post_comment_path(@post, reply), :method => :delete, :class => 'like_button delete_link' %>
-          </li>
-        <% end %>
+<div id="poststuff">
+  <h3>Edit Post</h3>
+  <div id="main_content">
+    <div id="main_content_body">
+      <%= form_for([:admin,@post]) do |f| %>
+        <%= f.error_messages %>
+        <div id="post_main">
+          <div id="post_header" class="medium_round_top ltr_border">
+            <%= f.select :category_id, Category.all.map { |c| [c.name, c.id]} %>
+            <%= f.label :category_id, "Category:" %>
+            By <%= admin_post_creator_link(@post) %>
+          </div>
+          <div id="body" class="lr_border">
+            <%= f.text_area :body %>
+          </div>
+          <div id="post_footer" class="medium_round_bottom lbr_border">
+            <%= f.submit "Update", :class => 'awesome_button' %>
+          </div>
+        </div>
       <% end %>
-    </ul>
-  <% end %>
-</fieldset
+    </div>
+    <div id="post_comments" class="full_border medium_round">
+      <div class="pc_header"><%= @post.comments.size %> Comments</div>
+      <p>comments are here</p>
+    </div>
+  </div>
+  <div id="third_column">
+    <div class="tc_box full_border medium_round">
+      <div class="tc_header">Publish</div>
+      <div class="tc_body">here is the body</div>
+      <div class="tc_footer">update</div>
+    </div>
+    <div class="tc_box full_border medium_round">
+      <div class="tc_header">Activity Summary</div>
+      <div class="tc_body">stuff happened</div>
+      <div class="tc_footer">bottom</div>
+    </div>
+  </div>
+</div>

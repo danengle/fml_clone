@@ -23,3 +23,4 @@ gem "mysql"
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem 'aasm', :git => "git://github.com/rubyist/aasm.git"
 gem 'will_paginate', '~> 3.0.pre'
+gem 'compass', ">= 0.10.1"

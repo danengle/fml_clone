@@ -1,12 +1,14 @@
-<p>
+<div class="post_main">
+<div id="post_body_header" class="rounded_top">
   By <%= admin_post_creator_link(@post) %>
-</p>
-<div>
-  <%= f.label :category_id, "Category:" %>
-  <%= f.select :category_id, Category.find(:all).map{|c| [c.name, c.id]} %>
 </div>
-<div class="clear_both">
+
+<div id="post_body">
   <%= f.label :body, "Body:" %>
   <%= f.text_area :body %>
+</div>
+  <div id="post_footer">
+    
+  </div>
 </div>
 

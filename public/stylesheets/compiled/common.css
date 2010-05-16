@@ -1,0 +1,50 @@
+/* line 10, ../../../app/stylesheets/common.scss */
+.msg {
+  padding: 8px;
+  margin-bottom: 2px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+/* line 14, ../../../app/stylesheets/common.scss */
+.msg .warning {
+  border: 2px solid #f2dd8c;
+  background-color: #fff5cc;
+}
+/* line 18, ../../../app/stylesheets/common.scss */
+.msg .info {
+  border: 2px solid #b8e2fb;
+  background-color: #e8f6ff;
+}
+/* line 22, ../../../app/stylesheets/common.scss */
+.msg .notice {
+  border: 2px solid #eaf7d9;
+  background-color: #bbdf8d;
+}
+/* line 26, ../../../app/stylesheets/common.scss */
+.msg .error {
+  border: 2px solid #ffaeae;
+  background-color: #feebeb;
+}
+
+/* line 31, ../../../app/stylesheets/common.scss */
+#errorExplanation {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  padding: 6px;
+  margin-bottom: 6px;
+  border: 2px solid #ffaeae;
+  background-color: #feebeb;
+}
+/* line 38, ../../../app/stylesheets/common.scss */
+#errorExplanation h2 {
+  margin: 4px 0;
+}
+/* line 41, ../../../app/stylesheets/common.scss */
+#errorExplanation ul {
+  margin: .5em .5em .5em 2em;
+}
+
+/* line 45, ../../../app/stylesheets/common.scss */
+.fieldHasErrors {
+  border: 2px solid #ffaeae;
+}

@@ -1,0 +1,109 @@
+.clear_both {
+	clear:both;
+}
+#header {
+    height:20px;
+}
+#navigation ul {
+    padding-bottom:10px;
+}
+#navigation li {
+    float:left;
+    display:block;
+    padding: 0 8px;
+}
+#body {
+    clear:both;
+}
+.like_button {
+	margin:4px 0;
+	padding:6px;
+	background-color:#efefef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	overflow:auto;
+	border:2px solid #e1e1e1;
+}
+.new_object_link {
+	float:right;
+	margin:4px 0;
+	padding:6px;
+	background-color:#efefef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	overflow:auto;
+	border:2px solid #e1e1e1;
+	color:#333;
+	text-decoration:none;
+}
+.actions a {
+	padding:2px 6px;
+	background-color:#efefef;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	overflow:auto;
+	border:2px solid #e1e1e1;
+	color:#333;
+	text-decoration:none;
+}
+form div {
+	margin:0 0 6px;
+}
+.submit_post {
+	margin-top:8px;
+}
+#main form fieldset div.flat_field label {
+	float:left;
+	width:120px;
+	clear:both;
+}
+.user_actions form {
+	display:block;
+	float:left;
+	margin-right:8px;
+}
+#main table tr th {
+	padding:3px 0 0 8px;
+}
+
+#main table tr td.actions {
+	padding:0 4px 0 0;
+}
+#pub_date {
+	float:left;
+}
+#preferences li {
+	margin:2px 0 12px 0;
+}
+#preferences label {
+	float:left;
+	width:25%;
+	text-align:right;
+	margin:2px 24px 0 0;
+}
+.pref_submit input {
+	margin-left:30%;
+}
+.comment_sibling {
+	padding-left:22px;
+}
+#post_comments li {
+	overflow:auto;
+	border-bottom:1px solid #ddd;
+}
+#post_comments form {
+	float:right;
+}
+#post_comments li p {
+	width:80%;
+	margin:2px;
+	padding-top:2px;
+}
+#post_comments .like_button {
+	padding:2px;
+	margin:2px 0 2px 0;
+	height:22px;
+}
+form .actions {
+	clear:both;
+}

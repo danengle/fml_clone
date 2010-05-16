@@ -1,0 +1,47 @@
+$darkyellow: #F2DD8C;
+$lightyellow: #FFF5CC;
+$darkblue: #B8E2FB;
+$lightblue: #E8F6FF;
+$lightgreen: #BBDF8D;
+$darkgreen: #EAF7D9;
+$darkred:#FFAEAE;
+$lightred:#FEEBEB;
+
+.msg {
+	padding:8px;
+	margin-bottom:2px;
+	-moz-border-radius:8px;-webkit-border-radius:8px;
+	.warning {
+		border:2px solid $darkyellow;
+		background-color: $lightyellow;
+	}
+	.info {
+		border:2px solid $darkblue;
+		background-color: $lightblue;
+	}
+	.notice {
+		border:2px solid $darkgreen;
+		background-color: $lightgreen;
+	}
+	.error {
+		border:2px solid $darkred;
+		background-color: $lightred;
+	}
+}
+#errorExplanation {
+	-moz-border-radius:8px;-webkit-border-radius:8px;
+	padding:6px;
+	margin-bottom:6px;
+	border:2px solid $darkred;
+	background-color: $lightred;
+	
+	h2 {
+		margin:4px 0;
+	}
+	ul {
+		margin:.5em .5em .5em 2em;
+	}
+}
+.fieldHasErrors {
+	border:2px solid $darkred;
+}

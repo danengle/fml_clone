@@ -5,35 +5,22 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title><%= controller.controller_name %> : <%= controller.action_name %></title>
-    <%= stylesheet_link_tag 'admin/transdmin', 'jquery.utils.css', 'ui.core.css', 'jquery.timepickr.css', 'common', 'admin' %>
-    <%= javascript_include_tag 'jquery-1.4.2.js', 'jNice', 'admin'  %>
+    <%= stylesheet_link_tag 'compiled/screen', 'compiled/common.css', 'compiled/classes.css', 'compiled/admin.css' %>
+    <%= javascript_include_tag 'jquery-1.4.2.js', 'admin'  %>
   </head>
   <body>
-    <div id="wrapper">
-      <h1><%= link_to raw("<span>Administration</span>"), admin_path %></h1> 
-      <ul id="mainNav">
-        <li><%= link_to 'Posts', admin_posts_path %></li>
-        <li><%= link_to 'Categories', admin_categories_path %></li>
-        <li><%= link_to 'Users', admin_users_path %></li>
-        <li><%= link_to 'Settings', admin_preferences_path %></li>
-        <li><%= link_to 'Pages', admin_pages_path %></li>
-        <li class="logout"><%= link_to 'Logout', logout_path %></li>
-        <li class="logout"><%= link_to 'View Site', root_path %></li>
-      </ul>
-      <div id="containerHolder">
-        <div id="container">
-          <%= render :partial => 'admin/shared/side_bar' %>
-          <h2><%= link_to "Breadcrumbs", "#" %> &raquo; <%= link_to "Here", "#", :class => 'active' %></h2>
-          <div id="main">
-            <% flash.each_pair do |key, value| -%>
-              <p class="msg <%= key %>"><%= value %></p>
-            <% end -%>
-            <%= yield %>
-          </div>
-          <div class="clear"></div>
-        </div>
+    <%= render 'admin/shared/top_bar' %>
+    <div id="body">
+      <%= render 'admin/shared/navigation' %>
+      <div id="content">
+        <% flash.each_pair do |key, value| %>
+          <p class="msg <%= key %>"><%= value %></p>
+        <% end %>
+        <%= yield %>
       </div>
-      <p id="footer">copyright 2009 Dan Engle</p>
+    </div>
+    <div id="footer">
+      <p>copyright 2009 Dan Engle</p>
     </div>
   </body>
 </html>
