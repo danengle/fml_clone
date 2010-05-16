@@ -2,8 +2,8 @@
 <% if @new_posts.blank? %>
   <h3>No new posts to review</h3>
 <% else %>
-<table class="small_round">
-  <caption><%= @new_posts.size %> Posts Need Review</caption>
+<table class="small_round add_margin">
+  <caption class="medium_round_top"><%= @new_posts.size %> Posts Need Review</caption>
   <tr>
     <th class="first_column">ID</th>
     <th>Post</th>
@@ -22,7 +22,7 @@
       </td>
       <td><%= post.display_name %></td>
       <td><%= post.category.name %></td>
-      <td> <%= post.created_at.to_s(:short) %></td>
+      <td> <%= post.created_at.to_s(:long) %></td>
     </tr>
   <% end %>
 </table>
@@ -30,8 +30,8 @@
 <% if @future_posts.blank? %>
   <p>There are no upcoming posts</p>
 <% else %>
-  <table class="small_round">
-  <caption>Upcoming posts</caption>
+  <table class="small_round add_margin">
+  <caption class="medium_round_top">Upcoming posts</caption>
     <tr>
       <th class="first_column">ID</th>
       <th>Post</th>
@@ -56,7 +56,7 @@
   </table>
 <% end %>
 <table class="small_round">
-  <caption><%= @posts.size %> Posts</caption>
+  <caption class="medium_round_top"><%= @posts.size %> Posts</caption>
   <tr>
     <th class="first_column">ID</th>
     <th>Post</th>

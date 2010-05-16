@@ -37,6 +37,9 @@ a:hover, a:active, a:focus { color:$orange; }
 .full_border {
 	border:1px solid $lightgrey2;
 }
+.add_margin {
+	margin-bottom:12px;
+}
 #top_bar {
 	background-color: $darkgrey;
 	padding:8px;
@@ -104,9 +107,16 @@ a:hover, a:active, a:focus { color:$orange; }
 	float:left;
 	clear:left;
 	margin-right:-400px;
-	#main_content_body, #post_comments {
+	#main_content_body, #comments {
 		margin-right:260px;
+		margin-bottom:12px;
 	}
+	table {
+		.author_row {
+			width:30%;
+		}
+	}
+
 }
 #third_column {
 	width:245px;
@@ -138,26 +148,62 @@ a:hover, a:active, a:focus { color:$orange; }
 		padding:4px;
 	}
 }
+.box_header {
+	background-color: $lightgrey;
+	padding:6px;
+}
+.box_body {
+	padding:6px;
+}
+.box_footer {
+	padding:6px;
+}
 .tc_box {
 	margin:0 0 12px 0;
 	
-	.tc_header {
-		background-color: $lightgrey;
-		padding:6px;
-	}
 	.tc_body {
 		padding:6px;
+		overflow:auto;
+		ul {
+			li {
+				list-style-type:none;
+				input {
+					float:left;
+					margin-right:3px;
+				}
+			}
+			#publish_form {
+				input {
+					float:none;
+				}
+				.awesome_button {
+					float:right;
+					margin-top:5px;
+				}
+				#date_date, #date_hour, #date_minute {
+					width:1.4em;
+				}
+				#date_year {
+					width:2.8em;
+				}
+			}
+		}
 	}
 	.tc_footer {
 		padding:6px;
 	}
 }
-#footer {
-	clear:both;
-}
+
 table {
 	width:100%;
 	border:1px solid $lightgrey2;
+	caption {
+		margin-left:8px;
+		background-color: $lightgrey2;
+		padding:3px;
+		width:16%;
+		text-align:center;
+	}
 	tr {
 		th {
 			background-color:$lightgrey;
@@ -167,6 +213,7 @@ table {
 		td {
 			padding-top:4px;
 			vertical-align:top;
+				padding-bottom:2px;
 		}
 		.first_column {
 			padding-left:5px;
@@ -194,6 +241,17 @@ table {
 			padding-top:2px;
 		}
 	}
+	.actions {
+		font-size:.9em;
+		margin-top:2px;
+		form {
+			float:left;
+			margin-right:6px;
+			input {
+				padding:1px 2px;
+			}
+		}
+	}
 }
 .pagination {
 	a, span, em {
@@ -210,7 +268,7 @@ table {
 	form {		
 			#post_body {
 				width:99%;
-				height:175px;
+				height:125px;
 			}
 			#post_footer {
 				overflow:auto;
@@ -223,3 +281,8 @@ table {
 			}
 		}
 	}
+
+
+#footer {
+	clear:both;
+}

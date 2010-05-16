@@ -73,5 +73,8 @@ class Post < ActiveRecord::Base
   def parent_comments
     self.comments.parent_comments
   end
- 
+  
+  def scheduled_to_be_published?
+    self.state == 'published' && self.published_at > Time.now
+  end
 end

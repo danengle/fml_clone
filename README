@@ -44,6 +44,7 @@ TODO
 	when logging out from admin section, redirect to home so "not authorized" message does not show up
 	add ability to add pictures
 	make top_rated have up_vote * 1, down_vote * .5
+	setup the spam service like wordpress
 	
 	SETTINGS TO IMPLEMENT
 	anonymous name

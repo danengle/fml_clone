@@ -19,19 +19,63 @@
         </div>
       <% end %>
     </div>
-    <div id="post_comments" class="full_border medium_round">
-      <div class="pc_header"><%= @post.comments.size %> Comments</div>
-      <p>comments are here</p>
+    <div id="comments">
+    <table class="medium_round">
+      <caption class="medium_round_top"><%= @post.comments.size %> Comments</caption>
+      <tr>
+        <th class="author_row first_column">Author</th>
+        <th>Comment</th>
+      </tr>
+      <% @post.comments.parent_comments.each do |comment| %>
+        <tr class="border_bottom <%= cycle('odd', 'even') %>">
+          <td class="first_column">
+            <%= link_to comment.user.login, edit_admin_user_path(comment.user) %><br />
+            <%= comment.created_at.to_s(:long) %>
+          </td>
+          <td>
+            <%= comment.body %>
+            <div class="actions">
+              <%= button_to "Unapprove", "#", :class => 'awesome_button' %>
+              <%= button_to "Delete", "#", :class => 'awesome_button' %>
+              <%= button_to "Spam", "#", :class => 'awesome_button' %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </table>
     </div>
   </div>
   <div id="third_column">
     <div class="tc_box full_border medium_round">
-      <div class="tc_header">Publish</div>
-      <div class="tc_body">here is the body</div>
-      <div class="tc_footer">update</div>
+      <div class="box_header">Publish</div>
+      <div class="tc_body">
+        <ul>
+          <li>Status: <%= @post.scheduled_to_be_published? ? "Publishing on #{@post.published_at.strftime("%b %e, %R")}" : @post.state %></li>
+          <% if @post.currently_published? %>
+            <li>Published On: <%= @post.published? ? @post.published_at.to_s(:long) : "Not Published" %></li>
+          <% end %>
+          <% if @post.currently_published? || @post.scheduled_to_be_published? %>
+            <li><%= button_to "Unpublish Post", "#", :class => 'awesome_button' %></li>
+          <% else %>
+            <li id="publish_form">
+              <%= form_tag publish_admin_post_path(@post) do %>
+                <label>Publish at:</label><br />
+                <%= select_month Date.today %>
+                <%= text_field_tag 'date[date]', Date.today.day %>
+                <%= text_field_tag 'date[year]', Date.today.year %>@
+                <%= text_field_tag 'date[hour]', Time.now.hour %>:
+                <%= text_field_tag 'date[minute]', Time.now.min %><br />
+                <%= submit_tag "Publish Post", :class => 'awesome_button' %>
+              <% end %>
+              <%= button_to "Spam", "#", :class => 'awesome_button' %>
+              <%= button_to "Deny", "#", :class => 'awesome_button' %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <div class="tc_box full_border medium_round">
-      <div class="tc_header">Activity Summary</div>
+      <div class="box_header">Activity Summary</div>
       <div class="tc_body">stuff happened</div>
       <div class="tc_footer">bottom</div>
     </div>

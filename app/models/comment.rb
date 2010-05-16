@@ -29,4 +29,5 @@ class Comment < ActiveRecord::Base
   def children
     Comment.where(:parent_id => self.id)
   end
+
 end

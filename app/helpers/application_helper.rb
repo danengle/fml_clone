@@ -49,4 +49,8 @@ module ApplicationHelper
       [{:text => controller_name, :path => admin_path}]
     end
   end
+  
+  def current_post_actions
+    
+  end
 end
