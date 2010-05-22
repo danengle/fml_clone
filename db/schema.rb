@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100516120031) do
+ActiveRecord::Schema.define(:version => 20100520013810) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -76,16 +76,17 @@ ActiveRecord::Schema.define(:version => 20100516120031) do
   add_index "preference_categories", ["position"], :name => "index_preference_categories_on_position"
 
   create_table "preferences", :force => true do |t|
-    t.string   "key",                                      :null => false
-    t.string   "value",                                    :null => false
+    t.string   "key",                                       :null => false
+    t.text     "value",                                     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "modifiable",             :default => true
-    t.integer  "preference_category_id",                   :null => false
+    t.integer  "preference_category_id",                    :null => false
     t.string   "display_name"
     t.text     "description"
-    t.integer  "position",                                 :null => false
+    t.integer  "position",                                  :null => false
     t.boolean  "required",               :default => true
+    t.boolean  "large",                  :default => false
   end
 
   add_index "preferences", ["preference_category_id"], :name => "index_preferences_on_preference_category_id"

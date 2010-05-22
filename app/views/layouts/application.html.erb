@@ -17,6 +17,13 @@
       <% flash.each_pair do |key, value| -%>
         <p class="msg <%= key %>"><%= value %></p>
       <% end -%>
+      <% unless @preferences[:top_horizontal_ad].blank? %>
+        <div class="post box">
+          <div class="rounded_top">
+            <%= raw @preferences[:top_horizontal_ad] %>
+          </div>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
     <%= render 'shared/side_bar' %>

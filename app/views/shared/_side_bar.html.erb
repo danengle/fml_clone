@@ -42,4 +42,9 @@
       <% end %>
     </ul>
   </div>
+  <% unless @preferences[:side_box_ad].blank? %>
+    <div id="side_ad" class="side_box">
+      <%= raw @preferences[:side_box_ad] %>
+    </div>
+  <% end %>
 </div>

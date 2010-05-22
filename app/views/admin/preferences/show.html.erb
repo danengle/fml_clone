@@ -15,7 +15,11 @@
     <% @preferences.each do |pref| %>
       <li class="editable">
         <label><%= pref.display_name %></label>
-        <%= text_field_tag "preferences[#{pref.key}]", pref.value, :class => has_errors?(pref) ? 'fieldHasErrors' : '' %>
+        <% if pref.large? %>
+          <%= text_area_tag "preferences[#{pref.key}]", pref.value, :class => has_errors?(pref) ? 'fieldHasErrors' : '' %>
+        <% else %>
+          <%= text_field_tag "preferences[#{pref.key}]", pref.value, :class => has_errors?(pref) ? 'fieldHasErrors' : '' %>
+        <% end %>
         <% unless pref.description.blank? %>
         <span><%= pref.description %></span>
         <% end %>
