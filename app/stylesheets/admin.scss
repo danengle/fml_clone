@@ -40,6 +40,40 @@ a:hover, a:active, a:focus { color:$orange; }
 .add_margin {
 	margin-bottom:12px;
 }
+.boxed {
+	background-color:$lightgrey;
+	border:1px solid $lightgrey2;
+}
+.full_box {
+	padding:7px;
+}
+.good_forms {
+	form {
+		div {
+			margin:8px 0;
+			label {
+				width:15%;
+				float:left;
+				text-align:right;
+				padding-right:6px;
+			}
+		}
+		.submit_button {
+			margin-left:16%;
+			background:-moz-linear-gradient(center top , #007DAA, #00698F) repeat scroll 0 0 transparent;
+			color: $white;
+			border:1px solid #00a1db;
+			padding:4px 5px;
+		}
+	}
+	.user_actions {
+		
+		form {
+			float:left;
+			margin-right:8px;
+		}
+	}
+}
 #top_bar {
 	background-color: $darkgrey;
 	padding:8px;
@@ -116,6 +150,7 @@ a:hover, a:active, a:focus { color:$orange; }
 	padding-top:8px;
 	overflow:auto;
 }
+
 #main_content {
 	width:100%;
 	float:left;
@@ -298,12 +333,7 @@ table {
 .new_obj_link {
 	float:right;
 }
-.submit_button {
-	background:-moz-linear-gradient(center top , #007DAA, #00698F) repeat scroll 0 0 transparent;
-	color: $white;
-	border:1px solid #00a1db;
-	padding:4px 5px;
-}
+
 
 #preferences {
 	span {

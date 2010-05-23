@@ -1,4 +1,6 @@
+<div id="poststuff">
 <h3><%= @preference_category.name %> Settings</h3>
+<div id="main_content">
 <%= form_tag bulk_update_admin_preferences_path do %>
   <% unless @errors.blank? %>
     <div id="errorExplanation">
@@ -29,3 +31,5 @@
   </ul>
   <%= hidden_field_tag 'preference_category', @preference_category.name %>
 <% end %>
+</div>
+</div>

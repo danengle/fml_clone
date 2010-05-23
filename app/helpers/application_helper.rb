@@ -26,19 +26,19 @@ module ApplicationHelper
   end
   
   def activate_button
-    button_to "Activate", activate_admin_user_path(@user), :class => 'like_button'
+    button_to "Activate", activate_admin_user_path(@user), :class => 'awesome_button'
   end
   
   def suspend_button
-    button_to "Suspend", suspend_admin_user_path(@user), :class => 'like_button'
+    button_to "Suspend", suspend_admin_user_path(@user), :class => 'awesome_button'
   end
   
   def unsuspend_button
-    button_to "Unsuspend", unsuspend_admin_user_path(@user), :class => 'like_button'
+    button_to "Unsuspend", unsuspend_admin_user_path(@user), :class => 'awesome_button'
   end
   
   def delete_button
-    button_to "Delete", delete_admin_user_path(@user), :class => 'like_button', :confirm => "Are you sure you want to delete this user?"
+    button_to "Delete", delete_admin_user_path(@user), :class => 'awesome_button', :confirm => "Are you sure you want to delete this user?"
   end
   
   def admin_side_bar_links
@@ -52,5 +52,23 @@ module ApplicationHelper
   
   def has_errors?(pref)
     @errors && @errors.any? {|msg| msg =~ /^#{pref.display_name}/}
+  end
+  
+  def render_table(obj, options = {})
+    render :partial => 'admin/shared/table_header', :locals => { :obj => obj, :options => options }
+  end
+  
+  def show_id
+    
+  end
+  def show_login(options)
+    
+  end
+  def show_full_name
+    
+  end
+  
+  def show_admin_status
+  
   end
 end

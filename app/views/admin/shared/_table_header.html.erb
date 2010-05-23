@@ -1,0 +1,16 @@
+<table class="small_round">
+  <tr>
+    <% options[:header_row].each_with_index do |row,index| %>
+      <th class="<%= 'first_column' if index == 0 %>"><%= row %></th>
+    <% end %>
+  </tr>
+  <%= obj.each_with_index do |object, index| %>
+    <tr>
+      <%= options[:columns].each_with_index do |column, i| %>
+        <td class="<%= 'first_column' if i == 0 %>">
+          <%= column %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>

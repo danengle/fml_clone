@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   before_destroy :stop_bad_delete
   before_update :stop_bad_admin_transistion
   
+  scope :not_deleted, where(['state != ?', 'deleted'])
+  
   aasm_column :state
   aasm_initial_state :initial => :pending
   aasm_state :passive

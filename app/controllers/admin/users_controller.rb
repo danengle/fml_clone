@@ -5,7 +5,7 @@ class Admin::UsersController < ApplicationController
   layout 'admin'
   
   def index
-    @users = User.all
+    @users = User.not_deleted.paginate(:page => params[:page], :per_page => 10)
   end
   
   def show

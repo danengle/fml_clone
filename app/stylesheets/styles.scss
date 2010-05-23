@@ -52,7 +52,7 @@ body {
 	#main {
 		width:79%;
 		float:left;
-		padding:0 8px 8px 0;
+		padding:0 8px 0 0;
 		h1 {
 			margin:.5em 0;
 		}
@@ -130,7 +130,7 @@ body {
 #footer {
 	padding-bottom:14px;
 	ul {
-		margin:12px 0;
+		margin:0 0 12px 0;
 		overflow:auto;
 		li {
 			display:block;
@@ -242,15 +242,22 @@ body {
 	}
 }
 /*** pagination ***/
-.pagination {
-	padding-top:6px;
-	float:right;
-	.disabled, em, a {
-		padding:3px 6px 5px;
-		-moz-border-radius:5px;
-		-webkit-border-radius:5px;
-		background-color:$off-white;
-		border:1px solid $grey;
+#paginate {
+	.pagination {
+		padding-top:6px;
+		float:right;
+		.disabled, em, a {
+			padding:3px 6px 5px;
+			-moz-border-radius:5px;
+			-webkit-border-radius:5px;
+			background-color:$off-white;
+			border:1px solid $grey;
+		}
+	}
+	.page_entries {
+		float:right;
+		clear:both;
+		margin-top:12px;
 	}
 }
 /*** forms ***/
@@ -259,7 +266,7 @@ body {
 		.user_form {
 			h1 {
 				float:left;
-				margin:0;
+				margin:0 0 6px 0;
 				padding:0;
 			}
 		}
@@ -268,7 +275,7 @@ body {
 .user_form {
 	position:relative;
 	form {
-		top:-13px;
+		top:-35px;
 		position:relative;
 	}
 	h3 {
@@ -300,10 +307,24 @@ body {
 		margin:0 0 6px 182px;
 	}
 }
+#new_post_box {
+	#submit_post_text {
+		clear:both;
+		ul {
+			li {
+				list-style-type:disc;
+			}
+			.margin-right {
+				margin-right:195px;
+			}
+		}
+	}
+}
 /*** ad space ***/
 #top_horiz_ad {
 	padding:5px;
 }
+/*** Misc stuff ***/
 #refine_results {
 	h3 {
 		margin:0;

@@ -49,7 +49,7 @@ body {
 #content #main {
   width: 79%;
   float: left;
-  padding: 0 8px 8px 0;
+  padding: 0 8px 0 0;
 }
 /* line 56, ../../../app/stylesheets/styles.scss */
 #content #main h1 {
@@ -143,7 +143,7 @@ body {
 }
 /* line 132, ../../../app/stylesheets/styles.scss */
 #footer ul {
-  margin: 12px 0;
+  margin: 0 0 12px 0;
   overflow: auto;
 }
 /* line 135, ../../../app/stylesheets/styles.scss */
@@ -265,82 +265,102 @@ body {
 }
 
 /*** pagination ***/
-/* line 245, ../../../app/stylesheets/styles.scss */
-.pagination {
+/* line 246, ../../../app/stylesheets/styles.scss */
+#paginate .pagination {
   padding-top: 6px;
   float: right;
 }
-/* line 248, ../../../app/stylesheets/styles.scss */
-.pagination .disabled, .pagination em, .pagination a {
+/* line 249, ../../../app/stylesheets/styles.scss */
+#paginate .pagination .disabled, #paginate .pagination em, #paginate .pagination a {
   padding: 3px 6px 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   background-color: #efefef;
   border: 1px solid #bbbbbb;
 }
+/* line 257, ../../../app/stylesheets/styles.scss */
+#paginate .page_entries {
+  float: right;
+  clear: both;
+  margin-top: 12px;
+}
 
 /*** forms ***/
-/* line 260, ../../../app/stylesheets/styles.scss */
+/* line 267, ../../../app/stylesheets/styles.scss */
 #content #main .user_form h1 {
   float: left;
-  margin: 0;
+  margin: 0 0 6px 0;
   padding: 0;
 }
 
-/* line 268, ../../../app/stylesheets/styles.scss */
+/* line 275, ../../../app/stylesheets/styles.scss */
 .user_form {
   position: relative;
 }
-/* line 270, ../../../app/stylesheets/styles.scss */
+/* line 277, ../../../app/stylesheets/styles.scss */
 .user_form form {
-  top: -13px;
+  top: -35px;
   position: relative;
 }
-/* line 274, ../../../app/stylesheets/styles.scss */
+/* line 281, ../../../app/stylesheets/styles.scss */
 .user_form h3 {
   margin: 12px 16px;
 }
-/* line 277, ../../../app/stylesheets/styles.scss */
+/* line 284, ../../../app/stylesheets/styles.scss */
 .user_form label {
   float: left;
   width: 190px;
   text-align: right;
   padding: 2px 8px 0 0;
 }
-/* line 283, ../../../app/stylesheets/styles.scss */
+/* line 290, ../../../app/stylesheets/styles.scss */
 .user_form .field {
   margin: 8px 0;
 }
-/* line 285, ../../../app/stylesheets/styles.scss */
+/* line 292, ../../../app/stylesheets/styles.scss */
 .user_form .field textarea {
   width: 99.9%;
   height: 175px;
 }
-/* line 291, ../../../app/stylesheets/styles.scss */
+/* line 298, ../../../app/stylesheets/styles.scss */
 .user_form .actions input {
   margin: 4px 0 0 198px;
 }
-/* line 294, ../../../app/stylesheets/styles.scss */
+/* line 301, ../../../app/stylesheets/styles.scss */
 .user_form .actions #post_submit {
   float: right;
 }
-/* line 298, ../../../app/stylesheets/styles.scss */
+/* line 305, ../../../app/stylesheets/styles.scss */
 .user_form p {
   padding: 4px 16px;
   margin: 0 0 6px 182px;
 }
 
+/* line 311, ../../../app/stylesheets/styles.scss */
+#new_post_box #submit_post_text {
+  clear: both;
+}
+/* line 314, ../../../app/stylesheets/styles.scss */
+#new_post_box #submit_post_text ul li {
+  list-style-type: disc;
+}
+/* line 317, ../../../app/stylesheets/styles.scss */
+#new_post_box #submit_post_text ul .margin-right {
+  margin-right: 195px;
+}
+
 /*** ad space ***/
-/* line 304, ../../../app/stylesheets/styles.scss */
+/* line 324, ../../../app/stylesheets/styles.scss */
 #top_horiz_ad {
   padding: 5px;
 }
 
-/* line 308, ../../../app/stylesheets/styles.scss */
+/*** Misc stuff ***/
+/* line 329, ../../../app/stylesheets/styles.scss */
 #refine_results h3 {
   margin: 0;
 }
-/* line 312, ../../../app/stylesheets/styles.scss */
+/* line 333, ../../../app/stylesheets/styles.scss */
 #refine_results span {
   float: right;
 }

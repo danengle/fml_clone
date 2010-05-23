@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     @post.user = current_user if logged_in?
     respond_to do |format|
       if @post.save
-        format.html { redirect_to(root_path, :notice => 'Thank you for you submission. It will have to be reviewed before it appears on the site.') }
+        format.html { redirect_to(root_path, :notice => @preferences[:successful_post_creation]) }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
         format.html { render :action => "new" }

@@ -1,63 +1,71 @@
-<h3>Editing User</h3>
-<% form_for([:admin,@user], :html => { :class => 'jNice' }) do |f| %>
-  <fieldset>
-  <%= f.error_messages %>
-  <p>
-    <%= f.label :login %>
-    <%= f.text_field :login %>
-  </p>
-  <p>
-    <%= f.label :full_name %>
-    <%= f.text_field :full_name %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :admin, "Admin?" %>
-    <%= f.check_box :admin %>
-  </p>
-  <p>
-    <%= f.submit "Update Profile" %>
-  </p>
-  </fieldset>
-<% end %>
-
-<fieldset>
-  <legend>Available Actions</legend>
-  <% if current_user == @user %>
-    <p>You can't change your own state</p>
-  <% else %>
-    <p>This user is currently <%= @user.state %> (activated on <%= @user.activated_at %>). The current available actions are...</p>
-    <%= current_user_actions %>
-  <% end %>
-</fieldset>
-
-
-  <h3>Posts</h3>
-  <% if @posts.blank? %>
-    <p>This user has not created any posts.</p>
-  <% else %>
-    <table>
-      <tr>
-        <th class="first_column">ID</th>
-        <th>Category</th>
-        <th>Body</th>
-        <th>Published at</th>
-        <th>Votes</th>
-        <th colspan="2">Actions</th>
-      </tr>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.id %></td>
-        <td><%=h post.category.name %></td>
-        <td><%=h truncate(post.body, :length => 25) %></td>
-        <td><%=h post.published? ? published_time(post) : post.state %></td>
-        <td><%= post.up_vote_counter %> / <%= post.down_vote_counter %></td>
-        <td class="actions"><%= link_to 'Edit', edit_admin_post_path(post), :class => 'goto_link' %></td>
-        <td class="actions"><%= link_to 'Destroy', [:admin,post], :confirm => 'Are you sure?', :method => :delete, :class => 'delete_link' %></td>
-      </tr>
-    <% end %>
-    </table>
-  <% end %>
+<div id="poststuff">
+  <h3>Editing User</h3>
+  <div id="main_content">
+    <div id="main_content_body" class="good_forms boxed full_box medium_round">
+      <%= form_for([:admin,@user]) do |f| %>
+        <fieldset>
+        <%= f.error_messages %>
+        <%= render :partial => 'form', :locals => { :f => f } %>
+        <div>
+          <%= f.submit "Update Profile", :class => "submit_button awesome_button" %>
+        </div>
+        </fieldset>
+      <% end %>
+  
+      <fieldset>
+        <legend>Available Actions</legend>
+        <% if current_user == @user %>
+          <p>You can't change your own state</p>
+        <% else %>
+          <p>This user is currently <%= @user.state %> (activated on <%= @user.activated_at %>). The current available actions are...</p>
+          <%= current_user_actions %>
+        <% end %>
+      </fieldset>
+    </div>
+    <div>
+      <h3>Posts</h3>
+      <% if @posts.blank? %>
+        <p>This user has not created any posts.</p>
+      <% else %>
+        <table class="boxed medium_round">
+          <tr>
+            <th class="first_column">ID</th>
+            <th>Body</th>
+            <th>Category</th>
+            <th>Published at</th>
+            <th>Votes</th>
+          </tr>
+          <% @posts.each do |post| %>
+            <tr class="border_bottom<%= cycle(' odd', ' even') %>">
+              <td class="first_column"><%= post.id %></td>
+              <td>
+                <%= truncate(post.body, :length => 25) %>
+                <div class="actions">
+                  <%= link_to 'Edit', edit_admin_post_path(post) %>
+                </div>
+              </td>
+              <td><%= post.category.name %></td>
+              <td><%= post.published? ? published_time(post) : post.state %></td>
+              <td><%= post.up_vote_counter %> / <%= post.down_vote_counter %></td></tr>
+          <% end %>
+        </table>
+      <% end %>
+    </div>
+  </div>
+  <div id="third_column">
+    <div class="tc_box full_border medium_round">
+      <div class="box_header">Favorites</div>
+      <div class="tc_body">
+        <% if @user.favorites.blank? %>
+          <p>This user does not have any favorites.</p>
+        <% else %>
+          <ul>
+            <% @user.favorites.each do |fav| %>
+              <li><%= link_to "Post #{fav.post.id}", edit_admin_post_path(fav.post) %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
