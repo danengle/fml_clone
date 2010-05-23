@@ -79,7 +79,7 @@
     <td><%= post.category.name %></td>
     <td class="centered"><%= post.up_vote_counter %> / <%= post.down_vote_counter %></td>
     <td class="centered"><%= post.comments.count %></td>
-    <td><%= post.published? ? published_time(post) : post.state %></td>
+    <td><%= post_times(post) %></td>
   </tr>
 <% end %>
   <tr>

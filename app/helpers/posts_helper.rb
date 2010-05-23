@@ -6,4 +6,8 @@ module PostsHelper
   def published_time(post)
     post.published_at.blank? ? 'Not Published' : post.published_at.to_s(:long)
   end
+  
+  def post_times(post)
+    post.published? ? "#{post.state}: #{post.published_at.to_s(:long)}" : "#{post.state}: created #{post.created_at.to_s(:long)}"
+  end
 end

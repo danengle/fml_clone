@@ -6,7 +6,9 @@ body {
 .clear {
 	clear:both;
 }
-
+.bolded {
+	font-weight:bold;
+}
 .centered {
     margin:0 auto;
     width:900px;
@@ -97,7 +99,7 @@ body {
 	width:18%;
 	float:left;
 }
-#side_bar .side_box {
+.side_box, .boxed {
 	margin:3px 0 5px;
 	padding:5px;
 	-moz-border-radius:8px;
@@ -428,4 +430,10 @@ input.awesome_button {
 }
 #page_box div {
 	padding:4px;
+}
+#top_horiz_ad {
+	margin-bottom: 4px;
+}
+#user_profile ul li {
+	list-style-type:none;
 }

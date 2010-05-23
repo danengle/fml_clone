@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   acts_as_authentic
 
   has_many :posts
+  has_many :comments
   has_many :favorites, :dependent => :destroy
   
   before_destroy :stop_bad_delete
@@ -76,5 +77,13 @@ class User < ActiveRecord::Base
     self.favorites.each{|f| posts << f.post }
     posts = posts.sort{|a,b| b.published_at <=> a.published_at }
     posts
+  end
+  
+  def number_of_posts
+    self.posts.count
+  end
+  
+  def number_of_comments
+    self.comments.count
   end
 end

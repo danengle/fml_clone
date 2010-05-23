@@ -1,6 +1,6 @@
-<div id="post_<%= post.id %>" class="post box">
-  <div class="post_header rounded_top">
-    <div class="right_side">
+<div id="post_<%= post.id %>" class="post boxed">
+  <div class="boxed_header round_top">
+    <div class="social_links">
       <span class="share_twitter">
         <%= link_to image_tag('tw0.png'), "#" %>
       </span>
@@ -15,20 +15,20 @@
         <% end %>
       </span>
     </div>
-    <div class="left_side">
+    <div class="published_at">
       <%= post.published_at.to_s(:long) %>
     </div>
   </div>
-  <div class="post_body box_background">
+  <div class="post_body">
     <p><%= link_to post.body, post %></p>
   </div>
-  <div class="post_footer box_background rounded_bottom">
+  <div class="post_footer round_bottom">
     <%= link_to post.id, post %>
     <span class="created_by">By <%= post.user.blank? ? @preferences[:anonymous_display_name] : post.user.login %> in <%= link_to post.category.name, category_path(post.category) %></span>
     <span class="comment_count"><%= post.comments.count %> comments</span>
     <div class="votes">
-      <%= button_to "#{@preferences[:thumbs_up]} (#{post.up_vote_counter})", up_vote_post_path(post), {:class => 'up_vote_button'} %>
-      <%= button_to "#{@preferences[:thumbs_down]} (#{post.down_vote_counter})", down_vote_post_path(post) %>
+      <%= button_to "#{@preferences[:thumbs_up]} (#{post.up_vote_counter})", up_vote_post_path(post), {:class => 'awesome_button up_vote'} %>
+      <%= button_to "#{@preferences[:thumbs_down]} (#{post.down_vote_counter})", down_vote_post_path(post), {:class => 'awesome_button down_vote'} %>
     </div>
   </div>
 </div>

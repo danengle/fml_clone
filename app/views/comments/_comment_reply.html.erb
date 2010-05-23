@@ -1,5 +1,5 @@
-<div id="comment_form">
-  <% form_for [@post,Comment.new] do |f| %>
+<div id="comment_form" class="boxed">
+  <%= form_for [@post,Comment.new] do |f| %>
     <%= f.error_messages %>
     <%= f.hidden_field :parent_id, :value => @comment.id %>
     <p>

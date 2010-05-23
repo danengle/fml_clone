@@ -1,15 +1,61 @@
 /* line 1, ../../../app/stylesheets/classes.scss */
-.centered {
-  text-align: center;
+body {
+  background-color: #DCE6F4;
+  height: 100%;
+  font: 85% arial,sans-serif;
 }
 
-/* line 4, ../../../app/stylesheets/classes.scss */
+/* line 6, ../../../app/stylesheets/classes.scss */
+.centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* line 10, ../../../app/stylesheets/classes.scss */
+.centered_box {
+  margin: 0 auto;
+  width: 900px;
+}
+
+/* line 14, ../../../app/stylesheets/classes.scss */
+.clear {
+  clear: both;
+}
+
+/* line 17, ../../../app/stylesheets/classes.scss */
+.bolded {
+  font-weight: bold;
+}
+
+/* line 20, ../../../app/stylesheets/classes.scss */
+.round {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+/* line 24, ../../../app/stylesheets/classes.scss */
+.round_top {
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-right-radius: 8px;
+}
+
+/* line 30, ../../../app/stylesheets/classes.scss */
+.round_bottom {
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+}
+
+/* line 36, ../../../app/stylesheets/classes.scss */
 .small_round {
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
 }
 
-/* line 8, ../../../app/stylesheets/classes.scss */
+/* line 40, ../../../app/stylesheets/classes.scss */
 .small_round_top {
   -moz-border-radius-topleft: 4px;
   -moz-border-radius-topright: 4px;
@@ -17,7 +63,7 @@
   -webkit-border-top-right-radius: 4px;
 }
 
-/* line 14, ../../../app/stylesheets/classes.scss */
+/* line 46, ../../../app/stylesheets/classes.scss */
 .small_round_bottom {
   -moz-border-radius-bottomleft: 4px;
   -moz-border-radius-bottomright: 4px;
@@ -25,13 +71,13 @@
   -webkit-border-top-right-radius: 4px;
 }
 
-/* line 20, ../../../app/stylesheets/classes.scss */
+/* line 52, ../../../app/stylesheets/classes.scss */
 .medium_round {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
 }
 
-/* line 24, ../../../app/stylesheets/classes.scss */
+/* line 56, ../../../app/stylesheets/classes.scss */
 .medium_round_top {
   -moz-border-radius-topleft: 6px;
   -moz-border-radius-topright: 6px;
@@ -39,7 +85,7 @@
   -webkit-border-top-right-radius: 6px;
 }
 
-/* line 30, ../../../app/stylesheets/classes.scss */
+/* line 62, ../../../app/stylesheets/classes.scss */
 .medium_round_bottom {
   -moz-border-radius-bottomleft: 6px;
   -moz-border-radius-bottomright: 6px;
@@ -47,7 +93,7 @@
   -webkit-border-top-right-radius: 6px;
 }
 
-/* line 36, ../../../app/stylesheets/classes.scss */
+/* line 68, ../../../app/stylesheets/classes.scss */
 .awesome_button {
   -moz-border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px;
@@ -64,7 +110,7 @@
   white-space: nowrap;
 }
 
-/* line 52, ../../../app/stylesheets/classes.scss */
+/* line 84, ../../../app/stylesheets/classes.scss */
 ul li {
   list-style-type: none;
 }

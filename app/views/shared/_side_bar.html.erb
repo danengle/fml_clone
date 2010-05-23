@@ -1,9 +1,9 @@
 <div id="side_bar">
-  <div id="account_box" class="side_box top_box">
+  <div id="account_box" class="boxed side_box">
     <% if logged_in? %>
       <h5>Hello, <%= current_user.login %> <span>(<%= link_to "logout", logout_path %>)</span></h5>
       <ul>
-        <li><%= link_to "View Profile", "#" %></li>
+        <li><%= link_to "View Profile", user_path(current_user) %></li>
         <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
         <li><%= link_to "My Messages", "#" %></li>
         <li><%= link_to "Favorites", user_favorites_path(current_user) %></li>
@@ -23,18 +23,18 @@
           <%= f.label :password %><br />
           <%= f.password_field :password %>
         </div>
-        <div class="login_stuff">
+        <div id="login_stuff">
           <%= f.check_box :remember_me %><%= f.label :remember_me, "Remember me?", :id => 'rem_submit' %>
           <%= f.submit "Login", :class => 'awesome_button' %>
         </div>
         <div id="login_bottom">
-          <%= link_to "Forgot your password?", new_password_path %><br />
+          <%= link_to "Password?", new_password_path %> -
           <%= link_to "Sign up!", new_user_path %>
         </div>
       <% end %>
     <% end %>
   </div>
-  <div id="categories" class="side_box">
+  <div id="categories" class="boxed side_box">
     <h5>Categories</h5>
     <ul>
       <% Category.all.sort {|a,b| a.name <=> b.name }.each do |category| %>
@@ -43,7 +43,7 @@
     </ul>
   </div>
   <% unless @preferences[:side_box_ad].blank? %>
-    <div id="side_ad" class="side_box">
+    <div id="side_ad" class="boxed side_box">
       <%= raw @preferences[:side_box_ad] %>
     </div>
   <% end %>

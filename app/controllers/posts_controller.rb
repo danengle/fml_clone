@@ -66,7 +66,7 @@ class PostsController < ApplicationController
   
   #TODO fix this random post generator
   def random
-    @post = Post.published.where(['id >= ?', rand(Post.count)]).first
+    @post = Post.published.random_record.first #where(['id >= ?', rand(Post.count)]).first
     @comment = @post.comments.new
     render :action => 'show'
   end

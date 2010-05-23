@@ -1,17 +1,9 @@
-<p>
-  <b>Full name:</b>
-  <%= @user.full_name %>
-</p>
-
-<p>
-  <b>Login:</b>
-  <%= @user.login %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="boxed">
+  <h3><%= @user.login %></h3>
+</div>
+<div id="user_profile" class="boxed">
+  <ul>
+    <li><span class="bolded">Number of posts:</span> <%= @user.number_of_posts %></li>
+    <li><span class="bolded">Number of comments:</span> <%= @user.number_of_comments %></li>
+  </ul>
+</div>

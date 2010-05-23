@@ -27,6 +27,8 @@ class Post < ActiveRecord::Base
   scope :by_period,
     lambda { |period| { :conditons => ['published_at >= ?', ]}}
   scope :sort_by_published, order('published_at desc')
+  scope :random_record, limit(1).order('rand()')
+  
 
   aasm_initial_state :unread
   aasm_state :unread

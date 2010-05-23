@@ -51,6 +51,11 @@ TODO
 	make categories and preference_categories 1 table
 	add ability to include multiple ads per ad space, allow them to be cycled
 	normalize box (rounded corner, background) css
+	make admin/posts table functions/partials
+	when reply is pressed when not logged in and viewing a random post, redirection got to another random post instead of previous random post
+	
 	
 	SETTINGS TO IMPLEMENT
 	anonymous name
+	flash messages for adding comments, creating posts, etc
+	submit your story text

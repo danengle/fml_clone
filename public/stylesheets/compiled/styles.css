@@ -1,0 +1,346 @@
+/*** variables ***/
+/* line 13, ../../../app/stylesheets/styles.scss */
+body {
+  background-color: #dce6f4;
+  height: 100%;
+  font: 85% arial,sans-serif;
+}
+
+/*** header ***/
+/* line 20, ../../../app/stylesheets/styles.scss */
+#header {
+  padding-top: 5px;
+}
+/* line 23, ../../../app/stylesheets/styles.scss */
+#header h1 {
+  margin-top: 0;
+  margin-bottom: 2px;
+  font-size: 1.2em;
+}
+/* line 28, ../../../app/stylesheets/styles.scss */
+#header a, #header a:visited {
+  color: #222222;
+}
+/* line 31, ../../../app/stylesheets/styles.scss */
+#header #navigation {
+  overflow: auto;
+  margin: 2px 0 6px 0;
+  font-size: .9em;
+}
+/* line 36, ../../../app/stylesheets/styles.scss */
+#header #navigation li {
+  float: left;
+  padding: 4px 8px;
+  list-style-type: none;
+}
+/* line 41, ../../../app/stylesheets/styles.scss */
+#header #navigation li.flush_left {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+/*** content ***/
+/* line 49, ../../../app/stylesheets/styles.scss */
+#content {
+  width: 900px;
+  overflow: auto;
+}
+/* line 52, ../../../app/stylesheets/styles.scss */
+#content #main {
+  width: 79%;
+  float: left;
+  padding: 0 8px 8px 0;
+}
+/* line 56, ../../../app/stylesheets/styles.scss */
+#content #main h1 {
+  margin: .5em 0;
+}
+
+/*** content boxes ***/
+/* line 62, ../../../app/stylesheets/styles.scss */
+.boxed {
+  margin: 3px 0 5px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  background-color: #efefef;
+  border: 1px solid #bbbbbb;
+  overflow: auto;
+}
+/* line 69, ../../../app/stylesheets/styles.scss */
+.boxed .boxed_header {
+  background-color: #c9d9ee;
+  background: -moz-linear-gradient(center top, #c9d9ee, #b5cbe8) repeat scroll 0 0 transparent;
+  height: 1.55em;
+  font: 85% arial,sans-serif;
+  padding: 2px;
+}
+
+/* line 77, ../../../app/stylesheets/styles.scss */
+.full_box {
+  padding: 7px;
+}
+
+/*** side bar ***/
+/* line 81, ../../../app/stylesheets/styles.scss */
+#side_bar {
+  width: 18%;
+  float: left;
+}
+/* line 84, ../../../app/stylesheets/styles.scss */
+#side_bar .side_box {
+  margin: 3px 0 5px;
+  padding: 5px;
+}
+/* line 88, ../../../app/stylesheets/styles.scss */
+#side_bar ul {
+  margin: 4px 0 0 8px;
+}
+
+/* line 94, ../../../app/stylesheets/styles.scss */
+#account_box h5 span {
+  float: right;
+  font-size: .8em;
+}
+/* line 100, ../../../app/stylesheets/styles.scss */
+#account_box form p {
+  margin-bottom: 5px;
+}
+/* line 103, ../../../app/stylesheets/styles.scss */
+#account_box form input[type="text"], #account_box form input[type="password"] {
+  width: 96%;
+}
+/* line 106, ../../../app/stylesheets/styles.scss */
+#account_box form input[type="submit"], #account_box form #comment_submit {
+  float: right;
+}
+/* line 110, ../../../app/stylesheets/styles.scss */
+#account_box #login_stuff, #account_box #login_bottom {
+  font-size: .8em;
+}
+/* line 113, ../../../app/stylesheets/styles.scss */
+#account_box #login_stuff {
+  margin-top: 5px;
+  overflow: auto;
+}
+/* line 116, ../../../app/stylesheets/styles.scss */
+#account_box #login_stuff #rem_submit {
+  padding-left: 3px;
+}
+/* line 119, ../../../app/stylesheets/styles.scss */
+#account_box #login_stuff #user_session_submit {
+  font-size: 1.05em;
+  padding: 2px 3px;
+}
+/* line 124, ../../../app/stylesheets/styles.scss */
+#account_box #login_bottom {
+  margin-top: 6px;
+}
+
+/*** footer ***/
+/* line 130, ../../../app/stylesheets/styles.scss */
+#footer {
+  padding-bottom: 14px;
+}
+/* line 132, ../../../app/stylesheets/styles.scss */
+#footer ul {
+  margin: 12px 0;
+  overflow: auto;
+}
+/* line 135, ../../../app/stylesheets/styles.scss */
+#footer ul li {
+  display: block;
+  float: left;
+  list-style-type: none;
+  margin-right: 23px;
+}
+/* line 140, ../../../app/stylesheets/styles.scss */
+#footer ul li a {
+  color: #555;
+  font-size: 90%;
+  text-decoration: none;
+}
+/* line 147, ../../../app/stylesheets/styles.scss */
+#footer p {
+  margin: 0;
+}
+
+/**** posts ***/
+/* line 154, ../../../app/stylesheets/styles.scss */
+.post .boxed_header .social_links {
+  float: right;
+  padding: 0;
+}
+/* line 158, ../../../app/stylesheets/styles.scss */
+.post .boxed_header .published_at {
+  float: left;
+  padding: 2px 0 0 5px;
+}
+/* line 163, ../../../app/stylesheets/styles.scss */
+.post .post_body {
+  background: -moz-linear-gradient(center top, #f9f9f9, #e3e3e3) repeat scroll 0 0 transparent;
+}
+/* line 166, ../../../app/stylesheets/styles.scss */
+.post .post_body p {
+  font-size: 14px;
+  margin-bottom: 0;
+  padding: 3px 7px 8px 7px;
+}
+/* line 170, ../../../app/stylesheets/styles.scss */
+.post .post_body p a, .post .post_body p a:visited {
+  color: black;
+  text-decoration: none;
+}
+/* line 176, ../../../app/stylesheets/styles.scss */
+.post .post_footer {
+  background: -moz-linear-gradient(center top, #e3e3e3, #f9f9f9) repeat scroll 0 0 transparent;
+  padding: 0 7px 3px 7px;
+  overflow: auto;
+}
+/* line 180, ../../../app/stylesheets/styles.scss */
+.post .post_footer .votes {
+  float: right;
+  margin-bottom: 3px;
+}
+/* line 183, ../../../app/stylesheets/styles.scss */
+.post .post_footer .votes .button_to {
+  float: right;
+}
+/* line 189, ../../../app/stylesheets/styles.scss */
+.post .post_footer .votes .down_vote {
+  margin-right: 6px;
+}
+
+/* line 195, ../../../app/stylesheets/styles.scss */
+#post_category {
+  float: right;
+}
+
+/*** comments ***/
+/* line 200, ../../../app/stylesheets/styles.scss */
+#comments h4 {
+  padding: 4px 7px;
+}
+/* line 203, ../../../app/stylesheets/styles.scss */
+#comments #comment_form {
+  padding: 6px;
+}
+/* line 206, ../../../app/stylesheets/styles.scss */
+#comments #comment_form form #comment_body {
+  width: 99.9%;
+  height: 55px;
+}
+/* line 210, ../../../app/stylesheets/styles.scss */
+#comments #comment_form form #comment_submit {
+  float: right;
+}
+/* line 215, ../../../app/stylesheets/styles.scss */
+#comments .comment {
+  padding: 7px;
+}
+/* line 218, ../../../app/stylesheets/styles.scss */
+#comments .comment .comment_footer .reply_link {
+  float: right;
+}
+/* line 224, ../../../app/stylesheets/styles.scss */
+#comments .child_comment {
+  background-color: #efefef;
+  margin-left: 35px;
+  margin-right: 10px;
+  padding: 6px;
+  border-top: 1px solid #bbbbbb;
+  border-left: 1px solid #bbbbbb;
+  border-right: 1px solid #bbbbbb;
+}
+/* line 233, ../../../app/stylesheets/styles.scss */
+#comments .first_child {
+  margin-top: -3px;
+}
+/* line 236, ../../../app/stylesheets/styles.scss */
+#comments .last_child {
+  -moz-border-radius-bottomleft: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+/*** pagination ***/
+/* line 245, ../../../app/stylesheets/styles.scss */
+.pagination {
+  padding-top: 6px;
+  float: right;
+}
+/* line 248, ../../../app/stylesheets/styles.scss */
+.pagination .disabled, .pagination em, .pagination a {
+  padding: 3px 6px 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #efefef;
+  border: 1px solid #bbbbbb;
+}
+
+/*** forms ***/
+/* line 260, ../../../app/stylesheets/styles.scss */
+#content #main .user_form h1 {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 268, ../../../app/stylesheets/styles.scss */
+.user_form {
+  position: relative;
+}
+/* line 270, ../../../app/stylesheets/styles.scss */
+.user_form form {
+  top: -13px;
+  position: relative;
+}
+/* line 274, ../../../app/stylesheets/styles.scss */
+.user_form h3 {
+  margin: 12px 16px;
+}
+/* line 277, ../../../app/stylesheets/styles.scss */
+.user_form label {
+  float: left;
+  width: 190px;
+  text-align: right;
+  padding: 2px 8px 0 0;
+}
+/* line 283, ../../../app/stylesheets/styles.scss */
+.user_form .field {
+  margin: 8px 0;
+}
+/* line 285, ../../../app/stylesheets/styles.scss */
+.user_form .field textarea {
+  width: 99.9%;
+  height: 175px;
+}
+/* line 291, ../../../app/stylesheets/styles.scss */
+.user_form .actions input {
+  margin: 4px 0 0 198px;
+}
+/* line 294, ../../../app/stylesheets/styles.scss */
+.user_form .actions #post_submit {
+  float: right;
+}
+/* line 298, ../../../app/stylesheets/styles.scss */
+.user_form p {
+  padding: 4px 16px;
+  margin: 0 0 6px 182px;
+}
+
+/*** ad space ***/
+/* line 304, ../../../app/stylesheets/styles.scss */
+#top_horiz_ad {
+  padding: 5px;
+}
+
+/* line 308, ../../../app/stylesheets/styles.scss */
+#refine_results h3 {
+  margin: 0;
+}
+/* line 312, ../../../app/stylesheets/styles.scss */
+#refine_results span {
+  float: right;
+}

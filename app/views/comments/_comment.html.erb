@@ -1,13 +1,15 @@
-<div id="comment_<%= comment.id %>" class="comment <%= "has_children" unless comment.replies.blank? %>">
+<div id="comment_<%= comment.id %>" class="comment boxed<%= " has_children" unless comment.replies.blank? %>">
   <p><%= comment.body %></p>
   <div class="comment_footer">
     <span class="reply_link"><%= link_to "reply", reply_post_comment_path(comment.post, comment) %></span>
-    <span class="comment_timestamp">On <%= comment.created_at.to_s(:short) %> by <%= comment.user.login %></span>
+    <span class="comment_timestamp">On <%= comment.created_at.to_s(:short) %> by <%= link_to comment.user.login, user_path(comment.user) %></span>
   </div>
 </div>
 <% comment.replies.each do |child| -%>
   <div class="child_comment <%= "first_child" if child.first_child? %> <%= "last_child" if child.last_child? %>">
     <p><%= child.body %></p>
-    <span class="comment_timestamp">On <%= child.created_at.to_s(:short) %> by <%= child.user.login %></span>
+    <div class="comment_footer">
+    <span class="comment_timestamp">On <%= child.created_at.to_s(:short) %> by <%= link_to child.user.login, user_path(child.user) %></span>
+    </div>
   </div>
 <% end -%>
