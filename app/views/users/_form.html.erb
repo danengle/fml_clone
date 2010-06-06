@@ -1,27 +1,20 @@
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
-
-  <div class="field">
-    <%= f.label :full_name, "Name:" %>
-    <%= f.text_field :full_name %>
-  </div>
-  <div class="field">
-    <%= f.label :login, "Login:" %>
-    <%= f.text_field :login %>
-  </div>
-  <div class="field">
-    <%= f.label :email, "Email Address:" %>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password, "Password:" %>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation, "Password Confirmation:" %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Update Profile", :class => 'awesome_button' %>
-  </div>
-<% end %>
+<div class="field">
+  <%= f.label :full_name, "Name:" %>
+  <%= f.text_field :full_name %>
+</div>
+<div class="field">
+  <%= f.label :login, "Login:" %>
+  <%= f.text_field :login %>
+</div>
+<div class="field">
+  <%= f.label :email, "Email Address:" %>
+  <%= f.text_field :email %>
+</div>
+<div class="field">
+  <%= f.label :password, "Password:" %>
+  <%= f.password_field :password %>
+</div>
+<div class="field">
+  <%= f.label :password_confirmation, "Password Confirmation:" %>
+  <%= f.password_field :password_confirmation %>
+</div>

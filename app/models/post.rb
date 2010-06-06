@@ -15,6 +15,7 @@ class Post < ActiveRecord::Base
   scope :published, lambda {
     where(["state = ? and published_at < ?", 'published', Time.now]).order('published_at desc')
   }
+  scope :published_after, lambda { |time_period| where(['state = ? and published_at > ?', 'published', time_period]) }
   scope :future_posts, lambda {
     where(["state = ? and published_at > ?", 'published', Time.now]).order('published_at desc')
   }
@@ -25,7 +26,7 @@ class Post < ActiveRecord::Base
   scope :by_category,
     lambda { |category| { :conditions => { :category_id => category.id }}}
   scope :by_period,
-    lambda { |period| { :conditons => ['published_at >= ?', ]}}
+    lambda { |period| { :conditons => ['published_at >= ?', '' ]}}
   scope :sort_by_published, order('published_at desc')
   scope :random_record, limit(1).order('rand()')
   

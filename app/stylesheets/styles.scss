@@ -73,6 +73,10 @@ body {
 			font:85% arial,sans-serif;
 			padding:2px;
 	}
+	h3 {
+		margin:12px;
+	}
+	
 }
 .full_box {
 	padding:7px;
@@ -184,10 +188,10 @@ body {
 				float:right;
 			}
 			.up_vote {
-			
+				margin-right:6px;
 			}
 			.down_vote {
-				margin-right:6px;
+				
 			}
 		}
 	}
@@ -272,10 +276,17 @@ body {
 		}
 	}
 }
+#errorExplanation {
+	margin:0 8px;
+	ul {
+		li {
+			list-style-type:disc;
+		}
+	}
+}
 .user_form {
-	position:relative;
+	padding-bottom:14px;
 	form {
-		top:-35px;
 		position:relative;
 	}
 	h3 {

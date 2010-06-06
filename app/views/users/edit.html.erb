@@ -1,4 +1,19 @@
-<div class="rounded_box box_background">
-  <h1>Editing Account</h1>
-  <%= render 'form' %>
+<div class="user_form boxed">
+  <h3>Editing Account</h3>
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+    <div id="errorExplanation">
+      <h2>Whoops! Something went wrong there...</h2>
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+    <%= render :partial => 'form', :locals => {:f => f} %>
+    <div class="actions">
+      <%= f.submit "Update Account", :class => 'awesome_button' %>
+    </div>
+  <% end %>
 </div>

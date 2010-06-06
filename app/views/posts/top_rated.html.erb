@@ -1,11 +1,22 @@
 <div id="refine_results" class="boxed full_box">
 <span>
-  Refine by <%= link_to "week", top_rated_posts_path(:time_period => 'week') %>,
-  <%= link_to "month", top_rated_posts_path(:time_period => 'month') %>,
-  <%= link_to "year", top_rated_posts_path(:time_period => 'year') %>,
-  <%= link_to "all", top_rated_posts_path(:time_period => 'all') %>
+  <%= link_to "Top of the Week", top_rated_posts_of_week_path %> |
+  <%= link_to "Top of the Month", top_rated_posts_of_month_path %> |
+  <%= link_to "Top of the Year", top_rated_posts_of_year_path %> |
+  <%= link_to "Top All Time", top_rated_posts_of_all_time_path %>
 </span>
-<h3><%= @posts.size %> Results</h3>
-
+<h3><%= @posts.total_entries %> Results</h3>
 </div>
+<% if @posts.blank? %>
+  <div class="boxed">
+    <p>There doesn't seem to be anything here...</p>
+  </div>
+<% else %>
 <%= render @posts %>
+<div id="paginate">
+  <%= will_paginate @posts %>
+  <div class="page_entries">
+    <%= page_entries_info @posts %>
+  </div>
+</div>
+<% end %>

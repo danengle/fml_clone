@@ -82,6 +82,6 @@ class PostsController < ApplicationController
     else
       Time.now - 10.years
     end
-    @posts = Post.published.where(['published_at >= ?', @time_period]).order('up_vote_counter desc')
+    @posts = Post.published_after(@time_period).order('up_vote_counter desc').paginate(:page => params[:page], :per_page => @preferences[:posts_per_page])
   end
 end

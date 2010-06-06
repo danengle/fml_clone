@@ -27,8 +27,8 @@
     <span class="created_by">By <%= post.user.blank? ? @preferences[:anonymous_display_name] : post.user.login %> in <%= link_to post.category.name, category_path(post.category) %></span>
     <span class="comment_count"><%= post.comments.count %> comments</span>
     <div class="votes">
-      <%= button_to "#{@preferences[:thumbs_up]} (#{post.up_vote_counter})", up_vote_post_path(post), {:class => 'awesome_button up_vote'} %>
       <%= button_to "#{@preferences[:thumbs_down]} (#{post.down_vote_counter})", down_vote_post_path(post), {:class => 'awesome_button down_vote'} %>
+      <%= button_to "#{@preferences[:thumbs_up]} (#{post.up_vote_counter})", up_vote_post_path(post), {:class => 'awesome_button up_vote'} %>
     </div>
   </div>
 </div>

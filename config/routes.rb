@@ -16,6 +16,11 @@ FmlClone::Application.routes.draw do |map|
   match 'account/save_password' => 'password#update', :as => 'save_password'
   match 'posts/:post_id/favorite' => 'favorites#create', :as => 'favorite_post'
   
+  match 'posts/top_rated/:time_period' => 'posts#top_rated', :as => 'top_rated_posts'
+  match 'posts/top_rated/week' => 'posts#top_rated', :as => 'top_rated_posts_of_week'
+  match 'posts/top_rated/month' => 'posts#top_rated', :as => 'top_rated_posts_of_month'
+  match 'posts/top_rated/year' => 'posts#top_rated', :as => 'top_rated_posts_of_year'
+  match 'posts/top_rated/all' => 'posts#top_rated', :as => 'top_rated_posts_of_all_time'
   resources :users do
     resources :favorites
   end

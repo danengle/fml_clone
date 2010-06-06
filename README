@@ -25,7 +25,8 @@ TODO
 	*add ability to comment
 		add reply to comments
 		follow comments
-	add voting ability
+		make admin forms uniform
+	*add voting ability
 	add search
 	*get navigation bar working
 	add password reset
@@ -53,9 +54,22 @@ TODO
 	normalize box (rounded corner, background) css
 	make admin/posts table functions/partials
 	when reply is pressed when not logged in and viewing a random post, redirection got to another random post instead of previous random post
-	
+	akismet, antispam something or other
+	get 404 pages working
 	
 	SETTINGS TO IMPLEMENT
 	anonymous name
 	flash messages for adding comments, creating posts, etc
 	submit your story text
+	
+	TRACKING ACTIONS/EVENTS
+	post is submitted
+	post is commented on
+	post has x number of views
+	post gets published
+	user signs up
+	user edits information
+	user forgets password
+	
+	model, action, user, time
+	

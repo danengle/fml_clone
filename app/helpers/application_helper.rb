@@ -1,5 +1,12 @@
 module ApplicationHelper
   
+  #TODO make this work
+  # def posts_pagination_helper(obj)
+    # content_tag(:div, :id => 'paginate' do
+      # will_paginate(obj) + content_tag(:div, page_entries_info(obj), :class => 'page_entries')
+    # end
+  # end
+  
   def current_user_actions
     content_tag(:div, 
     case @user.state
@@ -71,4 +78,6 @@ module ApplicationHelper
   def show_admin_status
   
   end
+  
+
 end
