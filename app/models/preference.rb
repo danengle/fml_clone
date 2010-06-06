@@ -1,5 +1,6 @@
 class Preference < ActiveRecord::Base
   belongs_to :preference_category
+  has_one :feature
   
   #TODO do something with the 'required' column?
   validates_uniqueness_of :key

@@ -34,7 +34,7 @@ class Admin::PreferencesController < ApplicationController
   # PUT /preferences/1.xml
   def update
     @preference = Preference.find(params[:id])
-
+    
     respond_to do |format|
       if @preference.update_attributes(params[:preference])
         flash[:notice] = 'Preference was successfully updated.'
@@ -48,12 +48,22 @@ class Admin::PreferencesController < ApplicationController
   end
   
   def bulk_update
+    logger.info { "\nparams = #{params.inspect}\n\n" }
     @preference_category = PreferenceCategory.find_by_name(params[:preference_category])
     @preferences = @preference_category.preferences.positioned.all
     @errors = []
     params[:preferences].each do |pref|
       preference = Preference.find_by_key(pref[0])
       preference.value = pref[1]
+      unless preference.feature.blank?
+        feature = Feature.find_by_preference_id(preference.id)
+        if params[:feature].blank?
+          feature.deployed = false
+        else
+          feature.deployed = params[:feature][preference.key.to_sym]
+        end
+        feature.save
+      end
       unless preference.save
         preference.errors.each_pair do |key, value|
           @errors << "#{preference.display_name} #{value[0]}"

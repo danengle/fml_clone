@@ -88,5 +88,20 @@
       <div class="tc_body">stuff happened</div>
       <div class="tc_footer">bottom</div>
     </div>
+    <div class="tc_box full_border medium_round">
+      <div class="box_header">Other Actions</div>
+      <div class="tc_body">
+        <ul>
+          <li>
+            <% if @post.short_url.blank? %>
+              <%= button_to "Get Short URL", get_short_url_admin_post_path(@post), :class => 'awesome_button' %>
+            <% else %>
+              <%= link_to @post.short_url, @post.short_url %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="tc_footer">bottom</div>
+    </div>
   </div>
 </div>

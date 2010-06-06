@@ -84,6 +84,21 @@ class Admin::PostsController < ApplicationController
     redirect_to edit_admin_post_path(@post)
   end
   
+  def get_short_url
+    @post = Post.find(params[:id])
+    logger.info { "#{@preferences[:bitly_username]}" }
+    logger.info { "#{@preferences[:bitly_api_key]}" }
+    url = URI.parse("http://api.bit.ly/v3/shorten?login=#{@preferences[:bitly_username]}&apiKey=#{@preferences[:bitly_api_key]}&longUrl=#{URI.encode(post_url(@post))}&format=txt")
+    logger.info { "#{url}" }
+    req = Net::HTTP::Get.new(url.path)
+    res = Net::HTTP.start(url.host, url.port) {|http|
+          http.request(req)
+        }
+    logger.info { "#{res.body}" }
+    @post.short_url = res.body
+    @post.save
+    redirect_to edit_admin_post_path(@post)
+  end
   # DELETE /posts/1
   # DELETE /posts/1.xml
   def destroy

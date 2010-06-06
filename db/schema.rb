@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100520013810) do
+ActiveRecord::Schema.define(:version => 20100606045758) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -42,6 +42,17 @@ ActiveRecord::Schema.define(:version => 20100520013810) do
 
   add_index "favorites", ["user_id"], :name => "index_favorites_on_user_id"
 
+  create_table "features", :force => true do |t|
+    t.integer  "preference_id"
+    t.string   "name",                             :null => false
+    t.boolean  "deployed",      :default => false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "features", ["name"], :name => "index_features_on_name"
+
   create_table "pages", :force => true do |t|
     t.string   "title",      :null => false
     t.string   "slug",       :null => false
@@ -62,6 +73,8 @@ ActiveRecord::Schema.define(:version => 20100520013810) do
     t.string   "state",             :default => "unread", :null => false
     t.integer  "up_vote_counter",   :default => 0,        :null => false
     t.integer  "down_vote_counter", :default => 0,        :null => false
+    t.boolean  "tweeted",           :default => false
+    t.string   "short_url"
   end
 
   create_table "preference_categories", :force => true do |t|

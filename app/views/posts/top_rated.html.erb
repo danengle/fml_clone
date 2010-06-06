@@ -1,11 +1,11 @@
 <div id="refine_results" class="boxed full_box">
-<span>
-  <%= link_to "Top of the Week", top_rated_posts_of_week_path %> |
-  <%= link_to "Top of the Month", top_rated_posts_of_month_path %> |
-  <%= link_to "Top of the Year", top_rated_posts_of_year_path %> |
-  <%= link_to "Top All Time", top_rated_posts_of_all_time_path %>
-</span>
-<h3><%= @posts.total_entries %> Results</h3>
+  <span>
+    <%= link_to "Top of the Week", top_rated_posts_of_week_path %> |
+    <%= link_to "Top of the Month", top_rated_posts_of_month_path %> |
+    <%= link_to "Top of the Year", top_rated_posts_of_year_path %> |
+    <%= link_to "Top All Time", top_rated_posts_of_all_time_path %>
+  </span>
+  <h3><%= @posts.total_entries %> Results</h3>
 </div>
 <% if @posts.blank? %>
   <div class="boxed">

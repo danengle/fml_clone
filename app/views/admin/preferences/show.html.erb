@@ -22,7 +22,16 @@
           <%= text_field_tag "preferences[#{pref.key}]", pref.value, :class => has_errors?(pref) ? 'fieldHasErrors' : '' %>
         <% end %>
         <% unless pref.description.blank? %>
-        <span><%= pref.description %></span>
+          <span><%= pref.description %></span>
+        <% end %>
+        <% unless pref.feature.blank? %>
+          <li class="editable">
+            <label><%= pref.feature.name %></label>
+            <%= check_box_tag "feature[#{pref.key}]", 1, pref.feature.deployed, :class => 'check_box_field' %>
+            <% unless pref.description.blank? %>
+              <span><%= pref.feature.description %></span>
+            <% end %>
+          </li>
         <% end %>
       </li>
     <% end %>

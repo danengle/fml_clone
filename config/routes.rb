@@ -21,6 +21,9 @@ FmlClone::Application.routes.draw do |map|
   match 'posts/top_rated/month' => 'posts#top_rated', :as => 'top_rated_posts_of_month'
   match 'posts/top_rated/year' => 'posts#top_rated', :as => 'top_rated_posts_of_year'
   match 'posts/top_rated/all' => 'posts#top_rated', :as => 'top_rated_posts_of_all_time'
+  
+  match 'search' => 'posts#index', :as => 'search'
+  
   resources :users do
     resources :favorites
   end
@@ -50,6 +53,7 @@ FmlClone::Application.routes.draw do |map|
       member do
         post :publish
         post :unpublish
+        post :get_short_url
       end
     end
     resources :categories

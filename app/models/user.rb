@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :comments
-  has_many :favorites, :dependent => :destroy
+  has_many :favorites, :dependent => :destroy, :order => 'created_at desc'
   
   before_destroy :stop_bad_delete
   before_update :stop_bad_admin_transistion
@@ -77,7 +77,7 @@ class User < ActiveRecord::Base
   def favorite_posts
     posts = []
     self.favorites.each{|f| posts << f.post }
-    posts = posts.sort{|a,b| b.published_at <=> a.published_at }
+    # posts = posts.sort{|a,b| b.published_at <=> a.published_at }
     posts
   end
   

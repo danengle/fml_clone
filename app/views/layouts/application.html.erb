@@ -9,6 +9,15 @@
 </head>
 <body>
   <div id="header" class="centered_box">
+    <div id="sub_header">
+      <%= form_tag search_path do |f| %>
+        <%= text_field_tag 'search', '', :class => 'small_round_left', :id => 'search_input' %>
+        <%= submit_tag 'Search', :class => 'search_button' %>
+      <% end %>
+      <% unless @preferences[:twitter_username].blank? %>
+        <%= link_to image_tag('twit1.gif'), "http://twitter.com/#{@preferences[:twitter_username]}" %>
+      <% end %>
+    </div>
     <h1><%= link_to @preferences[:site_title], root_path %></h1>
     <%= render :partial => 'shared/navigation' %>
   </div>

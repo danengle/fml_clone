@@ -42,6 +42,43 @@ body {
 			padding-left:0px; margin-left:0px;
 		}
 	}
+	#sub_header {
+		float:right;
+		margin-right:16px;
+		form {
+			float:right;
+			margin-top:4px;
+		}
+		#search_input {
+			margin:0;
+			padding:3px 0 3px 4px;
+			border:1px solid $grey;
+		}
+		a {
+			float:right;
+			margin-right:5px;
+		}
+		.search_button {
+			-moz-border-radius-topright:3px;
+			-webkit-border-top-right-radius:3px;
+			-moz-border-radius-bottomright:3px;
+			-webkit-border-bottom-right-radius:3px;
+			background:-moz-linear-gradient(center top , #F9F9F9, #E3E3E3) repeat scroll 0 0 transparent;
+			border:1px solid #BBBBBB;
+			color:#000000;
+			cursor:default;
+			font:70% arial,sans-serif;
+			margin:0;
+			outline:medium none;
+			padding:4px 6px;
+			text-align:center;
+			vertical-align:middle;
+			white-space:nowrap;
+			top:-2px;
+			position:relative;
+			right:4px;
+		}
+	}
 }
 
 
@@ -60,7 +97,7 @@ body {
 }
 /*** content boxes ***/
 .boxed {
-	margin:3px 0 5px;
+	margin:3px 0 10px;
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
 	background-color:$off-white;
@@ -74,7 +111,7 @@ body {
 			padding:2px;
 	}
 	h3 {
-		margin:12px;
+		margin:8px;
 	}
 	
 }
@@ -86,7 +123,7 @@ body {
 	width:18%;
 	float:left;
 	.side_box {
-		margin:3px 0 5px;
+		margin:3px 0 10px;
 		padding:5px;
 	}
 	ul {
@@ -278,6 +315,10 @@ body {
 }
 #errorExplanation {
 	margin:0 8px;
+	p {
+		margin:4px;
+		padding:4px 0;
+	}
 	ul {
 		li {
 			list-style-type:disc;

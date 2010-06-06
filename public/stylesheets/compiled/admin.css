@@ -434,14 +434,19 @@ table .actions form input {
   width: 35.5%;
   height: 125px;
 }
+/* line 354, ../../../app/stylesheets/admin.scss */
+.editable .check_box_field {
+  float: left;
+  width: 14px;
+}
 
-/* line 355, ../../../app/stylesheets/admin.scss */
+/* line 359, ../../../app/stylesheets/admin.scss */
 .form_button {
   width: 140px;
   margin-left: 27%;
 }
 
-/* line 359, ../../../app/stylesheets/admin.scss */
+/* line 363, ../../../app/stylesheets/admin.scss */
 #footer {
   clear: both;
 }

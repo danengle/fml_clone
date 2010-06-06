@@ -25,8 +25,6 @@ class Post < ActiveRecord::Base
     where({:state => ['viewed', 'published', 'denied']}).order('created_at desc')
   scope :by_category,
     lambda { |category| { :conditions => { :category_id => category.id }}}
-  scope :by_period,
-    lambda { |period| { :conditons => ['published_at >= ?', '' ]}}
   scope :sort_by_published, order('published_at desc')
   scope :random_record, limit(1).order('rand()')
   
@@ -115,5 +113,15 @@ class Post < ActiveRecord::Base
     end
     self.published_at = date
     self.publish!
+  end
+  
+  def tweet
+    
+  end
+  
+  def get_short_url(url)
+    logger.info { "user:#{@preferences[:bitly_username]}, key:#{@preferences[:bitly_api_key]}" }
+    url = Net::HTTP::Get.new("http://api.bit.ly/v3/shorten?login=#{@preferences[:bitly_username]}&apiKey=#{@preferences[:bitly_api_key]}&longUrl=#{URI.encode(url)}&format=txt")
+    self.short_url = url
   end
 end

@@ -65,6 +65,7 @@ class PostsController < ApplicationController
   end
   
   #TODO fix this random post generator
+  # not sure what's wrong with it anymore 6/5/10
   def random
     @post = Post.published.random_record.first #where(['id >= ?', rand(Post.count)]).first
     @comment = @post.comments.new
