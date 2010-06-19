@@ -38,5 +38,7 @@ module FmlClone
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters << :password
+    
+    config.secret_token = "kljsdf09lskdfjLDJFOi209flxvlkhlakjhwgh2sdvkvjklsdlfh20208HOH*ElojkhskHIEOPSJdhf"
   end
 end

@@ -41,8 +41,8 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: fml_clone_production
+  database: fml_clone_development2
   pool: 5
   username: root
-  password: 
+  password:
   socket: /tmp/mysql.sock

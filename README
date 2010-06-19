@@ -55,7 +55,7 @@ TODO
 	make admin/posts table functions/partials
 	when reply is pressed when not logged in and viewing a random post, redirection got to another random post instead of previous random post
 	akismet, antispam something or other
-	get 404 pages working
+	get 404 pages working - wtf! why won't these work!
 	
 	SETTINGS TO IMPLEMENT
 	anonymous name

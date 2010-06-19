@@ -7,4 +7,8 @@ class Page < ActiveRecord::Base
   def generate_slug
     self.slug = self.title.to_slug
   end
+  
+  def to_param
+    slug
+  end
 end

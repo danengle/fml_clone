@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    @category = Category.find(params[:id])
+    @category = Category.find_by_slug(params[:id])
     @posts = Post.published.by_category(@category).sort_by_published.paginate(:page => params[:page])
     respond_with(@posts)
   end

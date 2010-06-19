@@ -41,9 +41,12 @@ class PostsController < ApplicationController
 
   #TODO move up_vote and down_vote to votes_controller
   def up_vote
+    logger.info { "****: '#{session[:session_id]}'" }
     @post = Post.find(params[:id])
     vote = @post.votes.new(:up_vote => true)
     vote.user = current_user if logged_in?
+    vote.session_id = session[:session_id]
+    
     if vote.save
       flash[:notice] = "Thanks for voting!"
     else
@@ -56,6 +59,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     vote = @post.votes.new(:up_vote => false)
     vote.user = current_user if logged_in?
+    vote.session_id = session[:session_id]
     if vote.save
       flash[:notice] = "Thanks for voting!"
     else

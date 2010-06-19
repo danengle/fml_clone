@@ -18,7 +18,7 @@ class Admin::CategoriesController < ApplicationController
 
   # GET /categories/1/edit
   def edit
-    @category = Category.find(params[:id])
+    @category = Category.find_by_slug(params[:id])
   end
 
   # POST /categories
@@ -40,7 +40,7 @@ class Admin::CategoriesController < ApplicationController
   # PUT /categories/1
   # PUT /categories/1.xml
   def update
-    @category = Category.find(params[:id])
+    @category = Category.find_by_slug(params[:id])
 
     respond_to do |format|
       if @category.update_attributes(params[:category])
@@ -57,7 +57,7 @@ class Admin::CategoriesController < ApplicationController
   # DELETE /categories/1.xml
   # TODO get destroy link in admin/categories/index working
   def destroy
-    @category = Category.find(params[:id])
+    @category = Category.find_by_slug(params[:id])
 
     if @category.can_destroy?
       @category.destroy

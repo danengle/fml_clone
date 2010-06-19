@@ -79,4 +79,49 @@ class ApplicationController < ActionController::Base
       @preferences[p.key.to_sym] = p.value
     end
   end
+  
+=begin   
+   # def render_optional_error_file(status_code)
+     # status = interpret_status(status_code)
+     # render :template => "errors/#{status[0,3]}.html.erb", :status => status, :layout => 'application.html.erb'
+   # end
+  # unless ActionController::Base.consider_all_requests_local
+    # rescue_from Exception,                            :with => :render_error
+    # rescue_from ActiveRecord::RecordNotFound,         :with => :render_not_found
+    # rescue_from ActionController::RoutingError,       :with => :render_not_found
+    # rescue_from ActionController::UnknownController,  :with => :render_not_found
+    # rescue_from ActionController::UnknownAction,      :with => :render_not_found
+  # end
+  
+  def local_request?
+    false
+  end
+  protected
+  
+  def render_error(exception)
+    render :template => "errors/500", :status => 404
+  end
+  
+  def render_not_found(exception)
+    render :template => "errors/404", :status => 404
+  end
+=end
+
+# rescue_from ActiveRecord::RoutingError, :with => :render_record_not_found
+
+# Catch record not found for Active Record
+# def render_record_not_found
+  # render :template => "errors/404", :layout => 'application', :status => 404
+# end
+
+# Catches any missing methods and calls the general render_missing_page method
+# def method_missing(*args)
+  # render_missing_page # calls my common 404 rendering method
+# end
+
+# General method to render a 404
+# def render_missing_page
+  # render :template => "errors/404", :layout => 'application', :status => 404
+# end
+
 end

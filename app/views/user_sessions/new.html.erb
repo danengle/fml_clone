@@ -1,16 +1,19 @@
-<h1>Login</h1>
- 
-<% form_for @user_session, :url => user_session_path do |f| %>
-  <%= f.error_messages :header_message => "Oops! You must have entered your username or password incorrectly." %>
-  <div class="form_div">
-  <%= f.label :login %><br />
-  <%= f.text_field :login %>
-  </div>
-  <div class="form_div">
-  <%= f.label :password %><br />
-  <%= f.password_field :password %>
-  </div>
-  <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
-  <br />
-  <%= f.submit "Login" %>
-<% end %>
+<div class="boxed full_box user_form">
+  <h1>Login</h1>
+  <%= form_for @user_session, :url => user_session_path do |f| %>
+    <%= f.error_messages :header_message => "Oops! You must have entered your username or password incorrectly." %>
+    <div class="field">
+      <%= f.label :login %>
+      <%= f.text_field :login %>
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <%= f.check_box :remember_me %><%= f.label :remember_me, "Remember Me?" %><br />
+    <br />
+    <div class="actions">
+      <%= f.submit "Login", :class => 'awesome_button' %>
+    </div>
+  <% end %>
+</div>

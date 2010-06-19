@@ -9,11 +9,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      logger.info { "before register!" }
       @user.register!
       @user.reset_perishable_token!
       UserMailer.activation_email(@user).deliver
-      logger.info { "before flash!" }
       flash[:notice] = "Account registered! Please check your email to activate your account and then you can login."
       redirect_to root_path
     else
@@ -22,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_id(params[:id]) || current_user
   end
 
   def edit

@@ -72,4 +72,5 @@ FmlClone::Application.routes.draw do |map|
     end
     resources :pages
   end
+  
 end

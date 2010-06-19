@@ -78,6 +78,5 @@ module ApplicationHelper
   def show_admin_status
   
   end
-  
 
 end

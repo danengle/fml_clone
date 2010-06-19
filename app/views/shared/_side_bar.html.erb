@@ -13,7 +13,7 @@
       </ul>
     <% else %>
       <h5>Login</h5>
-      <% form_for UserSession.new, :url => user_session_path do |f| %>
+      <%= form_for UserSession.new, :url => user_session_path do |f| %>
         <%= f.error_messages %>
         <div>
           <%= f.label :login, "Username/Email" %><br />

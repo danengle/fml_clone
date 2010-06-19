@@ -5,6 +5,7 @@ class VotesController < ApplicationController
   # POST /votes
   # POST /votes.xml
   def create
+    logger.info { "*** #{session_id}" }
     @post = Post.find(params[:post_id])
     @vote = post.votes.new(params[:vote])
     @vote.user = current_user if logged_in?

@@ -360,66 +360,67 @@ body {
 /* line 330, ../../../app/stylesheets/styles.scss */
 .user_form form {
   position: relative;
+  clear: both;
 }
-/* line 333, ../../../app/stylesheets/styles.scss */
+/* line 334, ../../../app/stylesheets/styles.scss */
 .user_form h3 {
   margin: 12px 16px;
 }
-/* line 336, ../../../app/stylesheets/styles.scss */
+/* line 337, ../../../app/stylesheets/styles.scss */
 .user_form label {
   float: left;
   width: 190px;
   text-align: right;
   padding: 2px 8px 0 0;
 }
-/* line 342, ../../../app/stylesheets/styles.scss */
+/* line 343, ../../../app/stylesheets/styles.scss */
 .user_form .field {
   margin: 8px 0;
 }
-/* line 344, ../../../app/stylesheets/styles.scss */
+/* line 345, ../../../app/stylesheets/styles.scss */
 .user_form .field textarea {
   width: 99.9%;
   height: 175px;
 }
-/* line 350, ../../../app/stylesheets/styles.scss */
+/* line 351, ../../../app/stylesheets/styles.scss */
 .user_form .actions input {
   margin: 4px 0 0 198px;
 }
-/* line 353, ../../../app/stylesheets/styles.scss */
+/* line 354, ../../../app/stylesheets/styles.scss */
 .user_form .actions #post_submit {
   float: right;
 }
-/* line 357, ../../../app/stylesheets/styles.scss */
+/* line 358, ../../../app/stylesheets/styles.scss */
 .user_form p {
   padding: 4px 16px;
   margin: 0 0 6px 182px;
 }
 
-/* line 363, ../../../app/stylesheets/styles.scss */
+/* line 364, ../../../app/stylesheets/styles.scss */
 #new_post_box #submit_post_text {
   clear: both;
 }
-/* line 366, ../../../app/stylesheets/styles.scss */
+/* line 367, ../../../app/stylesheets/styles.scss */
 #new_post_box #submit_post_text ul li {
   list-style-type: disc;
 }
-/* line 369, ../../../app/stylesheets/styles.scss */
+/* line 370, ../../../app/stylesheets/styles.scss */
 #new_post_box #submit_post_text ul .margin-right {
   margin-right: 195px;
 }
 
 /*** ad space ***/
-/* line 376, ../../../app/stylesheets/styles.scss */
+/* line 377, ../../../app/stylesheets/styles.scss */
 #top_horiz_ad {
   padding: 5px;
 }
 
 /*** Misc stuff ***/
-/* line 381, ../../../app/stylesheets/styles.scss */
+/* line 382, ../../../app/stylesheets/styles.scss */
 #refine_results h3 {
   margin: 0;
 }
-/* line 385, ../../../app/stylesheets/styles.scss */
+/* line 386, ../../../app/stylesheets/styles.scss */
 #refine_results span {
   float: right;
 }
