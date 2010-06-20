@@ -38,7 +38,7 @@ test:
   socket: /tmp/mysql.sock
 
 production:
-  hostname: mysql.danengle.us
+  host: mysql.danengle.us
   port: 3306
   adapter: mysql
   encoding: utf8
