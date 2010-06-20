@@ -38,11 +38,11 @@ test:
   socket: /tmp/mysql.sock
 
 production:
+  hostname: mysql.danengle.us
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: fml_clone_development2
+  database: fml_production
   pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+  username: fml_clone
+  password: qwerQWER23$
