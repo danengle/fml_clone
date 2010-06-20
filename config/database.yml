@@ -39,10 +39,10 @@ test:
 
 production:
   hostname: mysql.danengle.us
+  port: 3306
   adapter: mysql
   encoding: utf8
-  reconnect: false
   database: fml_production
-  pool: 5
   username: fml_clone
   password: qwerQWER23$
+  socket: 
