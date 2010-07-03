@@ -86,28 +86,16 @@ class Admin::PostsController < ApplicationController
   
   def get_short_url
     @post = Post.find(params[:id])
-    #logger.info { "#{@preferences[:bitly_username]}" }
-    #logger.info { "#{@preferences[:bitly_api_key]}" }
-    # "http://api.bit.ly/v2/validate?x_login=developingdan&x_apiKey=R_a886861c1945dcefe627a22abd737b6f"
-    url = URI.parse("http://api.bit.ly/v3/shorten?login=#{@preferences[:bitly_username]}&apiKey=#{@preferences[:bitly_api_key]}ss&longUrl=#{URI.encode(post_url(@post))}&format=json")
-    # url = URI.parse("http://api.bit.ly/v3/shorten?login=developingdan&apiKey=R_a886861c1945dcefe627a22abd737b6f&longUrl=#{URI.encode(post_url(@post))}&format=json")
-    logger.info { "url: #{url}" }
-    #logger.info { "url: #{url.path}" }
-    # req = Net::HTTP::Get.new(url.path)
-    # logger.info { "req: #{}" }
-    # res = Net::HTTP.start(url.host, url.port) {|http| logger.info { "req: #{http.request(req)}"};http.request(req) }
+    url = URI.parse("http://api.bit.ly/v3/shorten?login=#{@preferences[:bitly_username]}&apiKey=#{@preferences[:bitly_api_key]}&longUrl=#{URI.encode(post_url(@post))}&format=json")
     res = Net::HTTP.get url
     res = ActiveSupport::JSON.decode(res)
-    # logger.info { "raw_res: #{res}" }
-    logger.info { "res: #{res}" }
-    logger.info { "status_code: #{res["status_code"]}" }
     if res["status_code"] == 200
       @post.short_url = res["data"]["url"]
       @post.save
       flash[:notice] = "Successfully retrieved bit.ly shortened url."
     else
       flash[:error] = "Unable to get shortened url from bit.ly. Reason: #{res["status_txt"]}"
-      logger.info { "couldn't retrieve short url with \n#{url}" }
+      logger.info { "Bit.ly error: #{res["status_txt"]}" }
     end
     redirect_to edit_admin_post_path(@post)
   end
