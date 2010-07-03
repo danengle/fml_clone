@@ -53,7 +53,10 @@ FmlClone::Application.routes.draw do |map|
       member do
         post :publish
         post :unpublish
+        post :deny
+        post :undeny
         post :get_short_url
+        post :delete_short_url
       end
     end
     resources :categories

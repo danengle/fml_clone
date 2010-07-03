@@ -253,6 +253,14 @@ a:hover, a:active, a:focus { color:$orange; }
 				}
 			}
 		}
+		#remove_shortened_url {
+			border:none;
+			background: url("/images/icons/decline.png") no-repeat center center;
+			text-indent:-9999px;
+			float:right;
+			height:16px;
+			width:16px;
+		}
 	}
 	.tc_footer {
 		padding:6px;

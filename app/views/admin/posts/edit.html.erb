@@ -60,25 +60,35 @@
       <div class="tc_body">
         <ul>
           <li>Status: <%= @post.scheduled_to_be_published? ? "Publishing on #{@post.published_at.strftime("%b %e, %R")}" : @post.state %></li>
-          <% if @post.currently_published? %>
-            <li>Published On: <%= @post.published? ? @post.published_at.to_s(:long) : "Not Published" %></li>
-          <% end %>
-          <% if @post.currently_published? || @post.scheduled_to_be_published? %>
-            <li id="publish_form"><%= button_to "Unpublish Post", unpublish_admin_post_path(@post), :class => 'awesome_button' %></li>
-          <% else %>
-            <li id="publish_form">
-              <%= form_tag publish_admin_post_path(@post) do %>
-                <label>Publish at:</label><br />
-                <%= select_month Date.today %>
-                <%= text_field_tag 'date[date]', Date.today.day %>
-                <%= text_field_tag 'date[year]', Date.today.year %>@
-                <%= text_field_tag 'date[hour]', Time.now.hour %>:
-                <%= text_field_tag 'date[minute]', Time.now.min %><br />
-                <%= submit_tag "Publish Post", :class => 'awesome_button' %>
-              <% end %>
-              <%= button_to "Spam", "#", :class => 'awesome_button' %>
-              <%= button_to "Deny", "#", :class => 'awesome_button' %>
+          <% if @post.denied? %>
+            <li>This post has been denied</li>
+            <li>
+              <%= button_to "Remove Denied Status", undeny_admin_post_path(@post), :class => 'awesome_button' %>
+              <%= button_to "Delete", admin_post_path(@post), :method => :delete, :class => 'awesome_button' %>
             </li>
+          <% else %>
+          <li>
+            <% if @post.currently_published? %>
+              Published On: <%= @post.published? ? @post.published_at.to_s(:long) : "Not Published" %>
+            <% end %>
+          </li>
+            <% if @post.currently_published? || @post.scheduled_to_be_published? %>
+              <li id="publish_form"><%= button_to "Unpublish Post", unpublish_admin_post_path(@post), :class => 'awesome_button' %></li>
+            <% else %>
+              <li id="publish_form">
+                <%= form_tag publish_admin_post_path(@post) do %>
+                  <label>Publish at:</label><br />
+                  <%= select_month Date.today %>
+                  <%= text_field_tag 'date[date]', Date.today.day %>
+                  <%= text_field_tag 'date[year]', Date.today.year %>@
+                  <%= text_field_tag 'date[hour]', Time.now.hour %>:
+                  <%= text_field_tag 'date[minute]', Time.now.min %><br />
+                  <%= submit_tag "Publish Post", :class => 'awesome_button' %>
+                <% end %>
+                <%= button_to "Spam", "#", :class => 'awesome_button' %>
+                <%= button_to "Deny", deny_admin_post_path(@post), :class => 'awesome_button' %>
+              </li>
+            <% end %>
           <% end %>
         </ul>
       </div>
@@ -96,7 +106,7 @@
             <% if @post.short_url.blank? %>
               <%= button_to "Get Short URL", get_short_url_admin_post_path(@post), :class => 'awesome_button' %>
             <% else %>
-              <%= link_to @post.short_url, @post.short_url %>
+              <%= button_to "Clear url", delete_short_url_admin_post_path(@post), :confirm => "Are you sure you want to remove this posts shortened url?", :id => 'remove_shortened_url' %>Shortened url: <%= link_to @post.short_url, @post.short_url %>
             <% end %>
           </li>
         </ul>

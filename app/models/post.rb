@@ -32,7 +32,7 @@ class Post < ActiveRecord::Base
   aasm_initial_state :unread
   aasm_state :unread
   aasm_state :viewed
-  aasm_state :published
+  aasm_state :published, :exit => :remove_published_at
   #TODO save the datetime when a post is denied/unpublished. Make a unpublish event?
   aasm_state :denied, :enter => :clear_published_at
   aasm_state :deleted
@@ -42,11 +42,19 @@ class Post < ActiveRecord::Base
   end
   
   aasm_event :publish do
-    transitions :to => :published, :from => [:viewed, :denied], :guard => Proc.new{|post| !post.published_at.blank? }
+    transitions :to => :published, :from => :viewed, :guard => Proc.new{|post| post.published_at.blank? }
+  end
+  
+  aasm_event :unpublish do
+    transitions :from => :published, :to => :viewed, :guard => Proc.new{|post| !post.published_at.blank? }
   end
   
   aasm_event :deny do
     transitions :to => :denied, :from => [:viewed, :published]
+  end
+  
+  aasm_event :undeny do
+    transitions :to => :viewed, :from => :denied
   end
   
   aasm_event :delete do
@@ -61,6 +69,10 @@ class Post < ActiveRecord::Base
     self.published? && self.published_at <= Time.now
   end
 
+  def remove_published_at
+    self.published_at = nil
+  end
+  
   def display_name
     user.blank? ? @preferences[:anonymous_display_name] : user.login
   end

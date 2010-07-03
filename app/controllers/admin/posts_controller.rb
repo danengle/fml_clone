@@ -79,8 +79,22 @@ class Admin::PostsController < ApplicationController
   
   def unpublish
     @post = Post.find(params[:id])
-    @post.deny!
+    @post.unpublish!
     flash[:notice] = "Post #{@post.id} has been unpublished."
+    redirect_to edit_admin_post_path(@post)
+  end
+  
+  def deny
+    @post = Post.find(params[:id])
+    @post.deny!
+    flash[:notice] = "Post #{@post.id} has been denied."
+    redirect_to edit_admin_post_path(@post)
+  end
+  
+  def undeny
+    @post = Post.find(params[:id])
+    @post.undeny!
+    flash[:notice] = "Post #{@post.id} is no longer denied."
     redirect_to edit_admin_post_path(@post)
   end
   
@@ -100,15 +114,18 @@ class Admin::PostsController < ApplicationController
     redirect_to edit_admin_post_path(@post)
   end
   
-  # DELETE /posts/1
-  # DELETE /posts/1.xml
+  def delete_short_url
+    @post = Post.find(params[:id])
+    @post.short_url = nil
+    @post.save
+    flash[:notice] = "Successfully deleted shortened url for this post."
+    redirect_to edit_admin_post_path(@post)
+  end
+  # DELETE /admin/posts/1
   def destroy
     @post = Post.find(params[:id])
     @post.delete!
     flash[:notice] = "Post deleted."
-    respond_to do |format|
-      format.html { redirect_to(admin_posts_url) }
-      format.xml  { head :ok }
-    end
+    format.html { redirect_to(admin_posts_url) }
   end
 end
