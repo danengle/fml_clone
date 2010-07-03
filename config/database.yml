@@ -44,4 +44,4 @@ production:
   database: fml_production
   username: rails
   password: kE84h24slj
-  socket: /tmp/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
