@@ -195,6 +195,39 @@ body {
 		.social_links {
 			float:right;
 			padding:0;
+			img {
+				display:block;
+				float:right;
+				height:17px;
+				width:17px;
+			}
+			a {
+				display:block;
+				float:right;
+				height:17px;
+				width:17px;
+				span {
+					display:none;
+				}
+			}
+			.share_twitter {
+				background: url("/images/tw0.png") no-repeat center center;
+			}
+			.share_twitter:hover {
+				background: url("/images/tw1.png") no-repeat center center;
+			}
+			.share_facebook {
+				background: url("/images/fb0.png") no-repeat center center;
+			}
+			.share_facebook:hover {
+				background: url("/images/fb1.png") no-repeat center center;
+			}
+			.favorite_post {
+				background: url("/images/fav0.png") no-repeat center center;
+			}
+			.favorite_post:hover {
+				background: url("/images/fav1.png") no-repeat center center;
+			}
 		}
 		.published_at {
 			float:left;

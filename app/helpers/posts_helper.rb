@@ -13,7 +13,7 @@ module PostsHelper
   
   #TODO find out why links are alright on Safari but not Firefox
   def tweet_this_link(post)
-    "http://twitter.com/?status=#{URI.escape("RT @#{@preferences[:twitter_username]} #{truncate(post.body, :length => 40)}", Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))}"
+    "http://twitter.com/?status=#{URI.escape("RT @#{@preferences[:twitter_username]} #{truncate(post.body, :length => 40)} #{post.short_url}", Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))}"
   end
   
   def facebook_this_link(post)

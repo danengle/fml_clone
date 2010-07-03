@@ -1,18 +1,13 @@
 <div id="post_<%= post.id %>" class="post boxed">
   <div class="boxed_header round_top">
     <div class="social_links">
-      <span class="share_twitter">
-        <%= link_to image_tag('tw0.png'), tweet_this_link(post) %>
-      </span>
-      <span class="share_facebook">
-        <%= link_to image_tag('fb0.png'), facebook_this_link(post) %>
-      </span>
-      <span class="favorite_post">
         <% if logged_in? && current_user.favorite?(post) %>
           <%= image_tag('fav1.png') %>
         <% else %>
-          <%= link_to image_tag('fav0.png'), favorite_post_path(post) %>
+          <%= link_to raw("<span>Favorite Post</span>"), favorite_post_path(post), :class => 'favorite_post' %>
         <% end %>
+        <%= link_to raw("<span>Share on Facebook</span>"), facebook_this_link(post), :class => 'share_facebook' %>
+        <%= link_to raw("<span>Share on twitter</span>"), tweet_this_link(post), :class => 'share_twitter' %>
       </span>
     </div>
     <div class="published_at">
