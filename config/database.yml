@@ -38,12 +38,10 @@ test:
   socket: /tmp/mysql.sock
 
 production:
-  host: mysql.danengle.us
-  hostname: mysql.danengle.us
   port: 3306
   adapter: mysql
   encoding: utf8
   database: fml_production
-  username: fml_clone
-  password: qwerQWER23$
-  socket: 
+  username: rails
+  password: kE84h24slj
+  socket: /tmp/mysql.sock
