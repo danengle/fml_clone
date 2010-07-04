@@ -10,8 +10,8 @@
 <body>
   <div id="header" class="centered_box">
     <div id="sub_header">
-      <%= form_tag search_path do |f| %>
-        <%= text_field_tag 'search', '', :class => 'small_round_left', :id => 'search_input' %>
+      <%= form_tag search_path, :method => :get do |f| %>
+        <%= text_field_tag 'q', '', :class => 'small_round_left', :id => 'search_input' %>
         <%= submit_tag 'Search', :class => 'search_button' %>
       <% end %>
       <% unless @preferences[:twitter_username].blank? %>
@@ -45,7 +45,7 @@
     </ul>
     <p>copyright 2009 Dan Engle, whoa!</p>
   </div>
-  <% if RAILS_ENV == 'production' && !@preferences[:analytics_script].blank? %>
+  <% if Rails.env == 'production' && !@preferences[:analytics_script].blank? %>
     <%= raw(@preferences[:analytics_script]) %>
   <% end %>
 </body>

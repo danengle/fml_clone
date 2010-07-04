@@ -3,6 +3,7 @@ FmlClone::Application.routes.draw do |map|
   root :to => "posts#index"
   resource :user_session
   resources :pages
+  match 'search' => 'search#index', :as => 'search'
   match 'logout' => 'user_sessions#destroy', :as => 'logout'
   match 'login' => 'user_sessions#new', :as => 'login'
   resource :account, :controller => "users"

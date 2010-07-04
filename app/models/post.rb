@@ -11,6 +11,13 @@ class Post < ActiveRecord::Base
   has_many :votes, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
   
+  define_index do
+    indexes body
+    indexes category(:name), :as => :category, :sortable => true
+    indexes user(:login), :as => :author, :sortable => true
+    has category_id, user_id, created_at, updated_at
+    where "published_at is not null and published_at < NOW()"
+  end
   # FIXME for some reason this returns posts with a publish date on same day but with time in future
   scope :published, lambda {
     where(["state = ? and published_at < ?", 'published', Time.now]).order('published_at desc')
