@@ -45,6 +45,8 @@
     </ul>
     <p>copyright 2009 Dan Engle, whoa!</p>
   </div>
-
+  <% if RAILS_ENV == 'production' && !@preferences[:analytics_script].blank? %>
+    <%= @preferences[:analytics_script] %>
+  <% end %>
 </body>
 </html>
