@@ -291,6 +291,7 @@ a:hover, a:active, a:focus {
 /* line 226, ../../../app/stylesheets/admin.scss */
 .tc_box {
   margin: 0 0 12px 0;
+  font-size: .9em;
 }
 /* line 229, ../../../app/stylesheets/admin.scss */
 .tc_box .tc_body {
@@ -300,30 +301,31 @@ a:hover, a:active, a:focus {
 /* line 233, ../../../app/stylesheets/admin.scss */
 .tc_box .tc_body ul li {
   list-style-type: none;
+  margin-left: 0;
 }
-/* line 235, ../../../app/stylesheets/admin.scss */
+/* line 236, ../../../app/stylesheets/admin.scss */
 .tc_box .tc_body ul li input {
   float: left;
   margin-right: 3px;
 }
-/* line 241, ../../../app/stylesheets/admin.scss */
+/* line 242, ../../../app/stylesheets/admin.scss */
 .tc_box .tc_body ul #publish_form input {
   float: none;
 }
-/* line 244, ../../../app/stylesheets/admin.scss */
+/* line 245, ../../../app/stylesheets/admin.scss */
 .tc_box .tc_body ul #publish_form .awesome_button {
   float: right;
   margin-top: 5px;
 }
-/* line 248, ../../../app/stylesheets/admin.scss */
+/* line 249, ../../../app/stylesheets/admin.scss */
 .tc_box .tc_body ul #publish_form #date_date, .tc_box .tc_body ul #publish_form #date_hour, .tc_box .tc_body ul #publish_form #date_minute {
   width: 1.4em;
 }
-/* line 251, ../../../app/stylesheets/admin.scss */
+/* line 252, ../../../app/stylesheets/admin.scss */
 .tc_box .tc_body ul #publish_form #date_year {
   width: 2.8em;
 }
-/* line 256, ../../../app/stylesheets/admin.scss */
+/* line 257, ../../../app/stylesheets/admin.scss */
 .tc_box .tc_body #remove_shortened_url {
   border: none;
   background: url("/images/icons/decline.png") no-repeat center center;
@@ -332,17 +334,22 @@ a:hover, a:active, a:focus {
   height: 16px;
   width: 16px;
 }
-/* line 265, ../../../app/stylesheets/admin.scss */
+/* line 266, ../../../app/stylesheets/admin.scss */
 .tc_box .tc_footer {
   padding: 6px;
 }
+/* line 271, ../../../app/stylesheets/admin.scss */
+.tc_box #activity_summary ul li {
+  list-style-type: disc;
+  margin-left: 14px;
+}
 
-/* line 270, ../../../app/stylesheets/admin.scss */
+/* line 279, ../../../app/stylesheets/admin.scss */
 table {
   width: 100%;
   border: 1px solid #bbbbbb;
 }
-/* line 273, ../../../app/stylesheets/admin.scss */
+/* line 282, ../../../app/stylesheets/admin.scss */
 table caption {
   margin-left: 8px;
   background-color: #bbbbbb;
@@ -350,62 +357,79 @@ table caption {
   width: 16%;
   text-align: center;
 }
-/* line 281, ../../../app/stylesheets/admin.scss */
+/* line 290, ../../../app/stylesheets/admin.scss */
 table tr th {
   background-color: #e4e4e4;
   color: #333333;
   padding: 5px 0;
 }
-/* line 286, ../../../app/stylesheets/admin.scss */
+/* line 295, ../../../app/stylesheets/admin.scss */
 table tr td {
   padding-top: 4px;
   vertical-align: top;
   padding-bottom: 2px;
 }
-/* line 291, ../../../app/stylesheets/admin.scss */
+/* line 300, ../../../app/stylesheets/admin.scss */
 table tr .first_column {
   padding-left: 5px;
 }
-/* line 296, ../../../app/stylesheets/admin.scss */
+/* line 305, ../../../app/stylesheets/admin.scss */
 table .border_bottom td {
   border-bottom: 1px solid #e4e4e4;
 }
-/* line 300, ../../../app/stylesheets/admin.scss */
+/* line 309, ../../../app/stylesheets/admin.scss */
 table .odd {
   background-color: #f9f9f9;
 }
-/* line 303, ../../../app/stylesheets/admin.scss */
+/* line 312, ../../../app/stylesheets/admin.scss */
 table .even {
   background-color: white;
 }
-/* line 306, ../../../app/stylesheets/admin.scss */
+/* line 315, ../../../app/stylesheets/admin.scss */
 table .pagination_links {
   text-align: center;
   background-color: #e4e4e4;
   height: 26px;
 }
-/* line 311, ../../../app/stylesheets/admin.scss */
+/* line 320, ../../../app/stylesheets/admin.scss */
 table .pagination_links .pagination_info {
   float: right;
   padding-right: 12px;
   padding-top: 2px;
 }
-/* line 317, ../../../app/stylesheets/admin.scss */
+/* line 326, ../../../app/stylesheets/admin.scss */
 table .actions {
   font-size: .9em;
   margin-top: 2px;
 }
-/* line 320, ../../../app/stylesheets/admin.scss */
+/* line 329, ../../../app/stylesheets/admin.scss */
 table .actions form {
   float: left;
   margin-right: 6px;
 }
-/* line 323, ../../../app/stylesheets/admin.scss */
+/* line 332, ../../../app/stylesheets/admin.scss */
 table .actions form input {
   padding: 1px 2px;
 }
+/* line 337, ../../../app/stylesheets/admin.scss */
+table .child_column {
+  background-color: #f9f9f4;
+}
+/* line 339, ../../../app/stylesheets/admin.scss */
+table .child_column .first_column_child {
+  padding-left: 6px;
+}
+/* line 341, ../../../app/stylesheets/admin.scss */
+table .child_column .first_column_child .wtf_div {
+  padding-left: 22px;
+  background: url("/images/icons/up_arrow.png") no-repeat center left;
+}
+/* line 346, ../../../app/stylesheets/admin.scss */
+table .child_column td {
+  border-bottom: 1px solid #e4e4e4;
+}
 
-/* line 330, ../../../app/stylesheets/admin.scss */
+/* line 352, ../../../app/stylesheets/admin.scss */
 .pagination a, .pagination span, .pagination em {
   padding: 3px 6px;
   border: 1px solid #BBBBBB;
@@ -415,18 +439,18 @@ table .actions form input {
   text-decoration: none;
 }
 
-/* line 340, ../../../app/stylesheets/admin.scss */
+/* line 362, ../../../app/stylesheets/admin.scss */
 #preferences span {
   font-size: 11px;
   font-style: italic;
   color: #777;
 }
 
-/* line 346, ../../../app/stylesheets/admin.scss */
+/* line 368, ../../../app/stylesheets/admin.scss */
 .editable {
   margin: 10px 0;
 }
-/* line 348, ../../../app/stylesheets/admin.scss */
+/* line 370, ../../../app/stylesheets/admin.scss */
 .editable label {
   width: 25%;
   display: block;
@@ -434,28 +458,28 @@ table .actions form input {
   text-align: right;
   padding: 4px 16px 0 0;
 }
-/* line 355, ../../../app/stylesheets/admin.scss */
+/* line 377, ../../../app/stylesheets/admin.scss */
 .editable input {
   width: 35%;
 }
-/* line 358, ../../../app/stylesheets/admin.scss */
+/* line 380, ../../../app/stylesheets/admin.scss */
 .editable textarea {
   width: 35.5%;
   height: 125px;
 }
-/* line 362, ../../../app/stylesheets/admin.scss */
+/* line 384, ../../../app/stylesheets/admin.scss */
 .editable .check_box_field {
   float: left;
   width: 14px;
 }
 
-/* line 367, ../../../app/stylesheets/admin.scss */
+/* line 389, ../../../app/stylesheets/admin.scss */
 .form_button {
   width: 140px;
   margin-left: 27%;
 }
 
-/* line 371, ../../../app/stylesheets/admin.scss */
+/* line 393, ../../../app/stylesheets/admin.scss */
 #footer {
   clear: both;
 }

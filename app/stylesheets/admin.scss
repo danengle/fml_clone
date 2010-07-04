@@ -225,13 +225,14 @@ a:hover, a:active, a:focus { color:$orange; }
 }
 .tc_box {
 	margin:0 0 12px 0;
-	
+	font-size:.9em;
 	.tc_body {
 		padding:6px;
 		overflow:auto;
 		ul {
 			li {
 				list-style-type:none;
+				margin-left:0;
 				input {
 					float:left;
 					margin-right:3px;
@@ -264,6 +265,14 @@ a:hover, a:active, a:focus { color:$orange; }
 	}
 	.tc_footer {
 		padding:6px;
+	}
+	#activity_summary {
+		ul {
+			li {
+				list-style-type:disc;
+				margin-left:14px;
+			}
+		}
 	}
 }
 
@@ -323,6 +332,19 @@ table {
 			input {
 				padding:1px 2px;
 			}
+		}
+	}
+	.child_column {
+		background-color:#f9f9f4;
+		.first_column_child {
+			padding-left:6px;
+			.wtf_div {
+				padding-left:22px;
+				background: url("/images/icons/up_arrow.png") no-repeat center left;
+			}
+		}
+		td {
+			border-bottom:1px solid $lightgrey;
 		}
 	}
 }

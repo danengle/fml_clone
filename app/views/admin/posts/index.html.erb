@@ -20,7 +20,7 @@
           <%= link_to "Edit", edit_admin_post_path(post) %>
         </div>
       </td>
-      <td><%= post.display_name %></td>
+      <td><%= display_name(post) %></td>
       <td><%= post.category.name %></td>
       <td> <%= post.created_at.to_s(:long) %></td>
     </tr>

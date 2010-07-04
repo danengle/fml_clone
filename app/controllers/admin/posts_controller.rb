@@ -15,37 +15,12 @@ class Admin::PostsController < ApplicationController
     end
   end
 
-  # GET /posts/new
-  # GET /posts/new.xml
-  def new
-    @post = Post.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @post }
-    end
-  end
-
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
-    @post.read! if @post.unread?
-  end
-
-  # POST /posts
-  # POST /posts.xml
-  def create
-    @post = Post.new(params[:post])
-
-    respond_to do |format|
-      if @post.save
-        flash[:notice] = 'Post was successfully created.'
-        format.html { redirect_to([:admin,@post]) }
-        format.xml  { render :xml => @post, :status => :created, :location => @post }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
-      end
+    if @post.unread?
+      @post.read!
+      @post.short_url = Bitly.get_short_url(@post, post_url(@post), @preferences)
     end
   end
 
@@ -100,16 +75,11 @@ class Admin::PostsController < ApplicationController
   
   def get_short_url
     @post = Post.find(params[:id])
-    url = URI.parse("http://api.bit.ly/v3/shorten?login=#{@preferences[:bitly_username]}&apiKey=#{@preferences[:bitly_api_key]}&longUrl=#{URI.encode(post_url(@post))}&format=json")
-    res = Net::HTTP.get url
-    res = ActiveSupport::JSON.decode(res)
-    if res["status_code"] == 200
-      @post.short_url = res["data"]["url"]
-      @post.save
-      flash[:notice] = "Successfully retrieved bit.ly shortened url."
+    @post.short_url = Bitly.get_short_url(@post, post_url(@post), @preferences)
+    if @post.save
+      flash[:notice] = "Successfully created bit.ly shortened url."
     else
-      flash[:error] = "Unable to get shortened url from bit.ly. Reason: #{res["status_txt"]}"
-      logger.info { "Bit.ly error: #{res["status_txt"]}" }
+      flash[:error] = "Unable to get shortened url from bit.ly. Reason: #{@post.errors.on('short_url')}"
     end
     redirect_to edit_admin_post_path(@post)
   end
@@ -121,6 +91,7 @@ class Admin::PostsController < ApplicationController
     flash[:notice] = "Successfully deleted shortened url for this post."
     redirect_to edit_admin_post_path(@post)
   end
+  
   # DELETE /admin/posts/1
   def destroy
     @post = Post.find(params[:id])

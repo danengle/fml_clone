@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def show
     @stuff = request
     @post = Post.find(params[:id])
+    @post.increment!(:view_counter)
     respond_with(@post)
   end
 
@@ -28,6 +29,8 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.user = current_user if logged_in?
+    @post.ip_address = request.remote_ip
+    @post.user_agent = request.user_agent
     respond_to do |format|
       if @post.save
         format.html { redirect_to(root_path, :notice => @preferences[:successful_post_creation]) }

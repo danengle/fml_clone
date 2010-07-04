@@ -19,4 +19,13 @@ module PostsHelper
   def facebook_this_link(post)
     "http://facebook.com/this_doesnt_work_now"
   end
+  
+  def display_name(post)
+    # user.blank? ? @preferences[:anonymous_display_name] : user.login
+    if post.user.blank?
+      @preferences[:anonymous_display_name]
+    else
+      post.user.login
+    end
+  end
 end

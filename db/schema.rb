@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100619212437) do
+ActiveRecord::Schema.define(:version => 20100703235025) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -75,6 +75,9 @@ ActiveRecord::Schema.define(:version => 20100619212437) do
     t.integer  "down_vote_counter", :default => 0,        :null => false
     t.boolean  "tweeted",           :default => false
     t.string   "short_url"
+    t.integer  "view_counter",      :default => 0
+    t.string   "ip_address"
+    t.string   "user_agent"
   end
 
   create_table "preference_categories", :force => true do |t|

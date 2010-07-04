@@ -73,18 +73,16 @@ class Post < ActiveRecord::Base
     self.published_at = nil
   end
   
+  # FIXME @preferences doesn't seem to be working inside model
   def display_name
-    user.blank? ? @preferences[:anonymous_display_name] : user.login
+    # user.blank? ? @preferences[:anonymous_display_name] : user.login
+    if self.user.blank?
+      @preferences[:anonymous_display_name]
+    else
+      self.user.login
+    end
   end
-=begin  
-  def up_votes
-    self.up_vote_counter
-  end
-  
-  def down_votes
-    self.down_vote_counter
-  end
-=end 
+
   def parent_comments
     self.comments.parent_comments
   end
@@ -131,9 +129,4 @@ class Post < ActiveRecord::Base
     
   end
   
-  def get_short_url(url)
-    logger.info { "user:#{@preferences[:bitly_username]}, key:#{@preferences[:bitly_api_key]}" }
-    url = Net::HTTP::Get.new("http://api.bit.ly/v3/shorten?login=#{@preferences[:bitly_username]}&apiKey=#{@preferences[:bitly_api_key]}&longUrl=#{URI.encode(url)}&format=txt")
-    self.short_url = url
-  end
 end

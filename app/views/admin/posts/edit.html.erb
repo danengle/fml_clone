@@ -50,6 +50,24 @@
             </div>
           </td>
         </tr>
+        <% comment.children.each do |ccomment| %>
+          <tr class="child_column">
+            <td class="first_column_child">
+              <div class="wtf_div">
+              <%= link_to comment.user.login, edit_admin_user_path(ccomment.user) %><br />
+              <%= ccomment.created_at.to_s(:long) %>
+              </div>
+            </td>
+            <td>
+              <%= ccomment.body %>
+              <div class="actions">
+                <%= button_to "Unapprove", "#", :class => 'awesome_button' %>
+                <%= button_to "Delete", "#", :class => 'awesome_button' %>
+                <%= button_to "Spam", "#", :class => 'awesome_button' %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
     </table>
     </div>
@@ -95,8 +113,22 @@
     </div>
     <div class="tc_box full_border medium_round">
       <div class="box_header">Activity Summary</div>
-      <div class="tc_body">stuff happened</div>
-      <div class="tc_footer">bottom</div>
+      <div  id="activity_summary" class="tc_body">
+        <ul>
+          <li>Number of Views: <%= @post.view_counter %></li>
+          <li>Up Votes: <%= @post.up_vote_counter %></li>
+          <li>Down Votes: <%= @post.down_vote_counter %></li>
+          <li>Number of Comments: <%= @post.comments.size %></li>
+          <li>
+            Submitted By: <%= @post.user.blank? ? @preferences[:anonymous_display_name] : link_to(@post.user.full_name, edit_admin_user_path(@post.user)) %>
+            <ul>
+              <li>IP Address: <%= @post.ip_address %></li>
+              <li>User Agent: <%= @post.user_agent %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="tc_footer"><!-- put something here --></div>
     </div>
     <div class="tc_box full_border medium_round">
       <div class="box_header">Other Actions</div>
@@ -111,7 +143,7 @@
           </li>
         </ul>
       </div>
-      <div class="tc_footer">bottom</div>
+      <div class="tc_footer"><!-- put something here --></div>
     </div>
   </div>
 </div>
