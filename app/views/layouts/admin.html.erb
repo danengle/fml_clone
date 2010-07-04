@@ -5,8 +5,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title><%= controller.controller_name %> : <%= controller.action_name %></title>
-    <%= stylesheet_link_tag 'compiled/screen', 'compiled/common.css', 'compiled/classes.css', 'compiled/admin.css' %>
-    <%= javascript_include_tag 'jquery-1.4.2.js', 'admin'  %>
+    <%= stylesheet_link_tag 'jquery.wysiwyg.css', 'compiled/screen', 'compiled/common.css', 'compiled/classes.css', 'compiled/admin.css' %>
+    <%= javascript_include_tag 'jquery-1.3.2.js', 'jquery.wysiwyg.js', 'rails', 'admin'  %>
   </head>
   <body>
     <%= render 'admin/shared/top_bar' %>

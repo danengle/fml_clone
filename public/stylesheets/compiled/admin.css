@@ -472,14 +472,19 @@ table .child_column td {
   float: left;
   width: 14px;
 }
+/* line 388, ../../../app/stylesheets/admin.scss */
+.editable #page_body {
+  width: 80%;
+  height: 300px;
+}
 
-/* line 389, ../../../app/stylesheets/admin.scss */
+/* line 393, ../../../app/stylesheets/admin.scss */
 .form_button {
   width: 140px;
   margin-left: 27%;
 }
 
-/* line 393, ../../../app/stylesheets/admin.scss */
+/* line 397, ../../../app/stylesheets/admin.scss */
 #footer {
   clear: both;
 }

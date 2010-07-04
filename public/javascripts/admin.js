@@ -1,4 +1,4 @@
 $(document).ready(function() {
-  // $('#publish_post_time').timepickr();
+  $('#page_body').wysiwyg();
   // $('#publish_post_date').datepicker();
 });
