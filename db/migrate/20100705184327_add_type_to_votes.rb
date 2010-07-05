@@ -1,4 +1,6 @@
 class AddTypeToVotes < ActiveRecord::Migration
+  class Vote < ActiveRecord::Base 
+  end
   def self.up
     add_column :votes, :type, :string, :null => false
     add_index :votes, [:type, :post_id]
