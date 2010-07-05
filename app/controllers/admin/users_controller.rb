@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
 
   before_filter :admin_required
-  before_filter :find_user, :only => [:show, :suspend, :unsuspend, :delete, :purge]
+  before_filter :find_user, :only => [:show, :edit, :update, :suspend, :unsuspend, :delete, :purge]
   layout 'admin'
   
   def index
@@ -13,12 +13,12 @@ class Admin::UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
-    @posts = @user.posts.all
+    @posts = @user.posts.paginate(:page => params[:page], :per_page => 10)
   end
   
   def update
-    @user = User.find(params[:id])
+    # TODO move this to check to model? hard to unless there is access to current_user in model
+    params[:user].delete(:admin) if current_user == @user
     respond_to do |format|
       if @user.update_attributes(params[:user])
         flash[:notice] = "Updated user"

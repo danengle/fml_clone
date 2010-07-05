@@ -155,7 +155,7 @@ a:hover, a:active, a:focus { color:$orange; }
 	float:left;
 	clear:left;
 	margin-right:-400px;
-	#main_content_body, #comments {
+	#main_content_body, #comments, #user_posts {
 		margin-right:260px;
 		margin-bottom:12px;
 	}
@@ -315,8 +315,10 @@ table {
 	.pagination_links {
 		text-align:center;
 		background-color:$lightgrey;
-		height:26px;
-		
+		height:30px;
+		.pagination {
+			margin-top:3px;
+		}
 		.pagination_info {
 			float:right;
 			padding-right:12px;
@@ -396,4 +398,8 @@ table {
 }
 #footer {
 	clear:both;
+}
+/*** buttons ***/
+#delete_button {
+	float:right;
 }

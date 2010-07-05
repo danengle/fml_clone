@@ -3,12 +3,15 @@ class User < ActiveRecord::Base
   include AASM
   acts_as_authentic
 
-  has_many :posts
+  has_many :posts, :order => 'created_at desc'
   has_many :comments
   has_many :favorites, :dependent => :destroy, :order => 'created_at desc'
+  has_many :post_votes
+  has_many :moderator_votes
   
   before_destroy :stop_bad_delete
-  before_update :stop_bad_admin_transistion
+  # TODO make this work so current_user can't change their own admin status
+  # before_update :stop_bad_admin_transistion
   
   scope :not_deleted, where(['state != ?', 'deleted'])
   
@@ -76,7 +79,7 @@ class User < ActiveRecord::Base
   
   def favorite_posts
     posts = []
-    #TODO user.favorites only return published posts
+    #TODO user.favorites should only return published posts
     self.favorites.each{|f| posts << f.post if f.post.published? }
     # posts = posts.sort{|a,b| b.published_at <=> a.published_at }
     posts

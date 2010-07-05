@@ -11,18 +11,8 @@
         </div>
         </fieldset>
       <% end %>
-  
-      <fieldset>
-        <legend>Available Actions</legend>
-        <% if current_user == @user %>
-          <p>You can't change your own state</p>
-        <% else %>
-          <p>This user is currently <%= @user.state %> (activated on <%= @user.activated_at %>). The current available actions are...</p>
-          <%= current_user_actions %>
-        <% end %>
-      </fieldset>
     </div>
-    <div>
+    <div id="user_posts">
       <h3>Posts</h3>
       <% if @posts.blank? %>
         <p>This user has not created any posts.</p>
@@ -48,11 +38,42 @@
               <td><%= post.published? ? published_time(post) : post.state %></td>
               <td><%= post.up_vote_counter %> / <%= post.down_vote_counter %></td></tr>
           <% end %>
+          <tr>
+            <td class="pagination_links" colspan="5">
+              <div class="pagination_info"><%= page_entries_info @posts %></div>
+              <%= will_paginate @posts %>
+            </td>
+          </tr>
         </table>
       <% end %>
     </div>
   </div>
   <div id="third_column">
+    <div class="tc_box full_border medium_round">
+      <div class="box_header">Available Actions</div>
+      <div class="tc_body">
+        <% if current_user == @user %>
+          <p>You can't change your own state</p>
+        <% else %>
+          <p>This user is currently <%= @user.state %>. The current available actions are...</p>
+          <%= current_user_actions %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tc_box full_border medium_round">
+      <div class="box_header">Additional Information</div>
+      <div class="tc_body">
+        <ul>
+          <li>Created At: <%= @user.created_at.to_s(:long) %></li>
+          <li>Last Login At: <%= @user.last_login_at.blank? ? "Never logged in." : @user.last_login_at.to_s(:long) %></li>
+          <li>Login Count: <%= @user.login_count %></li>
+          <li>Failed Login Count: <%= @user.failed_login_count %></li>
+          <li>Number of Posts: <%= @user.posts.count %></li>
+          <li>Number of votes cast on posts: <%= @user.post_votes.count %></li>
+          <li>Number of moderator votes cast: <%= @user.moderator_votes.count %></li>
+        </ul>
+      </div>
+    </div>
     <div class="tc_box full_border medium_round">
       <div class="box_header">Favorites</div>
       <div class="tc_body">

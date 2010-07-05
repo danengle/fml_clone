@@ -67,8 +67,8 @@ body {
 
 /* line 48, ../../../app/stylesheets/classes.scss */
 .small_round {
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 
 /* line 52, ../../../app/stylesheets/classes.scss */
@@ -136,16 +136,16 @@ body {
 
 /* line 101, ../../../app/stylesheets/classes.scss */
 .positive_awesome_button {
-  /*background:-moz-linear-gradient(center top , #F9F9F9, #E3E3E3) repeat scroll 0 0 transparent;*/
   background-color: #E6EFC2;
+  background: -moz-linear-gradient(center top, #f9f9f9, #deeaae) repeat scroll 0 0 transparent;
   border: 1px solid #C6D880;
   color: #529214;
 }
 
 /* line 107, ../../../app/stylesheets/classes.scss */
 .negative_awesome_button {
-  /*background:-moz-linear-gradient(center top , #F9F9F9, #E3E3E3) repeat scroll 0 0 transparent;*/
   background: #fbe3e4;
+  background: -moz-linear-gradient(center top, #fbe3e4, #f8cecf) repeat scroll 0 0 transparent;
   border: 1px solid #fbc2c4;
   color: #d12f19;
 }

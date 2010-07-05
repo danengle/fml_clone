@@ -12,5 +12,5 @@
 </div>
 <div>
   <%= f.label :admin, "Admin?" %>
-  <%= f.check_box :admin %>
+  <%= f.check_box :admin, :disabled => (current_user == @user) %>
 </div>

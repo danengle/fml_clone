@@ -46,8 +46,8 @@ body {
 	-webkit-border-bottom-right-radius:8px;
 }
 .small_round {
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
 }
 .small_round_top {
 	-moz-border-radius-topleft:4px;
@@ -99,14 +99,14 @@ body {
 	white-space:nowrap;
 }
 .positive_awesome_button {
-	/*background:-moz-linear-gradient(center top , #F9F9F9, #E3E3E3) repeat scroll 0 0 transparent;*/
 	background-color:#E6EFC2;
+	background:-moz-linear-gradient(center top , #F9F9F9, #DEEAAE) repeat scroll 0 0 transparent;
 	border:1px solid #C6D880;
 	color:#529214;
 }
 .negative_awesome_button {
-	/*background:-moz-linear-gradient(center top , #F9F9F9, #E3E3E3) repeat scroll 0 0 transparent;*/
 	background:#fbe3e4;
+	background:-moz-linear-gradient(center top , #fbe3e4, #F8CECF) repeat scroll 0 0 transparent;
 	border:1px solid #fbc2c4;
 	color:#d12f19;
 }

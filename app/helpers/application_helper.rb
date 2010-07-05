@@ -21,15 +21,15 @@ module ApplicationHelper
   end
   
   def activate_suspend_delete_buttons
-    activate_button + suspend_button + delete_button
+    delete_button + activate_button + suspend_button
   end
   
   def suspend_delete_buttons
-    suspend_button + delete_button
+    delete_button + suspend_button
   end
   
   def unsuspend_delete_buttons
-    unsuspend_button + delete_button
+    delete_button + unsuspend_button
   end
   
   def activate_button
@@ -41,11 +41,11 @@ module ApplicationHelper
   end
   
   def unsuspend_button
-    button_to "Unsuspend", unsuspend_admin_user_path(@user), :class => 'awesome_button'
+    button_to "Unsuspend", unsuspend_admin_user_path(@user), :class => 'awesome_button', :confirm => 'Are you sure? This will send the user an email letting them know their account has been unsuspended.'
   end
   
   def delete_button
-    button_to "Delete", delete_admin_user_path(@user), :class => 'awesome_button', :confirm => "Are you sure you want to delete this user?"
+    button_to "Delete", delete_admin_user_path(@user), :class => 'negative_awesome_button small_round', :id => 'delete_button', :confirm => "Are you sure you want to delete this user?"
   end
   
   def admin_side_bar_links
