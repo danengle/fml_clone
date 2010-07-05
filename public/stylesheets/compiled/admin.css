@@ -498,3 +498,13 @@ table .child_column td {
 #delete_button {
   float: right;
 }
+
+/* line 406, ../../../app/stylesheets/admin.scss */
+.regular_button {
+  margin-bottom: 4px;
+}
+
+/* line 409, ../../../app/stylesheets/admin.scss */
+.last_button {
+  margin-bottom: 0;
+}

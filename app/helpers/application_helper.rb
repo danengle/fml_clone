@@ -33,15 +33,15 @@ module ApplicationHelper
   end
   
   def activate_button
-    button_to "Activate", activate_admin_user_path(@user), :class => 'awesome_button'
+    button_to "Activate", activate_admin_user_path(@user), :class => 'awesome_button regular_button'
   end
   
   def suspend_button
-    button_to "Suspend", suspend_admin_user_path(@user), :class => 'awesome_button'
+    button_to "Suspend", suspend_admin_user_path(@user), :class => 'awesome_button', :confirm => 'Are you sure? This will send the user an email letting them know their account has been suspended.'
   end
   
   def unsuspend_button
-    button_to "Unsuspend", unsuspend_admin_user_path(@user), :class => 'awesome_button', :confirm => 'Are you sure? This will send the user an email letting them know their account has been unsuspended.'
+    button_to "Unsuspend", unsuspend_admin_user_path(@user), :class => 'awesome_button regular_button', :confirm => 'Are you sure? This will send the user an email letting them know their account has been unsuspended.'
   end
   
   def delete_button

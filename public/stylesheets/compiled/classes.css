@@ -140,17 +140,33 @@ body {
   background: -moz-linear-gradient(center top, #f9f9f9, #deeaae) repeat scroll 0 0 transparent;
   border: 1px solid #C6D880;
   color: #529214;
+  cursor: default;
+  font: 70% arial,sans-serif;
+  margin: 0;
+  outline: medium none;
+  padding: 3px 6px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
-/* line 107, ../../../app/stylesheets/classes.scss */
+/* line 115, ../../../app/stylesheets/classes.scss */
 .negative_awesome_button {
   background: #fbe3e4;
   background: -moz-linear-gradient(center top, #fbe3e4, #f8cecf) repeat scroll 0 0 transparent;
   border: 1px solid #fbc2c4;
   color: #d12f19;
+  cursor: default;
+  font: 70% arial,sans-serif;
+  margin: 0;
+  outline: medium none;
+  padding: 3px 6px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
 }
 
-/* line 114, ../../../app/stylesheets/classes.scss */
+/* line 130, ../../../app/stylesheets/classes.scss */
 ul li {
   list-style-type: none;
 }

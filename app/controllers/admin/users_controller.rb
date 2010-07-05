@@ -32,11 +32,13 @@ class Admin::UsersController < ApplicationController
 
   def suspend
     @user.suspend!
+    UserMailer.account_suspended_email(@user).deliver
     redirect_to edit_admin_user_path(@user), :notice => 'User has been suspended.'
   end
 
   def unsuspend
     @user.unsuspend!
+    UserMailer.account_unsuspended_email(@user).deliver
     redirect_to edit_admin_user_path(@user), :notice => 'User has been unsuspended.'
   end
 

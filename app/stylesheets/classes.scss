@@ -103,12 +103,28 @@ body {
 	background:-moz-linear-gradient(center top , #F9F9F9, #DEEAAE) repeat scroll 0 0 transparent;
 	border:1px solid #C6D880;
 	color:#529214;
+	cursor:default;
+	font:70% arial,sans-serif;
+	margin:0;
+	outline:medium none;
+	padding:3px 6px;
+	text-align:center;
+	vertical-align:middle;
+	white-space:nowrap;
 }
 .negative_awesome_button {
 	background:#fbe3e4;
 	background:-moz-linear-gradient(center top , #fbe3e4, #F8CECF) repeat scroll 0 0 transparent;
 	border:1px solid #fbc2c4;
 	color:#d12f19;
+	cursor:default;
+	font:70% arial,sans-serif;
+	margin:0;
+	outline:medium none;
+	padding:3px 6px;
+	text-align:center;
+	vertical-align:middle;
+	white-space:nowrap;
 }
 ul {
 	li {
