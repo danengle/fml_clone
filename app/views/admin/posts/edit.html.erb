@@ -116,8 +116,10 @@
       <div  id="activity_summary" class="tc_body">
         <ul>
           <li>Number of Views: <%= @post.view_counter %></li>
-          <li>Up Votes: <%= @post.up_vote_counter %></li>
-          <li>Down Votes: <%= @post.down_vote_counter %></li>
+          <li>Moderator Up Votes: <%= @post.moderator_up_vote_counter %></li>
+          <li>Moderator Down Votes: <%= @post.moderator_down_vote_counter %></li>
+          <li>Post Up Votes: <%= @post.up_vote_counter %></li>
+          <li>Post Down Votes: <%= @post.down_vote_counter %></li>
           <li>Number of Comments: <%= @post.comments.size %></li>
           <li>
             Submitted By: <%= @post.user.blank? ? @preferences[:anonymous_display_name] : link_to(@post.user.full_name, edit_admin_user_path(@post.user)) %>

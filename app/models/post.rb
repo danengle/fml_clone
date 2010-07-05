@@ -8,7 +8,8 @@ class Post < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :comments, :dependent => :destroy
-  has_many :votes, :dependent => :destroy
+  has_many :post_votes, :dependent => :destroy
+  has_many :moderator_votes, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
   
   define_index do
@@ -34,7 +35,8 @@ class Post < ActiveRecord::Base
     lambda { |category| { :conditions => { :category_id => category.id }}}
   scope :sort_by_published, order('published_at desc')
   scope :random_record, limit(1).order('rand()')
-  
+  scope :not_published,
+    where({:state => ['viewed', 'unread']})
 
   aasm_initial_state :unread
   aasm_state :unread

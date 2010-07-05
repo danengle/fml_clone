@@ -1,0 +1,8 @@
+<div class="boxed">
+    <p><%= @post.body %></p>
+    <p><span class="created_by">On <%= @post.created_at.to_s(:long) %> in <%= link_to @post.category.name, category_path(@post.category) %></span>.</p>
+</div>
+<div id="moderator_votes">
+  <%= button_to "Yay!", moderators_up_vote_path(@post), {:class => 'positive_awesome_button up_vote', :id => 'up_vote_button'} %>
+  <%= button_to "Nay!", moderators_down_vote_path(@post), {:class => 'negative_awesome_button down_vote', :id => 'down_vote_button'} %>
+</div>

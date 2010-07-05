@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100703235025) do
+ActiveRecord::Schema.define(:version => 20100705195948) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -70,14 +70,16 @@ ActiveRecord::Schema.define(:version => 20100703235025) do
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "state",             :default => "unread", :null => false
-    t.integer  "up_vote_counter",   :default => 0,        :null => false
-    t.integer  "down_vote_counter", :default => 0,        :null => false
-    t.boolean  "tweeted",           :default => false
+    t.string   "state",                       :default => "unread", :null => false
+    t.integer  "up_vote_counter",             :default => 0,        :null => false
+    t.integer  "down_vote_counter",           :default => 0,        :null => false
+    t.boolean  "tweeted",                     :default => false
     t.string   "short_url"
-    t.integer  "view_counter",      :default => 0
+    t.integer  "view_counter",                :default => 0
     t.string   "ip_address"
     t.string   "user_agent"
+    t.integer  "moderator_up_vote_counter",   :default => 0,        :null => false
+    t.integer  "moderator_down_vote_counter", :default => 0,        :null => false
   end
 
   create_table "preference_categories", :force => true do |t|
@@ -149,9 +151,11 @@ ActiveRecord::Schema.define(:version => 20100703235025) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "session_id"
+    t.string   "type",       :null => false
   end
 
   add_index "votes", ["post_id", "up_vote"], :name => "index_votes_on_post_id_and_up_vote"
   add_index "votes", ["session_id"], :name => "index_votes_on_session_id"
+  add_index "votes", ["type", "post_id"], :name => "index_votes_on_type_and_post_id"
 
 end

@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   def up_vote
     logger.info { "****: '#{session[:session_id]}'" }
     @post = Post.find(params[:id])
-    vote = @post.votes.new(:up_vote => true)
+    vote = @post.post_votes.new(:up_vote => true)
     vote.user = current_user if logged_in?
     vote.session_id = session[:session_id]
     
@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   
   def down_vote
     @post = Post.find(params[:id])
-    vote = @post.votes.new(:up_vote => false)
+    vote = @post.post_votes.new(:up_vote => false)
     vote.user = current_user if logged_in?
     vote.session_id = session[:session_id]
     if vote.save
