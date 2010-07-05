@@ -75,6 +75,7 @@ class PostsController < ApplicationController
   # not sure what's wrong with it anymore 6/5/10
   def random
     @post = Post.published.random_record.first #where(['id >= ?', rand(Post.count)]).first
+    @post.increment!(:view_counter)
     @comment = @post.comments.new
     render :action => 'show'
   end

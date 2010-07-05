@@ -76,7 +76,8 @@ class User < ActiveRecord::Base
   
   def favorite_posts
     posts = []
-    self.favorites.each{|f| posts << f.post }
+    #TODO user.favorites only return published posts
+    self.favorites.each{|f| posts << f.post if f.post.published? }
     # posts = posts.sort{|a,b| b.published_at <=> a.published_at }
     posts
   end
