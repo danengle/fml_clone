@@ -1,13 +1,15 @@
 require 'aasm'
 class User < ActiveRecord::Base
   include AASM
-  acts_as_authentic
 
+  acts_as_authentic
+  has_paper_trail :ignore => [:crypted_password, :password_salt, :perishable_token, :persistence_token, :login_count, :failed_login_count, :current_login_ip, :last_request_at, :last_login_ip, :last_login_at]
   has_many :posts, :order => 'created_at desc'
   has_many :comments
   has_many :favorites, :dependent => :destroy, :order => 'created_at desc'
   has_many :post_votes
   has_many :moderator_votes
+  has_many :changes, :foreign_key => 'whodunnit', :class_name => "Version", :order => 'created_at desc'
   
   before_destroy :stop_bad_delete
   # TODO make this work so current_user can't change their own admin status
