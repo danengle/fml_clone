@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   end
 
   def create
+    logger.info { "logger class = #{logger.class}" }
     @user = User.new(params[:user])
+    get_current_user if @user.valid?
     if @user.save
       @user.register!
       @user.reset_perishable_token!

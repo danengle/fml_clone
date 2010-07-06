@@ -68,8 +68,7 @@
       <% end %>
       <tr>
       <td class="pagination_links" colspan="5">
-        <div class="pagination_info"><%= page_entries_info @changes %></div>
-        <%= will_paginate @changes %>
+        <div class="pagination_info">Showing <%= @changes.size %> of <%= @user.changes.size %> most recent changes</div>
       </td>
       </tr>
       </table>

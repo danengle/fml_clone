@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   include AASM
 
   acts_as_authentic
-  has_paper_trail :ignore => [:crypted_password, :password_salt, :perishable_token, :persistence_token, :login_count, :failed_login_count, :current_login_ip, :last_request_at, :last_login_ip, :last_login_at]
+  has_paper_trail :ignore => [:crypted_password, :password_salt, :perishable_token, :persistence_token, :login_count, :failed_login_count, :current_login_at, :current_login_ip, :last_request_at, :last_login_ip, :last_login_at],
+    :dont_write => [:crypted_password, :password_salt, :perishable_token, :persistence_token]
   has_many :posts, :order => 'created_at desc'
   has_many :comments
   has_many :favorites, :dependent => :destroy, :order => 'created_at desc'
