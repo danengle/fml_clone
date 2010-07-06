@@ -1,0 +1,28 @@
+<h2>Dashboard</h2>
+<table class="small_round add_margin">
+<caption class="medium_round_top">Recent Activity</caption>
+  <tr>
+    <th class="first_column">ID</th>
+    <th>Whodunnit</th>
+    <th>Item Type</th>
+    <th>Event</th>
+    <th>Item</th>
+    <th>Created At</th>
+  </tr>
+  <% @changes.each do |change| %>
+    <tr class="border_bottom<%= cycle(' odd', ' even') %>">
+      <td class="first_column"><%= change.id %></td>
+      <td><%= change.whodunnit.to_i == 0 ? change.whodunnit : link_to(User.find(change.whodunnit.to_i).login, edit_admin_user_path(User.find(change.whodunnit.to_i))) %></td>
+      <td><%= change.item_type %></td>
+      <td><%= change.event %></td>
+      <td><%= link_to "#{change.item_type} #{change.item_id}", "#" %></td>
+      <td><%= change.created_at.to_s(:long) %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td class="pagination_links" colspan="7">
+      <div class="pagination_info"><%= page_entries_info @changes %></div>
+      <%= will_paginate @changes %>
+    </td>
+  </tr>
+</table>
