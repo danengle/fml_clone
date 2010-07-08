@@ -1,4 +1,4 @@
-<div id="side_bar">
+<section id="side_bar">
   <div id="account_box" class="boxed side_box">
     <% if logged_in? %>
       <h5>Hello, <%= current_user.login %> <span>(<%= link_to "logout", logout_path %>)</span></h5>
@@ -47,4 +47,4 @@
       <%= raw @preferences[:side_box_ad] %>
     </div>
   <% end %>
-</div>
+</section>

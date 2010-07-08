@@ -1,5 +1,5 @@
-<div id="post_<%= post.id %>" class="post boxed">
-  <div class="boxed_header round_top">
+<article id="post_<%= post.id %>" class="post boxed">
+  <header class="boxed_header round_top">
     <div class="social_links">
         <% if logged_in? && current_user.favorite?(post) %>
           <%= image_tag('fav1.png') %>
@@ -13,11 +13,11 @@
     <div class="published_at">
       <%= post.published_at.to_s(:long) %>
     </div>
-  </div>
+  </header>
   <div class="post_body">
     <p><%= link_to post.body, post %></p>
   </div>
-  <div class="post_footer round_bottom">
+  <footer class="post_footer round_bottom">
     <%= link_to post.id, post %>
     <span class="created_by">By <%= post.user.blank? ? @preferences[:anonymous_display_name] : post.user.login %> in <%= link_to post.category.name, category_path(post.category) %></span>.
     <span class="comment_count">(<%= post.comments.count %>) comments</span>
@@ -25,5 +25,5 @@
       <%= button_to "#{@preferences[:thumbs_down]} (#{post.down_vote_counter})", down_vote_post_path(post), {:class => 'awesome_button down_vote'} %>
       <%= button_to "#{@preferences[:thumbs_up]} (#{post.up_vote_counter})", up_vote_post_path(post), {:class => 'awesome_button up_vote'} %>
     </div>
-  </div>
-</div>
+  </footer>
+</article>

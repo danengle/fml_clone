@@ -52,3 +52,176 @@
 .fieldHasErrors {
   border: 2px solid #ffaeae;
 }
+
+/* line 48, ../../../app/stylesheets/common.scss */
+body {
+  background-color: #DCE6F4;
+  height: 100%;
+  font: 85% arial,sans-serif;
+}
+
+/* line 53, ../../../app/stylesheets/common.scss */
+.centered {
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* line 57, ../../../app/stylesheets/common.scss */
+.centered_box {
+  margin: 0 auto;
+  width: 900px;
+}
+
+/* line 61, ../../../app/stylesheets/common.scss */
+.clear {
+  clear: both;
+}
+
+/* line 64, ../../../app/stylesheets/common.scss */
+.bolded {
+  font-weight: bold;
+}
+
+/* line 67, ../../../app/stylesheets/common.scss */
+.round {
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+}
+
+/* line 71, ../../../app/stylesheets/common.scss */
+.round_top {
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-right-radius: 8px;
+}
+
+/* line 77, ../../../app/stylesheets/common.scss */
+.round_right {
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+}
+
+/* line 83, ../../../app/stylesheets/common.scss */
+.round_left {
+  -moz-border-radius-topleft: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+}
+
+/* line 89, ../../../app/stylesheets/common.scss */
+.round_bottom {
+  -moz-border-radius-bottomleft: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+}
+
+/* line 95, ../../../app/stylesheets/common.scss */
+.small_round {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+/* line 99, ../../../app/stylesheets/common.scss */
+.small_round_top {
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
+
+/* line 105, ../../../app/stylesheets/common.scss */
+.small_round_bottom {
+  -moz-border-radius-bottomleft: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+}
+
+/* line 111, ../../../app/stylesheets/common.scss */
+.small_round_left {
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+}
+
+/* line 117, ../../../app/stylesheets/common.scss */
+.medium_round {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+
+/* line 121, ../../../app/stylesheets/common.scss */
+.medium_round_top {
+  -moz-border-radius-topleft: 6px;
+  -moz-border-radius-topright: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+}
+
+/* line 127, ../../../app/stylesheets/common.scss */
+.medium_round_bottom {
+  -moz-border-radius-bottomleft: 6px;
+  -moz-border-radius-bottomright: 6px;
+  -webkit-border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+}
+
+/* line 133, ../../../app/stylesheets/common.scss */
+.awesome_button {
+  -moz-border-radius: 3px 3px 3px 3px;
+  -webkit-border-radius: 3px;
+  background: -moz-linear-gradient(center top, #f9f9f9, #e3e3e3) repeat scroll 0 0 transparent;
+  border: 1px solid #BBBBBB;
+  color: #000000;
+  cursor: default;
+  font: 70% arial,sans-serif;
+  margin: 0;
+  outline: medium none;
+  padding: 3px 6px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* line 148, ../../../app/stylesheets/common.scss */
+.positive_awesome_button {
+  background-color: #eaf7d9;
+  background: -moz-linear-gradient(center top, #f9f9f9, #deeaae) repeat scroll 0 0 transparent;
+  border: 1px solid #bbdf8d;
+  color: #529214;
+  cursor: default;
+  font: 70% arial,sans-serif;
+  margin: 0;
+  outline: medium none;
+  padding: 3px 6px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* line 162, ../../../app/stylesheets/common.scss */
+.negative_awesome_button {
+  background: #fbe3e4;
+  background: -moz-linear-gradient(center top, #fbe3e4, #f8cecf) repeat scroll 0 0 transparent;
+  border: 1px solid #fbc2c4;
+  color: #d12f19;
+  cursor: default;
+  font: 70% arial,sans-serif;
+  margin: 0;
+  outline: medium none;
+  padding: 3px 6px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* line 177, ../../../app/stylesheets/common.scss */
+ul li {
+  list-style-type: none;
+}

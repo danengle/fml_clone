@@ -14,10 +14,12 @@ body {
 	background-color:$light-blue4;
 	height:100%;
 	font:85% arial,sans-serif;
+	margin:0 1%;
+	min-width:850px;
 }
 /*** header ***/
 
-#header {
+#page_header {
 	padding-top:5px;
 	
 	h1 {
@@ -44,7 +46,6 @@ body {
 	}
 	#sub_header {
 		float:right;
-		margin-right:16px;
 		form {
 			float:right;
 			margin-top:4px;
@@ -64,37 +65,36 @@ body {
 			-moz-border-radius-bottomright:3px;
 			-webkit-border-bottom-right-radius:3px;
 			background:-moz-linear-gradient(center top , #F9F9F9, #E3E3E3) repeat scroll 0 0 transparent;
+			/*
+			background:-webkit-gradient(linear, center, top, #F9F9F9, #E3E3E3) repeat scroll 0 0 transparent;*/
 			border:1px solid #BBBBBB;
 			color:#000000;
 			cursor:default;
 			font:70% arial,sans-serif;
 			margin:0;
 			outline:medium none;
-			padding:4px 6px;
+			padding:3px 6px;
 			text-align:center;
 			vertical-align:middle;
 			white-space:nowrap;
-			top:-2px;
 			position:relative;
-			right:4px;
+			right:5px;
 		}
 	}
 }
 
 
 /*** content ***/
-#content {
-	width:900px;
-	overflow:auto;
-	#main {
-		width:79%;
-		float:left;
-		padding:0 8px 0 0;
-		h1 {
-			margin:.5em 0;
-		}
+#main_content {
+	float:left;
+	width:80%;
+	min-width:650px;
+	margin-right:1%;
+	h1 {
+		margin:.5em 0;
 	}
 }
+
 /*** content boxes ***/
 .boxed {
 	margin:3px 0 10px;
@@ -120,8 +120,9 @@ body {
 }
 /*** side bar ***/
 #side_bar {
-	width:18%;
-	float:left;
+	width:19%;
+	float:right;
+	min-width:160px;
 	.side_box {
 		margin:3px 0 10px;
 		padding:5px;
@@ -169,6 +170,8 @@ body {
 
 /*** footer ***/
 #footer {
+	width:100%;
+	clear:both;
 	padding-bottom:14px;
 	ul {
 		margin:0 0 12px 0;
