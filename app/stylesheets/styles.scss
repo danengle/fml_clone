@@ -190,6 +190,7 @@ body {
 	}
 	p {
 		margin:0;
+		padding-left:0;
 	}
 }
 /**** posts ***/
@@ -290,7 +291,13 @@ body {
 		}
 	}
 	.comment {
-		padding:7px;
+		.parent_comment {
+			padding:7px;
+			p {
+				padding-top:0;
+				padding-left:0;
+			}
+		}
 		.comment_footer {
 			.reply_link {
 				float:right;
