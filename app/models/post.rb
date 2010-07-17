@@ -133,8 +133,8 @@ class Post < ActiveRecord::Base
     ensure
       return false unless errors.blank?
     end
-    self.published_at = date
     self.publish!
+    self.published_at = date
   end
   
   def tweet

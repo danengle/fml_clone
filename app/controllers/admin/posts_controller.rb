@@ -1,11 +1,7 @@
 class Admin::PostsController < ApplicationController
   layout 'admin'
   before_filter :admin_required
-  before_filter :print_action_name
-  
-  def print_action_name
-    logger.info { "action: #{action_name}" }
-  end
+
   # GET /posts
   # GET /posts.xml
   def index
@@ -52,6 +48,7 @@ class Admin::PostsController < ApplicationController
       flash[:notice] = "Post #{@post.id} has been scheduled for publishing."
       redirect_to edit_admin_post_path(@post)
     else
+      logger.info { "** @post.errors: #{@post.errors.inspect}" }
       render 'edit'
     end
   end

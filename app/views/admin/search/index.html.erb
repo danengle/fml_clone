@@ -4,5 +4,11 @@
     <% @results.each do |r| %>
       <li><%= display_result(r) %></li>
     <% end %>
+    <li class="pagination_links">
+      <div class="pagination_info">
+        <%= page_entries_info @results %>
+      </div>
+      <%= will_paginate @results %>
+    </li>
   </ul>
 </div>

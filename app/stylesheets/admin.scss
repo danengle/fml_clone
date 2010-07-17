@@ -446,14 +446,12 @@ table {
 #search_results {
 	margin-top:14px;
 	ul {
-		
 		li {
 			padding:8px 18px 8px 12px;
 			min-height:45px;
 			border-bottom:1px solid $lightgrey;
 			overflow:auto;
 				ul {
-					
 					float:left;
 					li {
 						min-height:0;
@@ -471,9 +469,6 @@ table {
 				}
 			p {
 				padding:6px 3px;
-			}
-			.votes_counter {
-
 			}
 		}
 		li:last-child {

@@ -552,35 +552,35 @@ table .child_column td {
 #search_results {
   margin-top: 14px;
 }
-/* line 450, ../../../app/stylesheets/admin.scss */
+/* line 449, ../../../app/stylesheets/admin.scss */
 #search_results ul li {
   padding: 8px 18px 8px 12px;
   min-height: 45px;
   border-bottom: 1px solid #e4e4e4;
   overflow: auto;
 }
-/* line 455, ../../../app/stylesheets/admin.scss */
+/* line 454, ../../../app/stylesheets/admin.scss */
 #search_results ul li ul {
   float: left;
 }
-/* line 458, ../../../app/stylesheets/admin.scss */
+/* line 456, ../../../app/stylesheets/admin.scss */
 #search_results ul li ul li {
   min-height: 0;
   border-bottom: none;
   padding: 2px;
 }
-/* line 464, ../../../app/stylesheets/admin.scss */
+/* line 462, ../../../app/stylesheets/admin.scss */
 #search_results ul li .personal_info {
   width: 35%;
   display: block;
   float: left;
   margin-left: 8px;
 }
-/* line 472, ../../../app/stylesheets/admin.scss */
+/* line 470, ../../../app/stylesheets/admin.scss */
 #search_results ul li p {
   padding: 6px 3px;
 }
-/* line 479, ../../../app/stylesheets/admin.scss */
+/* line 474, ../../../app/stylesheets/admin.scss */
 #search_results ul li:last-child {
   border-bottom: none;
 }
