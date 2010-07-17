@@ -1,7 +1,9 @@
+puts "* loading user.rb"
 require 'aasm'
 class User < ActiveRecord::Base
   include AASM
-  # include ChangeLogger::Model
+  puts "** just before 'include ChangeLogger::Model', but it is commented out"
+  include ChangeLogger::HasChangeLog
   
   acts_as_authentic
   # has_paper_trail :ignore => [:crypted_password, :password_salt, :perishable_token, :persistence_token, :login_count, :failed_login_count, :current_login_at, :current_login_ip, :last_request_at, :last_login_ip, :last_login_at]
