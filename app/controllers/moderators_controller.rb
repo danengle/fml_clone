@@ -6,14 +6,14 @@ class ModeratorsController < ApplicationController
     respond_with(@post)
   end
 
-  # TODO combine into one method
+  # TODO combine up_vote and down_vote into one method
   def up_vote
     @post = Post.not_published.find(params[:id])
     vote = @post.moderator_votes.new(:up_vote => true)
     vote.user = current_user if logged_in?
     vote.session_id = session[:session_id]
     vote.save
-    flash[:notice] = "Thanks for helping to moderate posts."
+    flash[:notice] = "Thanks for your help moderating upcoming posts."
     redirect_to moderators_path
   end
   
@@ -23,7 +23,7 @@ class ModeratorsController < ApplicationController
     vote.user = current_user if logged_in?
     vote.session_id = session[:session_id]
     vote.save
-    flash[:notice] = "Thanks for helping to moderate posts."
+    flash[:notice] = "Thanks for your help moderating upcoming posts."
     redirect_to moderators_path
   end
 end

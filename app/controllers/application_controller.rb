@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   
   def access_denied
     store_location
-    flash[:notice] = "You are not authorized to access that page"
+    flash[:error] = "You are not authorized to access that page"
     logger.info { "User attempted unathorized access to #{request.request_uri}" }
     logger.info { "session[:return_to] = #{session[:return_to]}" }
     redirect_to root_path # figure out best way to use :back

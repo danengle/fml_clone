@@ -1,7 +1,7 @@
 class Admin::UsersController < ApplicationController
 
   before_filter :admin_required
-  before_filter :find_user, :only => [:show, :edit, :update, :suspend, :unsuspend, :delete, :purge]
+  before_filter :find_user, :only => [:show, :edit, :update, :activate, :suspend, :unsuspend, :delete, :purge]
   layout 'admin'
   
   def index
@@ -31,6 +31,12 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def activate
+    logger.info { "** #{@user.inspect} **" }
+    @user.activate!
+    redirect_to edit_admin_user_path(@user), :notice => "#{@user.login} has been activated."
+  end
+  
   def suspend
     @user.suspend!
     UserMailer.account_suspended_email(@user).deliver
@@ -44,7 +50,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def delete
-    logger.info { "@user == current_user = #{@user == current_user}" }
+    # logger.info { "@user == current_user = #{@user == current_user}" }
+    # TODO move this validation to model, but current_user is a prob in model
     if @user == current_user
       flash[:error] = "You can't delete yourself!"
       redirect_to edit_admin_user_path(current_user)
