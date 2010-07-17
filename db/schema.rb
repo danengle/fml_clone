@@ -22,13 +22,15 @@ ActiveRecord::Schema.define(:version => 20100717075004) do
   add_index "categories", ["name"], :name => "index_categories_on_name"
 
   create_table "change_logs", :force => true do |t|
-    t.integer "item_id",         :null => false
-    t.string  "item_type",       :null => false
-    t.string  "controller_name", :null => false
-    t.string  "action_name",     :null => false
-    t.string  "was",             :null => false
-    t.string  "is_now",          :null => false
-    t.string  "whodunnit"
+    t.integer  "item_id",         :null => false
+    t.string   "item_type",       :null => false
+    t.string   "controller_name", :null => false
+    t.string   "action_name",     :null => false
+    t.string   "was",             :null => false
+    t.string   "is_now",          :null => false
+    t.string   "whodunnit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "comments", :force => true do |t|

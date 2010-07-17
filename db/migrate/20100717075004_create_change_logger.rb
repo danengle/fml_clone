@@ -5,6 +5,7 @@ class CreateChangeLogger < ActiveRecord::Migration
       t.string :item_type, :null => false
       t.string :controller_name, :action_name, :was, :is_now, :null => false
       t.string :whodunnit
+      t.timestamps
     end
   end
   
