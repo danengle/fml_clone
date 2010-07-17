@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   include AASM
-  has_paper_trail :ignore => [:up_vote_counter, :down_vote_counter, :view_counter, :moderator_up_vote_counter, :moderator_down_vote_counter]
+  # has_paper_trail :ignore => [:up_vote_counter, :down_vote_counter, :view_counter, :moderator_up_vote_counter, :moderator_down_vote_counter]
+  
+  acts_as_change_logger :ignore => [:up_vote_counter, :down_vote_counter, :view_counter, :moderator_up_vote_counter, :moderator_down_vote_counter]
   
   aasm_column :state
   

@@ -12,6 +12,7 @@ module ChangeLogger
         
         cattr_accessor :ignore
         self.ignore = (options[:ignore] || []).map &:to_s
+        self.ignore.push('created_at', 'updated_at')
         
         has_many :change_logs, :as => :item, :order => 'created_at desc'
         
@@ -21,17 +22,16 @@ module ChangeLogger
     
     module InstanceMethods
       def record_changes
-        changes = {}
         attributes.delete_if{|k,v| self.class.ignore.include?(k) }.each do |attribute|
           if send("#{attribute[0]}_changed?")
-            changes["#{attribute[0]}"] = {}
-            changes["#{attribute[0]}"]["was"] = self.send("#{attribute[0]}_was")
-            changes["#{attribute[0]}"]["is_now"] = self.send("#{attribute[0]}")
-            change_logs.create(:was => changes["#{attribute[0]}"]["was"],
-                               :is_now => changes["#{attribute[0]}"]["is_now"],
+            change_log = change_logs.new(:was => self.send("#{attribute[0]}_was"),
+                               :is_now => self.send("#{attribute[0]}"),
                                :action_name => ::ChangeLogger.action_name,
                                :controller_name => ::ChangeLogger.controller_name,
                                :whodunnit => ::ChangeLogger.whodunnit)
+            unless change_log.save
+              logger.info { "Couldn't save change log: #{change_log.inspect}\nErrors: #{change_log.errors}" }
+            end
           end
         end
       end

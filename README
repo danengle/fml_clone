@@ -62,6 +62,7 @@ TODO
 	flash messages for adding comments, creating posts, etc
 	submit your story text
 	there are 0 posts message
+	move all flash messages to settings
 	
 	TRACKING ACTIONS/EVENTS
 	post is submitted
@@ -79,5 +80,4 @@ TODO
 	down votes
 	
 	model, action, user, time
-	
 	whodunnit, model, controller_action, attribute, original_value, new_value

@@ -1,7 +1,6 @@
 require 'aasm'
 class User < ActiveRecord::Base
   include AASM
-  # include ChangeLogger::ActsAsChangeLogger
   
   acts_as_authentic
   acts_as_change_logger :ignore => [:crypted_password, :password_salf, :perishable_token, :persistance_token, :login_count, :failed_login_count, :current_login_at, :current_login_ip, :last_request_at, :last_login_ip, :last_login_at]

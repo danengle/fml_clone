@@ -1,4 +1,5 @@
 class Category < ActiveRecord::Base
+  acts_as_change_logger
   has_many :posts
   
   validates_presence_of :name

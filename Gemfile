@@ -27,3 +27,4 @@ gem 'compass', ">= 0.10.1"
 gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'
 # gem 'paperclip', ">= 2.3.3"
 gem 'paper_trail', ">= 1.5.2"
+gem 'ruby-debug19', ">= 0.11.6"

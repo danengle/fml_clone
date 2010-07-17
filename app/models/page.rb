@@ -1,4 +1,5 @@
 class Page < ActiveRecord::Base
+  acts_as_change_logger
   validates_presence_of :title, :slug, :body
   validates_uniqueness_of :title, :slug
   

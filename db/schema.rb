@@ -26,9 +26,9 @@ ActiveRecord::Schema.define(:version => 20100717075004) do
     t.string   "item_type",       :null => false
     t.string   "controller_name", :null => false
     t.string   "action_name",     :null => false
-    t.string   "was",             :null => false
-    t.string   "is_now",          :null => false
     t.string   "whodunnit"
+    t.string   "was"
+    t.string   "is_now"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

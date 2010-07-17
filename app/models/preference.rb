@@ -1,4 +1,5 @@
 class Preference < ActiveRecord::Base
+  acts_as_change_logger
   belongs_to :preference_category
   has_one :feature
   

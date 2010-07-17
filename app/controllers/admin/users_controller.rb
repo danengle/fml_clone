@@ -37,7 +37,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def activate
-    logger.info { "** #{@user.inspect} **" }
+    # logger.info { "** #{@user.inspect} **" }
     @user.activate!
     redirect_to edit_admin_user_path(@user), :notice => "#{@user.login} has been activated."
   end

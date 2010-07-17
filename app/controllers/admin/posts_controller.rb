@@ -1,7 +1,11 @@
 class Admin::PostsController < ApplicationController
   layout 'admin'
   before_filter :admin_required
+  before_filter :print_action_name
   
+  def print_action_name
+    logger.info { "action: #{action_name}" }
+  end
   # GET /posts
   # GET /posts.xml
   def index
@@ -76,6 +80,7 @@ class Admin::PostsController < ApplicationController
   def get_short_url
     @post = Post.find(params[:id])
     @post.short_url = Bitly.get_short_url(@post, post_url(@post), @preferences)
+    # debugger
     if @post.save
       flash[:notice] = "Successfully created bit.ly shortened url."
     else
