@@ -1,10 +1,12 @@
 require 'aasm'
 class User < ActiveRecord::Base
   include AASM
-
+  # include ChangeLogger::Model
+  
   acts_as_authentic
-  has_paper_trail :ignore => [:crypted_password, :password_salt, :perishable_token, :persistence_token, :login_count, :failed_login_count, :current_login_at, :current_login_ip, :last_request_at, :last_login_ip, :last_login_at]
+  # has_paper_trail :ignore => [:crypted_password, :password_salt, :perishable_token, :persistence_token, :login_count, :failed_login_count, :current_login_at, :current_login_ip, :last_request_at, :last_login_ip, :last_login_at]
     #:dont_write => [:crypted_password, :password_salt, :perishable_token, :persistence_token]
+  has_change_log :ignore => [:crypted_password, :password_salf, :perishable_token, :persistance_token, :login_count, :failed_login_count, :current_login_at, :current_login_ip, :last_request_at, :last_login_ip, :last_login_at]
   has_many :posts, :order => 'created_at desc'
   has_many :comments
   has_many :favorites, :dependent => :destroy, :order => 'created_at desc'
@@ -13,14 +15,39 @@ class User < ActiveRecord::Base
   has_many :changes, :foreign_key => 'whodunnit', :class_name => "Version", :order => 'created_at desc'
   
   before_destroy :stop_bad_delete
-  before_update :log_caller
-  
+  # before_update :log_caller
+  # before_update :record_changes
   def log_caller
     data = caller.grep(/app\/controllers\//).first.gsub(/^.*\/app\/controllers\//, '').split(' ')
     controller = data[0].gsub(/\..*$/,'')
     action = data[1].gsub(/`/,'').gsub(/'/,'')
     logger.info { "** controller: #{controller}" }
     logger.info { "**     action: #{action}" }
+    # attributes.each do |attribute|
+      # if self.send("#{attribute[0]}_changed?")
+        # logger.info { "-- #{attribute[0]} changed" }
+        # logger.info { "---- was #{self.send("#{attribute[0]}_was")}" }
+        # logger.info { "----  is #{self.send("#{attribute[0]}")}" }
+        # changes["#{attribute}"][0] = self.send("#{attribute}_was")
+        # changes["#{attribute}"][1] = self.send("#{attribute}")
+      # end
+    # end
+  end
+  
+  def record_changes
+    ignore = [:perishable_token].map(&:to_s)
+    
+    changes = {}
+    attributes.delete_if{|k,v| ignore.include?(k) }.each do |attribute|
+      if self.send("#{attribute[0]}_changed?")
+        changes["#{attribute[0]}"] = {}
+        logger.info { "-- #{attribute[0]} changed" }
+        changes["#{attribute[0]}"]["was"] = self.send("#{attribute[0]}_was")
+        changes["#{attribute[0]}"]["is"] = self.send("#{attribute[0]}")
+        logger.info { "---- was #{changes["#{attribute[0]}"]["was"]}" }
+        logger.info { "----  is #{changes["#{attribute[0]}"]["is"]}" }
+      end
+    end
   end
   # TODO make this work so current_user can't change their own admin status
   # before_update :stop_bad_admin_transistion

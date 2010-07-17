@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100705213942) do
+ActiveRecord::Schema.define(:version => 20100717075004) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(:version => 20100705213942) do
   end
 
   add_index "categories", ["name"], :name => "index_categories_on_name"
+
+  create_table "change_logs", :force => true do |t|
+    t.integer "item_id",         :null => false
+    t.string  "item_type",       :null => false
+    t.string  "controller_name", :null => false
+    t.string  "action_name",     :null => false
+    t.string  "was",             :null => false
+    t.string  "is_now",          :null => false
+    t.string  "whodunnit"
+  end
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id",    :null => false
