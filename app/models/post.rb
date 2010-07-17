@@ -54,7 +54,7 @@ class Post < ActiveRecord::Base
   end
   
   aasm_event :publish do
-    transitions :to => :published, :from => :viewed, :guard => Proc.new{|post| post.published_at.blank? }
+    transitions :to => :published, :from => :viewed #, :guard => Proc.new{|post| post.published_at.blank? }
   end
   
   aasm_event :unpublish do
@@ -107,7 +107,7 @@ class Post < ActiveRecord::Base
     self.published_at = nil
   end
   
-  def publish(datetime)
+  def set_date(datetime)
     datetime.each_pair do |key,value|
       case key
       when 'year'
@@ -133,7 +133,6 @@ class Post < ActiveRecord::Base
     ensure
       return false unless errors.blank?
     end
-    self.publish!
     self.published_at = date
   end
   

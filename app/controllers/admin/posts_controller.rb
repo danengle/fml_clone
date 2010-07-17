@@ -44,7 +44,8 @@ class Admin::PostsController < ApplicationController
   #TODO figure out a better way to catch date errors
   def publish
     @post = Post.find(params[:id])
-    if @post.publish(params[:date])
+    if @post.set_date(params[:date])
+      @post.publish!
       flash[:notice] = "Post #{@post.id} has been scheduled for publishing."
       redirect_to edit_admin_post_path(@post)
     else

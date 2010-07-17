@@ -26,12 +26,15 @@ ActiveRecord::Schema.define(:version => 20100717075004) do
     t.string   "item_type",       :null => false
     t.string   "controller_name", :null => false
     t.string   "action_name",     :null => false
-    t.string   "whodunnit"
+    t.string   "item_attribute",  :null => false
     t.string   "was"
     t.string   "is_now"
+    t.integer  "whodunnit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "change_logs", ["item_type", "item_id"], :name => "index_change_logs_on_item_type_and_item_id"
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id",    :null => false

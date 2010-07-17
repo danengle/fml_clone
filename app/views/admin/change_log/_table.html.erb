@@ -1,0 +1,28 @@
+<% caption ||= 'Changes' %>
+<div class="change_log middle_column">
+  <table class="medium_round">
+    <caption class="medium_round_top"><%= change_log.size %> <%= caption %></caption>
+    <tr>
+      <th class="first_column">Created At</th>
+      <th>Whodunnit</th>
+      <th>Controller</th>
+      <th>Action</th>
+      <th>Item</th>
+      <th>Attribute</th>
+      <th>Previous Value</th>
+      <th>Current Value</th>
+    </tr>
+    <% change_log.each do |log| %>
+      <tr>
+        <td class="first_column"><%= log.created_at.to_s(:short) %></td>
+        <td><%= log.whodunnit.blank? ? 'Anon' : link_to(User.find(log.whodunnit).login, edit_admin_user_path(User.find(log.whodunnit))) %></td>
+        <td><%= log.controller_name %></td>
+        <td><%= log.action_name %></td>
+        <td><%= link_to "#{log.item.class} #{log.item.to_param}", "edit_admin_#{log.item.class.to_s.downcase}s_path(#{log.item.to_param})" %></td>
+        <td><%= log.item_attribute %></td>
+        <td><%= truncate(log.was, :length => 25) %></td>
+        <td><%= truncate(log.is_now, :length => 25) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

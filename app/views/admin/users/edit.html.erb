@@ -47,32 +47,7 @@
         </table>
       <% end %>
     </div>
-    <div id="user_activity">
-      <h3>Recent Activity</h3>
-      <table class="boxed medium_round">
-        <tr>
-          <th class="first_column">ID</th>
-          <th>Item Type</th>
-          <th>Event</th>
-          <th>Item</th>
-          <th>Created At</th>
-        </tr>
-      <% @changes.each do |change| %>
-        <tr class="border_bottom<%= cycle(' odd', ' even') %>">
-          <td class="first_column"><%= change.id %></td>
-          <td><%= change.item_type %></td>
-          <td><%= change.event %></td>
-          <td><%= link_to "#{change.item_type} #{change.item_id}", "#" %></td>
-          <td><%= change.created_at.to_s(:long) %></td>
-        </tr>
-      <% end %>
-      <tr>
-      <td class="pagination_links" colspan="5">
-        <div class="pagination_info">Showing <%= @changes.size %> of <%= @user.changes.size %> most recent changes</div>
-      </td>
-      </tr>
-      </table>
-    </div>
+    <%= render :partial => 'admin/change_log/table', :locals => { :change_log => @user.changes_made, :caption => 'Changes Made' } %>
   </div>
   <div id="third_column">
     <div class="tc_box full_border medium_round">

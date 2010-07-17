@@ -81,3 +81,5 @@ TODO
 	
 	model, action, user, time
 	whodunnit, model, controller_action, attribute, original_value, new_value
+	
+	make log.whodunnit.login, edit_admin_user_path(log.whodunnit) actually reference a user
