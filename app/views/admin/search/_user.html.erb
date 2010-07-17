@@ -1,0 +1,11 @@
+<h5>User</h5>
+<ul class="personal_info">
+  <li>Full Name: <%= link_to user.full_name, edit_admin_user_path(user) %></li>
+  <li>Login: <%= link_to user.login, edit_admin_user_path(user) %></li>
+  <li>Email: <%= link_to user.email, edit_admin_user_path(user) %></li>
+</ul>
+<ul class="other_info">
+  <li>Number of Posts: <%= user.posts.count %></li>
+  <li>Number of Comments: <%= user.comments.count %></li>
+  <li>Number of Votes: <%= user.post_votes.count %></li>
+</ul>

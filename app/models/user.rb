@@ -13,6 +13,13 @@ class User < ActiveRecord::Base
   
   before_destroy :stop_bad_delete
 
+  define_index do
+    indexes "LOWER(full_name)", :as => :full_name, :sortable => true
+    indexes "LOWER(login)", :as => :login, :sortable => true
+    indexes "LOWER(email)", :as => :email, :sortable => true
+    has created_at, updated_at
+    where "state != 'deleted'"
+  end
   # TODO make this work so current_user can't change their own admin status
   # before_update :stop_bad_admin_transistion
   

@@ -53,6 +53,7 @@ FmlClone::Application.routes.draw do |map|
   # match 'posts/top_rated/:time_period' => 'posts#top_rated', :as => 'top_rated'
   match 'admin' => 'admin/posts#index', :as => 'admin'
   match 'admin/dashboard' => 'admin/dashboard#index', :as => 'admin_dashboard'
+  match 'admin/search' => 'admin/search#index', :as => 'admin_search'
   namespace :admin do
     resources :posts do
       resources :comments

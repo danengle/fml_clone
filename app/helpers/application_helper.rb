@@ -79,4 +79,15 @@ module ApplicationHelper
   
   end
 
+  def display_result(r)
+    r.is_a?(User) ? user_result(r) : post_result(r)
+  end
+  
+  def user_result(r)
+    render :partial => 'admin/search/user', :locals => { :user => r }
+  end
+  
+  def post_result(r)
+    render :partial => 'admin/search/post', :locals => { :post => r }
+  end
 end

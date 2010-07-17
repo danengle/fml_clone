@@ -1,0 +1,12 @@
+<h5>Post</h5>
+<%= link_to "Post #{post.id}", edit_admin_post_path(post) %> is currently 
+<% if post.published? %>
+  published as of <%= post.published_at.to_s(:long) %>
+<% else %>
+  <%= post.state %>
+<% end %>
+<p><%= post.body %></p>
+<footer>
+  <span class="personal_info">By <%= post.user.blank? ? @preferences[:anonymous_display_name] : link_to(post.user.login, edit_admin_user_path(post.user)) %></span>
+  <span class="votes_counter"><%= post.up_vote_counter %> Up Votes | <%= post.down_vote_counter %> Down Votes</span>
+</footer>

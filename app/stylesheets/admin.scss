@@ -92,6 +92,39 @@ a:hover, a:active, a:focus { color:$orange; }
 	}
 	#info {
 		float:right;
+		background-color:$lightgrey;
+		border:1px solid $darkgrey2;
+		padding:9px 9px 8px 9px;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		margin-left:6px;
+		a {
+			color:$darkgrey;
+		}
+	}
+	#search_bar {
+		float:right;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		background-color:$lightgrey;
+		padding:4px 4px 4px 2px;
+		border:1px solid $darkgrey2;
+		#admin_search {
+			margin-left:4px;
+			input[type="submit"] {
+				background-color:#ccc;
+				border:1px solid $darkgrey;
+				font-size:1.05em;
+				padding:1px 2px 1px 2px;
+				-moz-border-radius:3px;
+				-webkit-border-radius:3px;
+			}
+			input[type="text"] {
+				padding:0;
+				position:relative;
+				font-size:1.05em;
+			}
+		}
 	}
 }
 
@@ -408,4 +441,43 @@ table {
 }
 .last_button {
 	margin-bottom:0;
+}
+/*** search results ***/
+#search_results {
+	margin-top:14px;
+	ul {
+		
+		li {
+			padding:8px 18px 8px 12px;
+			min-height:45px;
+			border-bottom:1px solid $lightgrey;
+			overflow:auto;
+				ul {
+					
+					float:left;
+					li {
+						min-height:0;
+						border-bottom:none;
+						padding:2px;
+					}
+				}
+				.personal_info {
+					width:35%;
+					display:block;
+					float:left;
+					margin-left:8px;
+				}
+				.other_info {
+				}
+			p {
+				padding:6px 3px;
+			}
+			.votes_counter {
+
+			}
+		}
+		li:last-child {
+			border-bottom:none;
+		}
+	}
 }

@@ -1,7 +1,12 @@
 <div id="top_bar">
   <h1><%= link_to "View Site", root_path %></h1>
   <div id="info">
-    <p>Hello, <%= link_to current_user.login, edit_admin_user_path(current_user) %> |
-    <%= link_to "Log Out", logout_path %>
+    <p>Hello, <%= link_to current_user.login, edit_admin_user_path(current_user) %> | <%= link_to "logout", logout_path %></p>
+  </div>
+  <div id="search_bar">
+  <%= form_tag admin_search_path, :id => 'admin_search', :method => :get do |f| %>
+    <%= text_field_tag :q %>
+    <%= submit_tag :search %>
+  <% end %>
   </div>
 </div>

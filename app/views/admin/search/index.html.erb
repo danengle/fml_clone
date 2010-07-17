@@ -1,0 +1,8 @@
+<h3><%= @results.size %> Results for '<%= params[:q] %>'</h3>
+<div id="search_results">
+  <ul>
+    <% @results.each do |r| %>
+      <li><%= display_result(r) %></li>
+    <% end %>
+  </ul>
+</div>
