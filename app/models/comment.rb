@@ -1,4 +1,7 @@
 class Comment < ActiveRecord::Base
+  
+  acts_as_change_logger
+    
   validates_presence_of :user_id, :post_id, :body
 
   belongs_to :post

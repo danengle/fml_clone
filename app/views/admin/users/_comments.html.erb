@@ -1,0 +1,28 @@
+<div id="user_comments" class="middle_column">
+  <h3>Comments</h3>
+  <% if @user.comments.blank? %>
+    <p>This user has not commented on any comments.</p>
+  <% else %>
+    <table class="boxed medium_round">
+      <tr>
+        <th class="first_column">ID</th>
+        <th>Created At</th>
+        <th>Post</th>
+        <th>Body</th>
+      </tr>
+      <% @user.comments.each do |comment| %>
+        <tr class="border_bottom<%= cycle(' odd', ' even') %>">
+          <td class="first_column"><%= comment.id %></td>
+          <td><%= comment.created_at.to_s(:short) %></td>
+          <td><%= link_to "Post #{comment.post.id}", edit_admin_post_path(comment.post) %></td>
+          <td>
+            <%= truncate(comment.body, :length => 25) %>
+            <div class="actions">
+              <%= link_to 'Edit', edit_admin_post_comment_path(comment.post, comment) %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+</div>

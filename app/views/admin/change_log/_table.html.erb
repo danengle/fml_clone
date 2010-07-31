@@ -15,10 +15,15 @@
     <% change_log.each do |log| %>
       <tr>
         <td class="first_column"><%= log.created_at.to_s(:short) %></td>
-        <td><%= log.whodunnit.blank? ? 'Anon' : link_to(User.find(log.whodunnit).login, edit_admin_user_path(User.find(log.whodunnit))) %></td>
+        <td><%= log.whodunnit.blank? ? 'Anon' : link_to(log.user.login, edit_admin_user_path(log.user)) %></td>
         <td><%= log.controller_name %></td>
         <td><%= log.action_name %></td>
-        <td><%= link_to "#{log.item.class} #{log.item.to_param}", "edit_admin_#{log.item.class.to_s.downcase}s_path(#{log.item.to_param})" %></td>
+        <td>
+          <% if log.item.class == Comment %>
+            <%= link_to "Comment #{log.item.to_param}", "#" %>
+          <% else %>
+            <%= link_to "#{log.item.class} #{log.item.to_param}", eval("edit_admin_#{log.item.class.to_s.downcase}_path(#{log.item.to_param})") %></td>
+          <% end %>
         <td><%= log.item_attribute %></td>
         <td><%= truncate(log.was, :length => 25) %></td>
         <td><%= truncate(log.is_now, :length => 25) %></td>

@@ -198,7 +198,7 @@ a:hover, a:active, a:focus { color:$orange; }
 		}
 	}
 	form {		
-		#post_body {
+		#post_body, #comment_body {
 			width:99%;
 			height:125px;
 		}
@@ -316,7 +316,7 @@ table {
 		margin-left:8px;
 		background-color: $lightgrey2;
 		padding:3px;
-		width:16%;
+		width:25%;
 		text-align:center;
 	}
 	tr {

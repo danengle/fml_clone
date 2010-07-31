@@ -54,6 +54,8 @@ FmlClone::Application.routes.draw do |map|
   match 'admin' => 'admin/posts#index', :as => 'admin'
   match 'admin/dashboard' => 'admin/dashboard#index', :as => 'admin_dashboard'
   match 'admin/search' => 'admin/search#index', :as => 'admin_search'
+  # TODO this is a hack, make change_logger work with nested resources
+  #match 'admin/posts/:post_id/comments/:id/edit' => 'admin/comments#edit', :as => 'edit_admin_comment'
   namespace :admin do
     resources :posts do
       resources :comments

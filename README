@@ -83,3 +83,6 @@ TODO
 	whodunnit, model, controller_action, attribute, original_value, new_value
 	
 	make log.whodunnit.login, edit_admin_user_path(log.whodunnit) actually reference a user
+	make revert action
+	make eval(path) work with nested resources
+	allow rest of value to be seen in change_log table

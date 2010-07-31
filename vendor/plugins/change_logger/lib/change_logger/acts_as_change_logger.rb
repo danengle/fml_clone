@@ -28,12 +28,13 @@ module ChangeLogger
       def record_changes
         attributes.delete_if{|k,v| self.class.ignore.include?(k) }.each do |attribute|
           if send("#{attribute[0]}_changed?")
+            logger.info { "** recording_changes: whodunnit = #{::ChangeLogger.whodunnit.inspect}" }
             change_log = change_logs.new(:was => send("#{attribute[0]}_was"),
                                :is_now => send("#{attribute[0]}"),
                                :item_attribute => attribute[0],
                                :action_name => ::ChangeLogger.action_name,
                                :controller_name => ::ChangeLogger.controller_name,
-                               :whodunnit => ::ChangeLogger.whodunnit)
+                               :whodunnit => ::ChangeLogger.whodunnit.id)
             unless change_log.save
               logger.error { "Couldn't save change log: #{change_log.inspect}\nErrors: #{change_log.errors}" }
             end

@@ -12,42 +12,9 @@
         </fieldset>
       <% end %>
     </div>
-    <div id="user_posts">
-      <h3>Posts</h3>
-      <% if @posts.blank? %>
-        <p>This user has not created any posts.</p>
-      <% else %>
-        <table class="boxed medium_round">
-          <tr>
-            <th class="first_column">ID</th>
-            <th>Body</th>
-            <th>Category</th>
-            <th>Published at</th>
-            <th>Votes</th>
-          </tr>
-          <% @posts.each do |post| %>
-            <tr class="border_bottom<%= cycle(' odd', ' even') %>">
-              <td class="first_column"><%= post.id %></td>
-              <td>
-                <%= truncate(post.body, :length => 25) %>
-                <div class="actions">
-                  <%= link_to 'Edit', edit_admin_post_path(post) %>
-                </div>
-              </td>
-              <td><%= post.category.name %></td>
-              <td><%= post.published? ? published_time(post) : post.state %></td>
-              <td><%= post.up_vote_counter %> / <%= post.down_vote_counter %></td></tr>
-          <% end %>
-          <tr>
-            <td class="pagination_links" colspan="5">
-              <div class="pagination_info"><%= page_entries_info @posts %></div>
-              <%= will_paginate @posts %>
-            </td>
-          </tr>
-        </table>
-      <% end %>
-    </div>
-    <%= render :partial => 'admin/change_log/table', :locals => { :change_log => @user.changes_made, :caption => 'Changes Made' } %>
+    <%= render :partial => 'admin/users/posts' %>
+    <%= render :partial => 'admin/users/comments' %>
+    <%= render :partial => 'admin/change_log/table', :locals => { :change_log => @user.change_logs, :caption => 'Changes' } %>
   </div>
   <div id="third_column">
     <div class="tc_box full_border medium_round">

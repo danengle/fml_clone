@@ -252,7 +252,7 @@ a:hover, a:active, a:focus {
   width: 30%;
 }
 /* line 201, ../../../app/stylesheets/admin.scss */
-#main_content form #post_body {
+#main_content form #post_body, #main_content form #comment_body {
   width: 99%;
   height: 125px;
 }
@@ -392,7 +392,7 @@ table caption {
   margin-left: 8px;
   background-color: #bbbbbb;
   padding: 3px;
-  width: 16%;
+  width: 25%;
   text-align: center;
 }
 /* line 323, ../../../app/stylesheets/admin.scss */
