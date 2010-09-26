@@ -6,7 +6,7 @@ class Admin::PostsController < ApplicationController
   # GET /posts.xml
   def index
     @new_posts = Post.need_review.all
-    @posts = Post.reviewed.paginate(:page => params[:page], :per_page => 10)
+    @posts = Post.visible.reviewed.paginate(:page => params[:page], :per_page => 10)
     @future_posts = Post.future_posts.all
     
     respond_to do |format|
@@ -22,6 +22,7 @@ class Admin::PostsController < ApplicationController
       @post.read!
       @post.short_url = Bitly.get_short_url(@post, post_url(@post), @preferences)
     end
+    @changes = ChangeLog.for_post(@post).paginate(:page => params[:page], :per_page => 10)
   end
 
   # PUT /posts/1

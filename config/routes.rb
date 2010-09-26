@@ -62,7 +62,12 @@ FmlClone::Application.routes.draw do
   namespace :admin do
     resources :profile
     resources :posts do
-      resources :comments
+      resources :comments do
+        member do
+          post :approve
+          post :reject
+        end
+      end
       member do
         post :publish
         post :unpublish

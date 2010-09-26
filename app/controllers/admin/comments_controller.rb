@@ -28,9 +28,21 @@ class Admin::CommentsController < ApplicationController
   # DELETE /admin/posts/1
   def destroy
     @comment = @post.comments.find(params[:id])
-    @comment.delete!
+    @comment.destroy
     flash[:notice] = "Comment deleted."
-    format.html { redirect_to(edit_admin_posts_url(@post)) }
+    redirect_to(edit_admin_posts_url(@post))
+  end
+  
+  def approve
+    @comment = @post.comments.find(params[:id])
+    @comment.mark_as_ham!
+    redirect_to edit_admin_post_path(@post)
+  end
+
+  def reject
+    @comment = @post.comments.find(params[:id])
+    @comment.mark_as_spam!
+    redirect_to edit_admin_post_path(@post)
   end
   
   private

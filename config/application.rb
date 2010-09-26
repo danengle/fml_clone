@@ -44,3 +44,4 @@ module FmlClone
     config.session_store :cookie_store, :key => '_fml_clone_session'
   end
 end
+require 'akismetor'

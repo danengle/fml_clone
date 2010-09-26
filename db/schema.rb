@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100926123406) do
+ActiveRecord::Schema.define(:version => 20100926150107) do
 
   create_table "categories", :force => true do |t|
     t.string   "name",        :null => false
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(:version => 20100926123406) do
     t.text     "body",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ip_address"
+    t.string   "user_agent"
+    t.string   "referrer"
+    t.boolean  "approved"
   end
 
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"

@@ -64,20 +64,6 @@ module ApplicationHelper
   def render_table(obj, options = {})
     render :partial => 'admin/shared/table_header', :locals => { :obj => obj, :options => options }
   end
-  
-  def show_id
-    
-  end
-  def show_login(options)
-    
-  end
-  def show_full_name
-    
-  end
-  
-  def show_admin_status
-  
-  end
 
   def display_result(r)
     r.is_a?(User) ? user_result(r) : post_result(r)
@@ -89,5 +75,19 @@ module ApplicationHelper
   
   def post_result(r)
     render :partial => 'admin/search/post', :locals => { :post => r }
+  end
+  
+  def change_log_link(item)
+    logger.info { "*^^* item class: #{item.class.to_s.to_sym}" }
+    case item.class.to_s
+    when 'Profile'
+      link_to "User #{item.user.to_param}", edit_admin_user_path(item.user)
+    when 'Preference'
+      link_to "Preference #{item.to_param}", admin_preference_path(item.preference_category.slug)
+    when 'Comment'
+      link_to "Comment #{item.to_param}", edit_admin_post_path(item.post)
+    else
+      link_to "#{item.class} #{item.to_param}", eval("edit_admin_#{item.class.to_s.downcase}_path(#{item.to_param})") 
+    end
   end
 end

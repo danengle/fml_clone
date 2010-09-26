@@ -18,16 +18,17 @@
         <td><%= log.whodunnit.blank? ? 'Anon' : link_to(log.user.login, edit_admin_user_path(log.user)) %></td>
         <td><%= log.controller_name %></td>
         <td><%= log.action_name %></td>
-        <td>
-          <% if log.item.class == Comment %>
-            <%= link_to "Comment #{log.item.to_param}", "#" %>
-          <% else %>
-            <%= link_to "#{log.item.class} #{log.item.to_param}", eval("edit_admin_#{log.item.class.to_s.downcase}_path(#{log.item.to_param})") %></td>
-          <% end %>
+        <td><%= change_log_link(log.item) %></td>
         <td><%= log.item_attribute %></td>
         <td><%= truncate(log.was, :length => 25) %></td>
         <td><%= truncate(log.is_now, :length => 25) %></td>
       </tr>
     <% end %>
+    <tr>
+      <td class="pagination_links" colspan="8">
+        <div class="pagination_info"><%= page_entries_info change_log %></div>
+        <%= will_paginate change_log %>
+      </td>
+    </tr>
   </table>
 </div>

@@ -40,7 +40,8 @@ class Post < ActiveRecord::Base
   scope :random_record, limit(1).order('rand()')
   scope :not_published,
     where({:state => ['viewed', 'unread']})
-
+  scope :visible, where(['state not in (?)', ['deleted', 'denied']])
+  
   aasm_initial_state :unread
   aasm_state :unread
   aasm_state :viewed
