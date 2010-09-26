@@ -48,7 +48,6 @@ class Admin::PreferencesController < ApplicationController
   end
   
   def bulk_update
-    logger.info { "\nparams = #{params.inspect}\n\n" }
     @preference_category = PreferenceCategory.find_by_name(params[:preference_category])
     @preferences = @preference_category.preferences.positioned.all
     @errors = []
@@ -76,6 +75,21 @@ class Admin::PreferencesController < ApplicationController
     else
       render 'show'
     end
-    
   end
+  
+  def export
+    @preferences = PreferenceCategory.includes(:preferences).all
+    @yaml = []
+    @preferences.each do |pc|
+      pcyaml = []
+      pcyaml << pc.attributes.delete_if{|k,v| ['id', 'created_at', 'updated_ad'].include?(k)}
+      pcyaml << pc.preferences.map{|pr| pr.attributes.delete_if{|k,v| ['id', 'created_at', 'updated_ad'].include?(k)} }
+      @yaml << pcyaml
+    end
+    f = File.new("config/preferences.yml", "w+")
+    f.write(@yaml.to_yaml)
+    f.close
+    redirect_to admin_preferences_path, :notice => "Export of preferences completed successfully."
+  end
+
 end

@@ -1,0 +1,208 @@
+--- 
+- - description: 
+    name: General
+    position: 1
+    slug: general
+    updated_at: 2010-09-26 00:28:17 Z
+  - - description: The text on the button used to up vote a post
+      display_name: Thumbs Up Text
+      key: thumbs_up
+      large: false
+      modifiable: true
+      position: 3
+      preference_category_id: 15
+      required: true
+      updated_at: 2010-04-18 18:44:06 Z
+      value: Fuck yeah!
+    - description: The text on the button used to down vote a post
+      display_name: Thumbs Down Text
+      key: thumbs_down
+      large: false
+      modifiable: true
+      position: 4
+      preference_category_id: 15
+      required: true
+      updated_at: 2010-05-16 13:00:03 Z
+      value: Awww shit!!
+    - description: What you see at the top of your browser window
+      display_name: Site Title
+      key: site_title
+      large: false
+      modifiable: true
+      position: 1
+      preference_category_id: 15
+      required: true
+      updated_at: 2010-04-18 19:48:38 Z
+      value: Make me laugh!
+    - description: Where should notification emails get sent?
+      display_name: Nofication Email
+      key: notification_email
+      large: false
+      modifiable: true
+      position: 2
+      preference_category_id: 15
+      required: false
+      updated_at: 2010-05-16 00:00:00 Z
+      value: engle.68@gmail.com
+    - description: Paste what your analytics provider privided to use to track page hits
+      display_name: Analytics Script
+      key: analytics_script
+      large: true
+      modifiable: true
+      position: 5
+      preference_category_id: 15
+      required: true
+      updated_at: 2010-07-04 01:15:11 Z
+      value: |-
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-17269777-1']);
+          _gaq.push(['_trackPageview']);
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+- - description: 
+    name: Ad Space
+    position: 2
+    slug: ad-space
+    updated_at: 2010-09-26 00:28:17 Z
+  - - description: Paste your ad source here
+      display_name: Top Horizontal Ad
+      key: top_horizontal_ad
+      large: true
+      modifiable: true
+      position: 1
+      preference_category_id: 16
+      required: true
+      updated_at: 2010-06-05 23:39:13 Z
+      value: |-
+        <div style="width:650px; height:65px;background-color:#ccc;margin:0 auto;">
+          <span style="padding:6px 0 0 25%;">Ad space for sale</span>
+        </div>
+    - description: This ad will go below Categories side box
+      display_name: Side Boxed Ad
+      key: side_box_ad
+      large: true
+      modifiable: true
+      position: 0
+      preference_category_id: 16
+      required: true
+      updated_at: 2010-06-05 23:39:13 Z
+      value: |-
+        <div style="height:445px;background-color:#ccc;margin:0 auto;">
+          <span style="padding:6px 0 0 10%;">Ad space for sale</span>
+        </div>
+- - description: 
+    name: Posts
+    position: 3
+    slug: posts
+    updated_at: 2010-09-26 00:28:17 Z
+  - - description: What should the author name of anonymously submitted posts be?
+      display_name: Anonymous Display Name
+      key: anonymous_display_name
+      large: false
+      modifiable: true
+      position: 2
+      preference_category_id: 17
+      required: true
+      updated_at: 2010-05-02 00:29:06 Z
+      value: Anonymous
+    - description: How many posts do you want to display per page?
+      display_name: Number of Posts per Page
+      key: posts_per_page
+      large: false
+      modifiable: true
+      position: 1
+      preference_category_id: 17
+      required: true
+      updated_at: 2010-05-16 11:58:52 Z
+      value: "5"
+    - description: This text will be displayed above the submit post age
+      display_name: Submit Post Text
+      key: submit_post_text
+      large: true
+      modifiable: true
+      position: 3
+      preference_category_id: 17
+      required: true
+      updated_at: 2010-05-23 02:23:10 Z
+      value: |-
+        <ul>
+          <li>Do this when you submit your post</li>
+          <li>Also, keep this in mind.</li>
+          <li>Say it below. This is a much longer sentence that is being used to take up more and more space because.</li>
+          <li class="margin-right">This is a much longer sentence that is being used to take up a bunch of space and yeah blah.</li>
+        </ul>
+    - description: This text will be displayed at the top of the submit a post page
+      display_name: Submit Post Header Text
+      key: submit_post_header_text
+      large: false
+      modifiable: true
+      position: 4
+      preference_category_id: 17
+      required: true
+      updated_at: 2010-05-23 02:26:27 Z
+      value: Submit your own story, tard!
+    - description: This is the text that will be displayed on the submit button for submitting posts
+      display_name: Submit Post Button Text
+      key: post_button_text
+      large: false
+      modifiable: true
+      position: 5
+      preference_category_id: 17
+      required: true
+      updated_at: 2010-09-26 00:28:17 Z
+      value: Share with the world!
+- - description: 
+    name: Notifications
+    position: 4
+    slug: notifications
+    updated_at: 2010-09-26 00:28:17 Z
+  - - description: The message displayed to users after successfully submitting a post
+      display_name: Successful Post Message
+      key: successful_post_creation
+      large: false
+      modifiable: true
+      position: 1
+      preference_category_id: 18
+      required: true
+      updated_at: 2010-05-23 02:33:25 Z
+      value: Thank you for your submission. It's being reviewed, don't be hurt if it doesn't get published.
+- - description: 
+    name: Social
+    position: 5
+    slug: social
+    updated_at: 2010-09-26 00:28:17 Z
+  - - description: What's the Twitter username used to tweet published posts?
+      display_name: Twitter Username
+      key: twitter_username
+      large: false
+      modifiable: true
+      position: 1
+      preference_category_id: 19
+      required: false
+      updated_at: 2010-06-06 02:16:41 Z
+      value: developing_dan
+    - description: This is your bit.ly api username
+      display_name: Bit.ly Username
+      key: bitly_username
+      large: false
+      modifiable: true
+      position: 2
+      preference_category_id: 19
+      required: false
+      updated_at: 2010-09-26 00:28:17 Z
+      value: developingdan
+    - description: This is your bit.ly API key
+      display_name: Bit.ly API Key
+      key: bitly_api_key
+      large: false
+      modifiable: true
+      position: 3
+      preference_category_id: 19
+      required: false
+      updated_at: 2010-06-06 03:41:29 Z
+      value: R_a886861c1945dcefe627a22abd737b6f

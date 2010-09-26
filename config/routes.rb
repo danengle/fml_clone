@@ -80,6 +80,7 @@ FmlClone::Application.routes.draw do |map|
     resources :preferences do
       collection do
         post :bulk_update
+        post :export
       end
     end
     resources :pages
