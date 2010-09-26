@@ -2,13 +2,9 @@ class Admin::UsersController < ApplicationController
 
   before_filter :admin_required
   before_filter :find_user, :only => [:show, :edit, :update, :activate, :suspend, :unsuspend, :delete, :purge]
-  before_filter :log_names
+
   layout 'admin'
   
-  def log_names
-    logger.info { "* controller_name: #{controller_path}" }
-    logger.info { "*     action_name: #{action_name}" }
-  end
   def index
     @users = User.not_deleted.paginate(:page => params[:page], :per_page => 10)
   end
@@ -20,6 +16,7 @@ class Admin::UsersController < ApplicationController
   def edit
     @posts = @user.posts.paginate(:page => params[:page], :per_page => 10)
     @changes = @user.changes.limit(20)
+    @change_log = ChangeLog.by_created_at.affect(@user).all
   end
   
   def update

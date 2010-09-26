@@ -490,15 +490,15 @@ table .child_column td {
 
 /* line 403, ../../../app/stylesheets/admin.scss */
 .editable {
+  clear: both;
   margin: 10px 0;
 }
-/* line 405, ../../../app/stylesheets/admin.scss */
-.editable label {
+/* line 406, ../../../app/stylesheets/admin.scss */
+.editable .preference_name {
   width: 25%;
-  display: block;
   float: left;
   text-align: right;
-  padding: 4px 16px 0 0;
+  padding: 4px 8px 0 0;
 }
 /* line 412, ../../../app/stylesheets/admin.scss */
 .editable input {
@@ -515,77 +515,87 @@ table .child_column td {
   width: 14px;
 }
 /* line 423, ../../../app/stylesheets/admin.scss */
+.editable input[type=checkbox] {
+  width: 14px;
+}
+/* line 426, ../../../app/stylesheets/admin.scss */
 .editable #page_body {
   width: 80%;
   height: 300px;
 }
 
-/* line 428, ../../../app/stylesheets/admin.scss */
+/* line 431, ../../../app/stylesheets/admin.scss */
+.form_text_area {
+  width: 40%;
+  height: 100px;
+}
+
+/* line 435, ../../../app/stylesheets/admin.scss */
 .form_button {
   width: 140px;
   margin-left: 27%;
 }
 
-/* line 432, ../../../app/stylesheets/admin.scss */
+/* line 439, ../../../app/stylesheets/admin.scss */
 #preferences_export {
   clear: both;
 }
 
-/* line 435, ../../../app/stylesheets/admin.scss */
+/* line 442, ../../../app/stylesheets/admin.scss */
 #footer {
   clear: both;
 }
 
 /*** buttons ***/
-/* line 439, ../../../app/stylesheets/admin.scss */
+/* line 446, ../../../app/stylesheets/admin.scss */
 #delete_button {
   float: right;
 }
 
-/* line 442, ../../../app/stylesheets/admin.scss */
+/* line 449, ../../../app/stylesheets/admin.scss */
 .regular_button {
   margin-bottom: 4px;
 }
 
-/* line 445, ../../../app/stylesheets/admin.scss */
+/* line 452, ../../../app/stylesheets/admin.scss */
 .last_button {
   margin-bottom: 0;
 }
 
 /*** search results ***/
-/* line 449, ../../../app/stylesheets/admin.scss */
+/* line 456, ../../../app/stylesheets/admin.scss */
 #search_results {
   margin-top: 14px;
 }
-/* line 452, ../../../app/stylesheets/admin.scss */
+/* line 459, ../../../app/stylesheets/admin.scss */
 #search_results ul li {
   padding: 8px 18px 8px 12px;
   min-height: 45px;
   border-bottom: 1px solid #e4e4e4;
   overflow: auto;
 }
-/* line 457, ../../../app/stylesheets/admin.scss */
+/* line 464, ../../../app/stylesheets/admin.scss */
 #search_results ul li ul {
   float: left;
 }
-/* line 459, ../../../app/stylesheets/admin.scss */
+/* line 466, ../../../app/stylesheets/admin.scss */
 #search_results ul li ul li {
   min-height: 0;
   border-bottom: none;
   padding: 2px;
 }
-/* line 465, ../../../app/stylesheets/admin.scss */
+/* line 472, ../../../app/stylesheets/admin.scss */
 #search_results ul li .personal_info {
   width: 35%;
   display: block;
   float: left;
   margin-left: 8px;
 }
-/* line 473, ../../../app/stylesheets/admin.scss */
+/* line 480, ../../../app/stylesheets/admin.scss */
 #search_results ul li p {
   padding: 6px 3px;
 }
-/* line 477, ../../../app/stylesheets/admin.scss */
+/* line 484, ../../../app/stylesheets/admin.scss */
 #search_results ul li:last-child {
   border-bottom: none;
 }

@@ -14,3 +14,25 @@
   <%= f.label :admin, "Admin?" %>
   <%= f.check_box :admin, :disabled => (current_user == @user) %>
 </div>
+<%= f.fields_for :profile do |profile_form| %>
+  <div class="field">
+    <%= profile_form.label :dob %>
+    <%= profile_form.date_select :dob, :start_year => Time.now.year - 75, :end_year => Time.now.year - 10, :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= profile_form.label :city %>
+    <%= profile_form.text_field :city %>
+  </div>
+  <div class="field">
+    <%= profile_form.label :country %>
+    <%= profile_form.text_field :country %>
+  </div>
+  <div class="field">
+    <%= profile_form.label :about_me %>
+    <%= profile_form.text_area :about_me, :class => 'form_text_area' %>
+  </div>
+  <div class="field">
+    <%= profile_form.label :hidden, "Profile is Hidden?" %>
+    <%= profile_form.check_box :hidden %>
+  </div>
+<% end %>

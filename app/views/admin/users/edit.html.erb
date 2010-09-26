@@ -4,7 +4,16 @@
     <div id="main_content_body" class="good_forms boxed full_box medium_round">
       <%= form_for([:admin,@user]) do |f| %>
         <fieldset>
-        <%= f.error_messages %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2>Oh snap! You need to fix <%= pluralize(@user.errors.count, "error") %>:</h2>
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
         <%= render :partial => 'form', :locals => { :f => f } %>
         <div>
           <%= f.submit "Update Profile", :class => "submit_button awesome_button" %>
@@ -14,7 +23,7 @@
     </div>
     <%= render :partial => 'admin/users/posts' %>
     <%= render :partial => 'admin/users/comments' %>
-    <%= render :partial => 'admin/change_log/table', :locals => { :change_log => @user.change_logs, :caption => 'Changes' } %>
+    <%= render :partial => 'admin/change_log/table', :locals => { :change_log => @change_log, :caption => 'Changes' } %>
   </div>
   <div id="third_column">
     <div class="tc_box full_border medium_round">

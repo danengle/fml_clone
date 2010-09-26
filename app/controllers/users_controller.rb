@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = @current_user
+    @profile = @user.profile || Profile.new
   end
 
   def update

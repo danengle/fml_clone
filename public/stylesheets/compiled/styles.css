@@ -437,65 +437,70 @@ body {
   width: 99.9%;
   height: 175px;
 }
-/* line 398, ../../../app/stylesheets/styles.scss */
+/* line 396, ../../../app/stylesheets/styles.scss */
+.user_form .field .form_text_area {
+  width: 40%;
+  height: 100px;
+}
+/* line 402, ../../../app/stylesheets/styles.scss */
 .user_form .actions input {
   margin: 4px 0 0 198px;
 }
-/* line 401, ../../../app/stylesheets/styles.scss */
+/* line 405, ../../../app/stylesheets/styles.scss */
 .user_form .actions #post_submit {
   float: right;
 }
-/* line 405, ../../../app/stylesheets/styles.scss */
+/* line 409, ../../../app/stylesheets/styles.scss */
 .user_form p {
   padding: 4px 16px;
   margin: 0 0 6px 182px;
 }
 
-/* line 411, ../../../app/stylesheets/styles.scss */
+/* line 415, ../../../app/stylesheets/styles.scss */
 #new_post_box #submit_post_text {
   clear: both;
 }
-/* line 414, ../../../app/stylesheets/styles.scss */
+/* line 418, ../../../app/stylesheets/styles.scss */
 #new_post_box #submit_post_text ul li {
   list-style-type: disc;
 }
-/* line 417, ../../../app/stylesheets/styles.scss */
+/* line 421, ../../../app/stylesheets/styles.scss */
 #new_post_box #submit_post_text ul .margin-right {
   margin-right: 195px;
 }
 
 /*** ad space ***/
-/* line 424, ../../../app/stylesheets/styles.scss */
+/* line 428, ../../../app/stylesheets/styles.scss */
 #top_horiz_ad {
   padding: 5px;
 }
 
 /*** Misc stuff ***/
-/* line 429, ../../../app/stylesheets/styles.scss */
+/* line 433, ../../../app/stylesheets/styles.scss */
 #refine_results h3 {
   margin: 0;
 }
-/* line 433, ../../../app/stylesheets/styles.scss */
+/* line 437, ../../../app/stylesheets/styles.scss */
 #refine_results span {
   float: right;
 }
 
 /*** moderators stuff ***/
-/* line 438, ../../../app/stylesheets/styles.scss */
+/* line 442, ../../../app/stylesheets/styles.scss */
 #moderator_votes {
   margin-left: 30%;
 }
-/* line 440, ../../../app/stylesheets/styles.scss */
+/* line 444, ../../../app/stylesheets/styles.scss */
 #moderator_votes form {
   display: block;
   float: left;
 }
-/* line 443, ../../../app/stylesheets/styles.scss */
+/* line 447, ../../../app/stylesheets/styles.scss */
 #moderator_votes form input {
   font-size: 1.5em;
   padding: 20px 48px;
 }
-/* line 448, ../../../app/stylesheets/styles.scss */
+/* line 452, ../../../app/stylesheets/styles.scss */
 #moderator_votes #up_vote_button {
   margin-right: 4px;
   -moz-border-radius-topleft: 8px;
@@ -504,7 +509,7 @@ body {
   -webkit-border-bottom-left-radius: 8px;
   background: #e6efc2 url("/images/icons/bullet_tick.png") no-repeat 1.5em center;
 }
-/* line 456, ../../../app/stylesheets/styles.scss */
+/* line 460, ../../../app/stylesheets/styles.scss */
 #moderator_votes #down_vote_button {
   -moz-border-radius-topright: 8px;
   -webkit-border-top-right-radius: 8px;

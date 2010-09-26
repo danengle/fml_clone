@@ -16,7 +16,7 @@ class Admin::PreferencesController < ApplicationController
   # GET /preferences/1
   # GET /preferences/1.xml
   def show
-    @preference_category = PreferenceCategory.find_by_name(params[:id].humanize)
+    @preference_category = PreferenceCategory.find_by_name(params[:id].titleize)
     @preferences = @preference_category.preferences.positioned.all
     
     respond_to do |format|
@@ -51,19 +51,9 @@ class Admin::PreferencesController < ApplicationController
     @preference_category = PreferenceCategory.find_by_name(params[:preference_category])
     @preferences = @preference_category.preferences.positioned.all
     @errors = []
-    params[:preferences].each do |pref|
-      preference = Preference.find_by_key(pref[0])
-      preference.value = pref[1]
-      unless preference.feature.blank?
-        feature = Feature.find_by_preference_id(preference.id)
-        if params[:feature].blank?
-          feature.deployed = false
-        else
-          feature.deployed = params[:feature][preference.key.to_sym]
-        end
-        feature.save
-      end
-      unless preference.save
+    params[:preferences].each_pair do |id, attributes|
+      preference = Preference.find(id)
+      unless preference.update_attributes(attributes)
         preference.errors.each_pair do |key, value|
           @errors << "#{preference.display_name} #{value[0]}"
         end

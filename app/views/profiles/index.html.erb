@@ -1,0 +1,35 @@
+<h1>Listing profiles</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Dob</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Time zone</th>
+    <th>About me</th>
+    <th>Hidden</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= profile.user_id %></td>
+    <td><%= profile.dob %></td>
+    <td><%= profile.city %></td>
+    <td><%= profile.country %></td>
+    <td><%= profile.time_zone %></td>
+    <td><%= profile.about_me %></td>
+    <td><%= profile.hidden %></td>
+    <td><%= link_to 'Show', profile %></td>
+    <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+    <td><%= link_to 'Destroy', profile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Profile', new_profile_path %>

@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     @stuff = request
     @post = Post.find(params[:id])
     @post.increment!(:view_counter)
+    @comment = @post.comments.new
     respond_with(@post)
   end
 

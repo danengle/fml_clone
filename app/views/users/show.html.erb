@@ -3,7 +3,27 @@
 </div>
 <div id="user_profile" class="boxed">
   <ul>
+    <li><span class="bolded">Town/Country:</span> <%= @user.try(:profile).try(:city) %>/<%= @user.try(:profile).try(:country) %></li>
+    <li><span class="bolded">Date of Birth:</span> <%= @user.try(:profile).try(:dob).to_s(:long) %></li>
     <li><span class="bolded">Number of posts:</span> <%= @user.number_of_posts %></li>
     <li><span class="bolded">Number of comments:</span> <%= @user.number_of_comments %></li>
   </ul>
+</div>
+<div class="boxed">
+  <h3>About <%= @user.login %></h3>
+  <p>
+    <% if @user.try(:profile).about_me.blank? %>
+      Nothing to see here. This user still hasn't added anything about themselves
+    <% else %>
+      <%= @user.profile.about_me %>
+    <% end %>
+  </p>
+</div>
+<div class="boxed">
+  <h3><%= @user.login %> has favorited <%= @user.favorites.count %> posts</h3>
+</div>
+<div>
+  <% @user.favorites.each do |favorite| %>
+    <%= render :partial => 'posts/post', :locals => {:post => favorite.post } %>
+  <% end %>
 </div>
