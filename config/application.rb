@@ -41,5 +41,6 @@ module FmlClone
     config.filter_parameters << :password
     
     config.secret_token = "kljsdf09lskdfjLDJFOi209flxvlkhlakjhwgh2sdvkvjklsdlfh20208HOH*ElojkhskHIEOPSJdhf"
+    config.session_store :cookie_store, :key => '_fml_clone_session'
   end
 end

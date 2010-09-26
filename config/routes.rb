@@ -1,5 +1,5 @@
 # TODO organize routes better
-FmlClone::Application.routes.draw do |map|
+FmlClone::Application.routes.draw do
   match 'moderators' => 'moderators#index', :as => 'moderators'
   match 'moderators/:id/up_vote' => 'moderators#up_vote', :as => 'moderators_up_vote'
   match 'moderators/:id/down_vote' => 'moderators#down_vote', :as => 'moderators_down_vote'
