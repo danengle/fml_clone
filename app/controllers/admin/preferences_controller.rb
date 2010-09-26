@@ -5,8 +5,8 @@ class Admin::PreferencesController < ApplicationController
   # GET /preferences
   # GET /preferences.xml
   def index
-    @preference_category = PreferenceCategory.find_by_name('general')
-    @preferences = Preference.general.all
+    @preference_category = PreferenceCategory.find_by_name('general'.humanize)
+    @preferences = @preference_category.preferences.positioned.all
     respond_to do |format|
       format.html { render 'show' }
       format.xml  { render :xml => @preferences }
