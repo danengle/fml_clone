@@ -49,7 +49,6 @@ class Admin::PostsController < ApplicationController
       flash[:notice] = "Post #{@post.id} has been scheduled for publishing."
       redirect_to edit_admin_post_path(@post)
     else
-      logger.info { "** @post.errors: #{@post.errors.inspect}" }
       render 'edit'
     end
   end

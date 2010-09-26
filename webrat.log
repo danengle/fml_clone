@@ -1,0 +1,154 @@
+# Logfile created on 2010-09-25 23:30:15 -0500 by logger.rb/25413
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: GET /posts/new with {} and HTTP headers {}
+REQUESTING PAGE: POST /posts with {"utf8"=>"\xE2\x9C\x93", "post"=>{"category_id"=>"2", "body"=>"get some"}, "commit"=>"Create Post"} and HTTP headers {"HTTP_REFERER"=>"/posts/new"}

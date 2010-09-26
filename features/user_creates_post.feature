@@ -5,6 +5,8 @@ Feature: user creates post
 	
 	Scenario: create post when not logged in
 		Given I am not logged in
-		When I create a new post
-		Then I should see "Thanks for submitting."
-		
+		When I go to the new post page
+		And I create a post
+		Then a new post will be created
+		And the post will be pending review
+		And I should be on the posts page

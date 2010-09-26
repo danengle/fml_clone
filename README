@@ -86,3 +86,9 @@ TODO
 	make revert action
 	make eval(path) work with nested resources
 	allow rest of value to be seen in change_log table
+	
+	CUCUMBER
+	user creates post
+	logged in user creates post
+	logged in user creates comment
+	

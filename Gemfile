@@ -34,4 +34,5 @@ group :development, :test do
 	gem 'rspec'
 	gem 'cucumber-rails'
 	gem 'webrat'
+	gem 'seed-fu'
 end

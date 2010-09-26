@@ -16,11 +16,12 @@ require 'webrat'
 require 'webrat/core/matchers'
 
 Webrat.configure do |config|
-  config.mode = :rails
+  config.mode = :rack
   config.open_error_files = false # Set to true if you want error pages to pop up in the browser
 end
-
-
+World(Rack::Test::Methods)
+World(Webrat::Methods)
+World(Webrat::Matchers)
 # If you set this to false, any error raised from within your app will bubble 
 # up to your step definition and out to cucumber unless you catch it somewhere
 # on the way. You can make Rails rescue errors and render error pages on a
@@ -53,4 +54,12 @@ if defined?(ActiveRecord::Base)
     DatabaseCleaner.strategy = :truncation
   rescue LoadError => ignore_if_database_cleaner_not_present
   end
+end
+
+Before do
+  # ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations['test'])
+  # ActiveRecord::Schema.verbose = false
+  # load "#{RAILS_ROOT}/db/schema.rb"
+  # Dir[File.join(RAILS_ROOT, "features/fixtures", '*.rb')].sort.each { |fixture| load fixture }
+  Category.create(:name => "Family")
 end
