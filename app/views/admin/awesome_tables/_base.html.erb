@@ -2,28 +2,32 @@
   <caption class="medium_round_top"><%= table.caption %></caption>
   <tr>
     <% table.table_headers.each do |header| %>
-      <th<%= " class=#{header[:class]}" unless header[:class].blank? %>><%= header[:text].blank? ? image_tag(header[:image]) : header[:text]%></th>
+      <th<%= " class=#{header[:class]}" unless header[:class].blank? %>><%= header[:image].blank? ? header[:text] : image_tag(header[:image]) %></th>
     <% end %>
   </tr>
-  <% table.objects.each do |object| %>
-    <tr>
-    <% table.columns.each do |column| %>
-      <td<%= " class=#{column[:class]}" unless column[:class].blank? %>>
-        <% if !column[:method].blank? && object.respond_to?(column[:method]) %>
-          <%= object.send(column[:method]) %>
-        <% else %>
-          <%= render :partial => column[:partial], :locals => { :obj => object } %>
+  <% if table.objects.blank? %>
+    <tr><td colspan="<%= table.table_headers.size %>">0 results</td></tr>
+  <% else %>
+    <% table.objects.each do |object| %>
+      <tr>
+        <% table.columns.each do |column| %>
+          <td<%= " class=#{column[:class]}" unless column[:class].blank? %>>
+            <% if !column[:method].blank? && object.respond_to?(column[:method]) %>
+              <%= object.send(column[:method]) %>
+            <% else %>
+              <%= render :partial => column[:partial], :locals => { :obj => object } %>
+            <% end %>
+          </td>
         <% end %>
-      </td>
+      </tr>
     <% end %>
-    </tr>
-  <% end %>
-  <% if table.paginate? %>
-    <tr>
-      <td class="pagination_links" colspan="<%= table.table_headers.size %>">
-        <div class="pagination_info"><%= page_entries_info table.objects %></div>
-        <%= will_paginate table.objects %>
-      </td>
-    </tr>
+    <% if table.paginate? %>
+      <tr>
+        <td class="pagination_links" colspan="<%= table.table_headers.size %>">
+          <div class="pagination_info"><%= page_entries_info table.objects %></div>
+          <%= will_paginate table.objects %>
+        </td>
+      </tr>
+    <% end %>
   <% end %>
 </table>

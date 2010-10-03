@@ -89,11 +89,7 @@ class Post < ActiveRecord::Base
   
   # FIXME @preferences doesn't seem to be working inside model
   def display_name
-    # user.blank? ? @preferences[:anonymous_display_name] : user.login
     if self.try(:user).blank?
-      # logger.info { "*** @preferences inside user#display_name" }
-      # logger.info { "*** #{@preferences}" }
-      # @preferences[:anonymous_display_name]
       "Anonymous"
     else
       self.user.login

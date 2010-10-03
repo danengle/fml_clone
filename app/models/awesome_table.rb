@@ -6,7 +6,12 @@ class AwesomeTable
   
   attr_accessor :objects, :partial, :caption, :columns, :table_headers
   
-  def self.build(obj, table_type, objects)
+  def self.register_table(table_name, &block)
+    @@tables[table_name] = block
+  end
+  
+  def self.build(obj, table_type)
+    raise "table_type '#{table_type}' has not yet been registered." if @@tables[table_type].blank?
     @@tables[table_type].call(obj)
   end
 
@@ -15,11 +20,7 @@ class AwesomeTable
     @columns = []
     @objects = objects
     @partial = "admin/awesome_tables/base"
-    @table = AwesomeTable.build(self, table_type, objects)
-  end
-  
-  def self.register_table(table_name, &block)
-    @@tables[table_name] = block
+    AwesomeTable.build(self, table_type)
   end
   
   def set_caption(text)
@@ -27,18 +28,17 @@ class AwesomeTable
   end
   
   def column(header, method, options = {})
+    headers = {:class => options[:class], :text => header}
     if method.is_a? Hash
       raise "column requires a partial" if method[:partial].blank?
       @columns << {:partial => method[:partial] }
-      @table_headers << {:class => options[:class], :text => header}
     else
       @columns << {:method => method, :class => options[:class]}
       unless options[:as_image].blank?
-        @table_headers << {:class => options[:class], :image => options[:as_image]}
-      else
-        @table_headers << {:class => options[:class], :text => header}
+        headers.merge!(:image => options[:as_image])
       end
     end
+    @table_headers << headers
   end
   
   def paginate
@@ -51,8 +51,9 @@ class AwesomeTable
   
   register_table :posts do |t|
     t.set_caption "Posts"
-    t.column 'ID', :id, :class => 'first_column'
+    t.column 'ID', :id
     t.column 'Post', :partial => "admin/awesome_tables/posts/body"
+    # t.column 'Author', link_to_or_text(post.display_name, edit_admin_user_path(post.user))
     t.column 'Author', :display_name
     t.column 'Category', :category_name
     t.column 'Votes', :votes_counter, :class => 'centered'
@@ -61,17 +62,58 @@ class AwesomeTable
     t.paginate
   end
   
-  register_table :future_posts do
-    column :id, data.id
-    column :post, data.body, :truncate => 25
-    column :author, data.user, :link_to => true
-    column :category, data.category.name
-    column :published_at
+  register_table :new_posts do |t|
+    t.set_caption "Posts Needing Review"
+    t.column 'ID', :id
+    t.column 'Post', :partial => "admin/awesome_tables/posts/body"
+    t.column 'Author', :display_name
+    t.column 'Category', :category_name
+    t.column 'Created At', :created_at
+  end
+  
+  register_table :future_posts do |t|
+    t.set_caption "Upcoming Posts"
+    t.column 'ID', :id
+    t.column 'Post', :partial => "admin/awesome_tables/posts/body"
+    t.column 'Author', :display_name
+    t.column 'Category', :category_name
+    t.column 'Publishing At', :published_at
+  end
+  
+  register_table :categories do |t|
+    t.set_caption "Categories"
+    t.column 'ID', :id
+    t.column 'Name', :partial => "admin/awesome_tables/categories/name"
+    t.column 'Slug', :slug
+    t.column 'Posts', :partial => "admin/awesome_tables/categories/number_of_posts"
+    t.paginate
+  end
+  
+  register_table :users do |t|
+    t.set_caption "Users"
+    t.column 'ID', :id
+    t.column 'Login', :partial => 'admin/awesome_tables/users/login'
+    t.column 'Full Name', :full_name
+    t.column 'State', :state
+    t.column 'Admin', :admin?
+    t.paginate
+  end
+  
+  register_table :users_posts do |t|
+    t.set_caption "Posts"
+    t.column 'ID', :id
+    t.column 'Body', :partial => 'admin/awesome_tables/posts/body'
+    t.column 'Category', :category_name
+    t.column 'Published At', :published_at
+    t.column 'Votes', :votes_counter, :class => 'centered'
+    t.paginate
+  end
+  
+  register_table :users_comments do |t|
+    t.set_caption "Comments"
+    t.column 'ID', :id
+    t.column 'Created At', :created_at
+    t.column 'Post', :partial => 'admin/awesome_tables/posts/link_to'
+    t.column 'Body', :partial => 'admin/awesome_tables/comments/body'
   end
 end
-
-# t.caption = "Posts"
-# t.columns = {
-  # :id => {:data => Proc.new{|obj| obj.id }, :class => 'first_column'},
-  # :post => {:data => Proc.new{|obj| obj.body }, :truncate => 25}
-# }

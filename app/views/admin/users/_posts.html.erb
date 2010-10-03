@@ -1,6 +1,6 @@
 <div id="user_posts">
   <h3>Posts</h3>
-  <% if @posts.blank? %>
+  <% if @users_posts.blank? %>
     <p>This user has not created any posts.</p>
   <% else %>
     <table class="boxed medium_round">
@@ -11,7 +11,7 @@
         <th>Published at</th>
         <th>Votes</th>
       </tr>
-      <% @posts.each do |post| %>
+      <% @users_posts.each do |post| %>
         <tr class="border_bottom<%= cycle(' odd', ' even') %>">
           <td class="first_column"><%= post.id %></td>
           <td>
@@ -26,8 +26,8 @@
       <% end %>
       <tr>
         <td class="pagination_links" colspan="5">
-          <div class="pagination_info"><%= page_entries_info @posts %></div>
-          <%= will_paginate @posts %>
+          <div class="pagination_info"><%= page_entries_info @users_posts %></div>
+          <%= will_paginate @users_posts %>
         </td>
       </tr>
     </table>

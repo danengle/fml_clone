@@ -1,4 +1,8 @@
+<h2>Category Management</h2>
 <%= link_to 'New category', new_admin_category_path, :class => 'new_obj_link awesome_button' %>
+
+<%= awesome_table :categories %>
+
 <table class="small_round">
   <caption class="medium_round_top">Categories</caption>
   <tr>

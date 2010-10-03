@@ -14,7 +14,8 @@ class Admin::UsersController < ApplicationController
   end
   
   def edit
-    @posts = @user.posts.paginate(:page => params[:page], :per_page => 10)
+    @users_posts = @user.posts.paginate(:page => params[:page], :per_page => 10)
+    @users_comments = @user.comments
     @changes = @user.changes.limit(20)
     @changes = ChangeLog.by_created_at.affect(@user).paginate(:page => params[:page], :per_page => 10)
   end
