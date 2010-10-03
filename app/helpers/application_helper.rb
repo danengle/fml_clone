@@ -90,4 +90,10 @@ module ApplicationHelper
       link_to "#{item.class} #{item.to_param}", eval("edit_admin_#{item.class.to_s.downcase}_path(#{item.to_param})") 
     end
   end
+  
+  def awesome_table(table_type, data = nil)
+    data = eval("@#{table_type.to_s}") if data.nil?
+    awesome_table = AwesomeTable.new(table_type, data)
+    render :partial => awesome_table.partial, :locals => { :table => awesome_table }
+  end
 end

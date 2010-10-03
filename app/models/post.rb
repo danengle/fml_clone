@@ -15,6 +15,7 @@ class Post < ActiveRecord::Base
   has_many :moderator_votes, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
   
+  # delegate :author_
   define_index do
     indexes body
     indexes category(:name), :as => :category, :sortable => true
@@ -89,13 +90,32 @@ class Post < ActiveRecord::Base
   # FIXME @preferences doesn't seem to be working inside model
   def display_name
     # user.blank? ? @preferences[:anonymous_display_name] : user.login
-    if self.user.blank?
-      @preferences[:anonymous_display_name]
+    if self.try(:user).blank?
+      # logger.info { "*** @preferences inside user#display_name" }
+      # logger.info { "*** #{@preferences}" }
+      # @preferences[:anonymous_display_name]
+      "Anonymous"
     else
       self.user.login
     end
   end
 
+  def votes_counter
+    "#{up_vote_counter} / #{down_vote_counter}"
+  end
+  
+  def comment_counter
+    comments.count
+  end
+  
+  def category_name
+    self.category.name
+  end
+  
+  def display_published_at
+    published_at.blank? ? self.state : published_at.to_s(:short)
+  end
+  
   def parent_comments
     self.comments.parent_comments
   end
