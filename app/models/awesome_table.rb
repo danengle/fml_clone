@@ -1,7 +1,7 @@
-
 class AwesomeTable
   include ActionView::Helpers
   include ActionView::Rendering
+  
   @@tables = {}
   
   attr_accessor :objects, :partial, :caption, :columns, :table_headers
