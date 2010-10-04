@@ -1,0 +1,35 @@
+<%= form_for(@profile, :url => user_profile_path(@user)) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :dob %>
+    <%= f.date_select :dob, :start_year => Time.now.year - 75, :end_year => Time.now.year - 10, :include_blank => true %>
+  </div>
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :about_me %>
+    <%= f.text_area :about_me, :class => 'form_text_area' %>
+  </div>
+  <div class="field">
+    <%= f.label :hidden, "Hide my profile" %>
+    <%= f.check_box :hidden %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Update Profile", :class => 'awesome_button' %>
+  </div>
+<% end %>

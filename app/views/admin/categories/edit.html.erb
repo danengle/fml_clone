@@ -1,8 +1,11 @@
 <h3>Editing Category</h3>
-
+<div id="main_content">
+  <div id="main_content_body" class="good_forms boxed full_box medium_round">
 <%= form_for([:admin,@category]) do |f| %>
 <%= render :partial => 'form', :locals => {:f => f} %>
-<div class="form_button">
+<div>
   <%= f.submit "Update", :class => 'awesome_button submit_button' %>
 </div>
 <% end %>
+  </div>
+</div>

@@ -188,7 +188,7 @@ a:hover, a:active, a:focus { color:$orange; }
 	float:left;
 	clear:left;
 	margin-right:-400px;
-	#main_content_body, #comments, #user_posts, #user_activity, .middle_column {
+	table, #main_content_body, #comments, #user_posts, #user_activity, .middle_column {
 		margin-right:260px;
 		margin-bottom:12px;
 	}
@@ -401,13 +401,13 @@ table {
 	}
 }
 .editable {
+	clear:both;
 	margin:10px 0;
-	label {
+	.preference_name {
 		width:25%;
-		display:block;
 		float:left;
 		text-align:right;
-		padding:4px 16px 0 0;
+		padding:4px 8px 0 0;
 	}
 	input {
 		width:35%;
@@ -420,14 +420,24 @@ table {
 		float:left;
 		width:14px;
 	}
+	input[type=checkbox] {
+		width:14px;
+	}
 	#page_body {
 		width:80%;
 		height:300px;
 	}
 }
+.form_text_area {
+	width:40%;
+	height:100px;
+}
 .form_button {
 	width:140px;
 	margin-left:27%;
+}
+#preferences_export {
+	clear:both;
 }
 #footer {
 	clear:both;

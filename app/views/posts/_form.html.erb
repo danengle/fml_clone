@@ -1,3 +1,4 @@
+<% logger.info { "*** wtf2 " } %>
 <%= form_for(@post) do |f| %>
   <% unless @post.errors.blank? %>
     <div id="errorExplanation">
@@ -13,6 +14,8 @@
     </div>
   <% end %>
   <div id="post_category" class="field">
+    <% logger.info { "#{f.select :category_id, Category.all.map {|c| [c.name, c.id] }}" } %>
+    <% logger.info { @session.inspect } %>
     <%= f.label :category_id, "Choose a category:" %>
     <%= f.select :category_id, Category.all.map {|c| [c.name, c.id] } %>
   </div>

@@ -15,23 +15,20 @@
   <ul id="preferences">
     <% @preferences.each do |pref| %>
       <li class="editable">
-        <label><%= pref.display_name %></label>
+        <div class="preference_name">
+          <label><%= pref.display_name %></label>
+          <% unless pref.required? %>
+            <%= hidden_field_tag "preferences[#{pref.id}][disabled]", 0 %>
+            <%= check_box_tag "preferences[#{pref.id}][disabled]", 1, pref.disabled %>
+          <% end %>
+        </div>
         <% if pref.large? %>
-          <%= text_area_tag "preferences[#{pref.key}]", pref.value, :class => has_errors?(pref) ? 'fieldHasErrors' : '' %>
+          <%= text_area_tag "preferences[#{pref.id}][value]", pref.value, :class => has_errors?(pref) ? 'fieldHasErrors' : '', :disabled => pref.disabled? %>
         <% else %>
-          <%= text_field_tag "preferences[#{pref.key}]", pref.value, :class => has_errors?(pref) ? 'fieldHasErrors' : '' %>
+          <%= text_field_tag "preferences[#{pref.id}][value]", pref.value, :class => has_errors?(pref) ? 'fieldHasErrors' : '', :disabled => pref.disabled? %>
         <% end %>
         <% unless pref.description.blank? %>
           <span><%= pref.description %></span>
-        <% end %>
-        <% unless pref.feature.blank? %>
-          <li class="editable">
-            <label><%= pref.feature.name %></label>
-            <%= check_box_tag "feature[#{pref.key}]", 1, pref.feature.deployed, :class => 'check_box_field' %>
-            <% unless pref.description.blank? %>
-              <span><%= pref.feature.description %></span>
-            <% end %>
-          </li>
         <% end %>
       </li>
     <% end %>
@@ -39,4 +36,7 @@
   </ul>
   <%= hidden_field_tag 'preference_category', @preference_category.name %>
 <% end %>
+</div>
+<div id="preferences_export">
+  <%= button_to "Export All Preferences", export_admin_preferences_path, :class  => 'submit_button' %>
 </div>

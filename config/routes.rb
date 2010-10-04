@@ -1,5 +1,7 @@
 # TODO organize routes better
-FmlClone::Application.routes.draw do |map|
+FmlClone::Application.routes.draw do
+  resources :profiles
+
   match 'moderators' => 'moderators#index', :as => 'moderators'
   match 'moderators/:id/up_vote' => 'moderators#up_vote', :as => 'moderators_up_vote'
   match 'moderators/:id/down_vote' => 'moderators#down_vote', :as => 'moderators_down_vote'
@@ -31,6 +33,7 @@ FmlClone::Application.routes.draw do |map|
   
   resources :users do
     resources :favorites
+    resource :profile
   end
   
   resources :categories
@@ -57,8 +60,14 @@ FmlClone::Application.routes.draw do |map|
   # TODO this is a hack, make change_logger work with nested resources
   #match 'admin/posts/:post_id/comments/:id/edit' => 'admin/comments#edit', :as => 'edit_admin_comment'
   namespace :admin do
+    resources :profile
     resources :posts do
-      resources :comments
+      resources :comments do
+        member do
+          post :approve
+          post :reject
+        end
+      end
       member do
         post :publish
         post :unpublish
@@ -80,6 +89,7 @@ FmlClone::Application.routes.draw do |map|
     resources :preferences do
       collection do
         post :bulk_update
+        post :export
       end
     end
     resources :pages

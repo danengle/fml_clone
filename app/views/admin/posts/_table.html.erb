@@ -1,0 +1,34 @@
+<table class="small_round">
+  <caption class="medium_round_top"><%= @posts.size %> Posts</caption>
+  <tr>
+    <th class="first_column">ID</th>
+    <th>Post</th>
+    <th>Author</th>
+    <th>Category</th>
+    <th class="centered">Votes</th>
+    <th class="centered"><%= image_tag 'comment-grey-bubble.png' %></th>
+    <th>Date</th>
+  </tr>
+<% @posts.each_with_index do |post, index| %>
+  <tr class="border_bottom<%= cycle(' odd', ' even') %>">
+    <td class="first_column"><%= post.id %></td>
+    <td>
+      <%= truncate(post.body, :length => 25) %>
+      <div class="actions">
+        <%= link_to "Edit", edit_admin_post_path(post) %>
+      </div>
+    </td>
+    <td><%= link_to_user(post) %></td>
+    <td><%= post.category.name %></td>
+    <td class="centered"><%= post.up_vote_counter %> / <%= post.down_vote_counter %></td>
+    <td class="centered"><%= post.comments.count %></td>
+    <td><%= post_times(post) %></td>
+  </tr>
+<% end %>
+  <tr>
+    <td class="pagination_links" colspan="7">
+      <div class="pagination_info"><%= page_entries_info %></div>
+      <%= will_paginate @posts %>
+    </td>
+  </tr>
+</table>

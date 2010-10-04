@@ -1,4 +1,13 @@
-<%= f.error_messages %>
+<% if @category.errors.any? %>
+<div id="errorExplanation">
+  <h2>Whoops! Something went wrong there...</h2>
+  <ul>
+  <% @category.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
 <div class="editable">
   <%= f.label :name %>
   <%= f.text_field :name %>

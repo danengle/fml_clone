@@ -76,7 +76,7 @@ class ApplicationController < ActionController::Base
     preferences = Preference.find(:all)
     @preferences = {}
     preferences.each do |p|
-      @preferences[p.key.to_sym] = p.value
+      @preferences[p.key.to_sym] = p.value unless p.disabled?
     end
   end
   

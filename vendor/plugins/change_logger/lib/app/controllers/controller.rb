@@ -9,7 +9,6 @@ module ChangeLogger
     protected
     
     def whodunnit
-      logger.info { "* whodunnit: #{current_user.inspect}" }
       current_user rescue nil
     end
     

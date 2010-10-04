@@ -14,9 +14,12 @@
         <td>
           <%= comment.body %>
           <div class="actions">
-            <%= button_to "Unapprove", "#", :class => 'awesome_button' %>
-            <%= button_to "Delete", "#", :class => 'awesome_button' %>
-            <%= button_to "Spam", "#", :class => 'awesome_button' %>
+            <% if !comment.approved? %>
+              <%= button_to "Spam", reject_admin_post_comment_path(@post,comment), :class => 'awesome_button' %>
+            <% else %>
+              <%= button_to "Ham", approve_admin_post_comment_path(@post,comment), :class => 'negative_awesome_button' %>
+            <% end %>
+            <%= button_to "Delete", [:admin, @post, comment], :method => :delete, :confirm => 'Are you sure?', :class => 'awesome_button' %>
           </div>
         </td>
       </tr>
@@ -31,9 +34,12 @@
           <td>
             <%= ccomment.body %>
             <div class="actions">
-              <%= button_to "Unapprove", "#", :class => 'awesome_button' %>
-              <%= button_to "Delete", "#", :class => 'awesome_button' %>
-              <%= button_to "Spam", "#", :class => 'awesome_button' %>
+              <% if !comment.approved? %>
+                <%= button_to "Spam", reject_admin_post_comment_path(@post,comment), :class => 'awesome_button' %>
+              <% else %>
+                <%= button_to "Ham", approve_admin_post_comment_path(@post,comment), :class => 'negative_awesome_button' %>
+              <% end %>
+              <%= button_to "Delete", [:admin, @post, comment], :method => :delete, :confirm => 'Are you sure?', :class => 'awesome_button' %>
             </div>
           </td>
         </tr>

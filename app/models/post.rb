@@ -15,6 +15,7 @@ class Post < ActiveRecord::Base
   has_many :moderator_votes, :dependent => :destroy
   has_many :favorites, :dependent => :destroy
   
+  # delegate :author_
   define_index do
     indexes body
     indexes category(:name), :as => :category, :sortable => true
@@ -40,7 +41,8 @@ class Post < ActiveRecord::Base
   scope :random_record, limit(1).order('rand()')
   scope :not_published,
     where({:state => ['viewed', 'unread']})
-
+  scope :visible, where(['state not in (?)', ['deleted', 'denied']])
+  
   aasm_initial_state :unread
   aasm_state :unread
   aasm_state :viewed
@@ -87,14 +89,29 @@ class Post < ActiveRecord::Base
   
   # FIXME @preferences doesn't seem to be working inside model
   def display_name
-    # user.blank? ? @preferences[:anonymous_display_name] : user.login
-    if self.user.blank?
-      @preferences[:anonymous_display_name]
+    if self.try(:user).blank?
+      "Anonymous"
     else
       self.user.login
     end
   end
 
+  def votes_counter
+    "#{up_vote_counter} / #{down_vote_counter}"
+  end
+  
+  def comment_counter
+    comments.count
+  end
+  
+  def category_name
+    self.category.name
+  end
+  
+  def display_published_at
+    published_at.blank? ? self.state : published_at.to_s(:short)
+  end
+  
   def parent_comments
     self.comments.parent_comments
   end

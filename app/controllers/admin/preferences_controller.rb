@@ -5,8 +5,8 @@ class Admin::PreferencesController < ApplicationController
   # GET /preferences
   # GET /preferences.xml
   def index
-    @preference_category = PreferenceCategory.find_by_name('general')
-    @preferences = Preference.general.all
+    @preference_category = PreferenceCategory.find_by_name('general'.humanize)
+    @preferences = @preference_category.preferences.positioned.all
     respond_to do |format|
       format.html { render 'show' }
       format.xml  { render :xml => @preferences }
@@ -16,7 +16,7 @@ class Admin::PreferencesController < ApplicationController
   # GET /preferences/1
   # GET /preferences/1.xml
   def show
-    @preference_category = PreferenceCategory.find_by_name(params[:id].humanize)
+    @preference_category = PreferenceCategory.find_by_name(params[:id].titleize)
     @preferences = @preference_category.preferences.positioned.all
     
     respond_to do |format|
@@ -48,23 +48,12 @@ class Admin::PreferencesController < ApplicationController
   end
   
   def bulk_update
-    logger.info { "\nparams = #{params.inspect}\n\n" }
     @preference_category = PreferenceCategory.find_by_name(params[:preference_category])
     @preferences = @preference_category.preferences.positioned.all
     @errors = []
-    params[:preferences].each do |pref|
-      preference = Preference.find_by_key(pref[0])
-      preference.value = pref[1]
-      unless preference.feature.blank?
-        feature = Feature.find_by_preference_id(preference.id)
-        if params[:feature].blank?
-          feature.deployed = false
-        else
-          feature.deployed = params[:feature][preference.key.to_sym]
-        end
-        feature.save
-      end
-      unless preference.save
+    params[:preferences].each_pair do |id, attributes|
+      preference = Preference.find(id)
+      unless preference.update_attributes(attributes)
         preference.errors.each_pair do |key, value|
           @errors << "#{preference.display_name} #{value[0]}"
         end
@@ -76,6 +65,21 @@ class Admin::PreferencesController < ApplicationController
     else
       render 'show'
     end
-    
   end
+  
+  def export
+    @preferences = PreferenceCategory.includes(:preferences).all
+    @yaml = []
+    @preferences.each do |pc|
+      pcyaml = []
+      pcyaml << pc.attributes.delete_if{|k,v| ['id', 'created_at', 'updated_ad'].include?(k)}
+      pcyaml << pc.preferences.map{|pr| pr.attributes.delete_if{|k,v| ['id', 'created_at', 'updated_ad'].include?(k)} }
+      @yaml << pcyaml
+    end
+    f = File.new("config/preferences.yml", "w+")
+    f.write(@yaml.to_yaml)
+    f.close
+    redirect_to admin_preferences_path, :notice => "Export of preferences completed successfully."
+  end
+
 end

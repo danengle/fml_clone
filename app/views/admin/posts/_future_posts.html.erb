@@ -1,0 +1,29 @@
+<% if @future_posts.blank? %>
+  <p>There are no upcoming posts</p>
+<% else %>  
+  <table class="small_round add_margin">
+  <caption class="medium_round_top">Upcoming posts</caption>
+    <tr>
+      <th class="first_column">ID</th>
+      <th>Post</th>
+      <th>Author</th>
+      <th>Category</th>
+      <th>Publishing at</th>
+    </tr>
+    
+  <% @future_posts.each do |post| %>
+    <tr class="border_bottom<%= cycle(' odd', ' even') %>">
+      <td class="first_column"><%= post.id %></td>
+      <td>
+        <%=h truncate(post.body, :length => 25) %>
+        <div class="actions">
+          <%= link_to "Edit", edit_admin_post_path(post) %>
+        </div>
+      </td>
+      <td><%= link_to_user(post) %></td>
+      <td><%= post.category.name %></td>
+      <td><%= post.published? ? published_time(post) : post.state %></td>
+    </tr>
+  <% end %>
+  </table>
+<% end %>

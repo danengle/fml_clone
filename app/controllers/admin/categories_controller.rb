@@ -5,7 +5,7 @@ class Admin::CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.xml
   def index
-    @categories = Category.all
+    @categories = Category.paginate(:page => params[:page], :per_page => 20)
     respond_with(@categories)
   end
 

@@ -1,6 +1,15 @@
 <div id="comment_form" class="boxed">
-  <%= form_for [@post,Comment.new] do |f| %>
-    <%= f.error_messages %>
+  <%= form_for [@post,@comment] do |f| %>
+    <% if @comment.errors.any? %>
+    <div id="errorExplanation">
+      <h2>Whoops! Something went wrong there...</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
     <p>
       <%= f.label :body, "Make a comment:" %><br />
       <%= f.text_area :body %>

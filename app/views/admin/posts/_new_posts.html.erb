@@ -1,0 +1,28 @@
+<% if @new_posts.blank? %>
+  <p>No new posts to review</p>
+<% else %>
+<table class="small_round add_margin">
+  <caption class="medium_round_top"><%= @new_posts.size %> Posts Need Review</caption>
+  <tr>
+    <th class="first_column">ID</th>
+    <th>Post</th>
+    <th>Author</th>
+    <th>Category</th>
+    <th>Created At</th>
+  </tr>
+  <% @new_posts.each do |post| %>
+    <tr class="<%= cycle('odd','even') %>">
+      <td class="first_column"><%= post.id %></td>
+      <td>
+        <%= truncate(post.body, :length => 25) %>
+        <div class="actions">
+          <%= link_to "Edit", edit_admin_post_path(post) %>
+        </div>
+      </td>
+      <td><%= display_name(post) %></td>
+      <td><%= post.category.name %></td>
+      <td> <%= post.created_at.to_s(:long) %></td>
+    </tr>
+  <% end %>
+</table>
+<% end %>
