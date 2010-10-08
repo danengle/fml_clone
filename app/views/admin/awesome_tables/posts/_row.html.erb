@@ -1,0 +1,14 @@
+<tr class="border_bottom">
+  <td class="first_column"><%= obj.id %></td>
+  <td>
+    <%= truncate(obj.body, :length => 25) %>
+    <div class="actions">
+      <%= link_to "Edit", edit_admin_post_path(obj) %>
+    </div>
+  </td>
+  <td><%= link_to_user(obj) %></td>
+  <td><%= obj.category.name %></td>
+  <td class="centered"><%= obj.up_vote_counter %> / <%= obj.down_vote_counter %></td>
+  <td class="centered"><%= obj.comments.count %></td>
+  <td><%= post_times(obj) %></td>
+</tr>

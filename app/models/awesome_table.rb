@@ -49,6 +49,13 @@ class AwesomeTable
     @paginate
   end
   
+  register_table :posts2 do |t|
+    t.set_caption 'Posts'
+    t.headers 'admin/awesome_tables/posts/headers'
+    t.row 'admin/awesome_tables/posts/row'
+    t.paginate
+  end
+  
   register_table :posts do |t|
     t.set_caption "Posts"
     t.column 'ID', :id

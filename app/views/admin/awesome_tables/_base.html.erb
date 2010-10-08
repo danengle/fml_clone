@@ -31,3 +31,21 @@
     <% end %>
   <% end %>
 </table>
+
+<table class="small_round add_margin">
+  <% if table.caption? %>
+    <caption class="medium_round_top"><%= table.caption %></caption>
+  <% end %>
+  <%= table.headers %>
+  <% table.objects.each do |object| %>
+    <%= render :partial => table.row, :locals => { :obj => object } %>
+  <% end %>
+  <% if table.paginate? %>
+    <tr>
+      <td class="pagination_links" colspan="<%= table.table_headers.size %>">
+        <div class="pagination_info"><%= page_entries_info table.objects %></div>
+        <%= will_paginate table.objects %>
+      </td>
+    </tr>
+  <% end %>
+</table>

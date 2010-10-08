@@ -1,8 +1,10 @@
-1284498933
+1286578284
 ActionView	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	module ActionView
 ActsAsChangeLogger	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/change_logger/acts_as_change_logger.rb	  module ActsAsChangeLogger
+AddAdditionalUserAgentColumnsToComments	/home/dan/workspace/rails3/fml_clone/db/migrate/20100926150107_add_additional_user_agent_columns_to_comments.rb	class AddAdditionalUserAgentColumnsToComments 
 AddAdminToUsers	/home/dan/workspace/rails3/fml_clone/db/migrate/20100214190242_add_admin_to_users.rb	class AddAdminToUsers 
 AddDescriptionFieldsToCategoriesAndPreferences	/home/dan/workspace/rails3/fml_clone/db/migrate/20100516105554_add_description_fields_to_categories_and_preferences.rb	class AddDescriptionFieldsToCategoriesAndPreferences 
+AddDisableToPreferences	/home/dan/workspace/rails3/fml_clone/db/migrate/20100926110648_add_disable_to_preferences.rb	class AddDisableToPreferences 
 AddExtraColumnsToPreferences	/home/dan/workspace/rails3/fml_clone/db/migrate/20100502020901_add_extra_columns_to_preferences.rb	class AddExtraColumnsToPreferences 
 AddIpUserAgentToPosts	/home/dan/workspace/rails3/fml_clone/db/migrate/20100703235025_add_ip_user_agent_to_posts.rb	class AddIpUserAgentToPosts 
 AddLastRequestAtToUsers	/home/dan/workspace/rails3/fml_clone/db/migrate/20100213232018_add_last_request_at_to_users.rb	class AddLastRequestAtToUsers 
@@ -17,9 +19,11 @@ AddStateColumnToPosts	/home/dan/workspace/rails3/fml_clone/db/migrate/2010021420
 AddTweetedColumnToPosts	/home/dan/workspace/rails3/fml_clone/db/migrate/20100606021921_add_tweeted_column_to_posts.rb	class AddTweetedColumnToPosts 
 AddTypeToVotes	/home/dan/workspace/rails3/fml_clone/db/migrate/20100705184327_add_type_to_votes.rb	class AddTypeToVotes 
 AddViewsToPosts	/home/dan/workspace/rails3/fml_clone/db/migrate/20100703233356_add_views_to_posts.rb	class AddViewsToPosts 
+Akismetor	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	class Akismetor
 Application	/home/dan/workspace/rails3/fml_clone/config/application.rb	  class Application 
 ApplicationController	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	module ApplicationHelper
+AwesomeTable	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	class AwesomeTable
 Bitly	/home/dan/workspace/rails3/fml_clone/app/models/Bitly.rb	class Bitly
 BrowsingTest	/home/dan/workspace/rails3/fml_clone/test/performance/browsing_test.rb	class BrowsingTest 
 CategoriesController	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/categories_controller.rb	class Admin::CategoriesController 
@@ -51,6 +55,7 @@ CreatePaperTrailVersionsDb	/home/dan/workspace/rails3/fml_clone/db/migrate/20100
 CreatePosts	/home/dan/workspace/rails3/fml_clone/db/migrate/20100209025321_create_posts.rb	class CreatePosts 
 CreatePreferenceCategories	/home/dan/workspace/rails3/fml_clone/db/migrate/20100426024104_create_preference_categories.rb	class CreatePreferenceCategories 
 CreatePreferences	/home/dan/workspace/rails3/fml_clone/db/migrate/20100418182735_create_preferences.rb	class CreatePreferences 
+CreateProfiles	/home/dan/workspace/rails3/fml_clone/db/migrate/20100926123406_create_profiles.rb	class CreateProfiles 
 CreateUserSessions	/home/dan/workspace/rails3/fml_clone/db/migrate/20100214003613_create_user_sessions.rb	class CreateUserSessions 
 CreateUsers	/home/dan/workspace/rails3/fml_clone/db/migrate/20100213193701_create_users.rb	class CreateUsers 
 CreateVotes	/home/dan/workspace/rails3/fml_clone/db/migrate/20100214193944_create_votes.rb	class CreateVotes 
@@ -81,6 +86,7 @@ ModeratorsController	/home/dan/workspace/rails3/fml_clone/app/controllers/modera
 ModeratorsControllerTest	/home/dan/workspace/rails3/fml_clone/test/functional/moderators_controller_test.rb	class ModeratorsControllerTest 
 ModeratorsHelper	/home/dan/workspace/rails3/fml_clone/app/helpers/moderators_helper.rb	module ModeratorsHelper
 ModeratorsHelperTest	/home/dan/workspace/rails3/fml_clone/test/unit/helpers/moderators_helper_test.rb	class ModeratorsHelperTest 
+NavigationHelpers	/home/dan/workspace/rails3/fml_clone/features/support/paths.rb	module NavigationHelpers
 Page	/home/dan/workspace/rails3/fml_clone/app/models/page.rb	class Page 
 PageTest	/home/dan/workspace/rails3/fml_clone/test/unit/page_test.rb	class PageTest 
 PagesController	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/pages_controller.rb	class Admin::PagesController 
@@ -105,9 +111,13 @@ PreferenceCategory	/home/dan/workspace/rails3/fml_clone/app/models/preference_ca
 PreferenceCategoryTest	/home/dan/workspace/rails3/fml_clone/test/unit/preference_category_test.rb	class PreferenceCategoryTest 
 PreferenceTest	/home/dan/workspace/rails3/fml_clone/test/unit/preference_test.rb	class PreferenceTest 
 PreferencesController	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/preferences_controller.rb	class Admin::PreferencesController 
+Profile	/home/dan/workspace/rails3/fml_clone/app/models/profile.rb	class Profile 
+ProfilesController	/home/dan/workspace/rails3/fml_clone/app/controllers/profiles_controller.rb	class ProfilesController 
+ProfilesHelper	/home/dan/workspace/rails3/fml_clone/app/helpers/profiles_helper.rb	module ProfilesHelper
 RemovePublishedFromPosts	/home/dan/workspace/rails3/fml_clone/db/migrate/20100214220352_remove_published_from_posts.rb	class RemovePublishedFromPosts 
 SITE_URL	/home/dan/workspace/rails3/fml_clone/config/environments/development.rb	SITE_URL =
 SITE_URL	/home/dan/workspace/rails3/fml_clone/config/environments/production.rb	SITE_URL =
+SITE_URL	/home/dan/workspace/rails3/fml_clone/config/environments/test.rb	SITE_URL =
 SearchController	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/search_controller.rb	class Admin::SearchController 
 SearchController	/home/dan/workspace/rails3/fml_clone/app/controllers/search_controller.rb	class SearchController 
 SearchControllerTest	/home/dan/workspace/rails3/fml_clone/test/functional/search_controller_test.rb	class SearchControllerTest 
@@ -151,12 +161,26 @@ admin_post_creator_link	/home/dan/workspace/rails3/fml_clone/app/helpers/posts_h
 admin_required	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def admin_required
 admin_side_bar_links	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def admin_side_bar_links
 after_create	/home/dan/workspace/rails3/fml_clone/app/models/user_observer.rb	  def after_create
+akismet_api_key	/home/dan/workspace/rails3/fml_clone/app/models/comment.rb	  attr_accessor :akismet_api_key
+akismet_attributes	/home/dan/workspace/rails3/fml_clone/app/models/comment.rb	  def akismet_attributes
 all_input_tags	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	      def all_input_tags
+approve	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/comments_controller.rb	  def approve
+attributes	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	  attr_accessor :attributes
+attributes_for_post	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	  def attributes_for_post
+awesome_table	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def awesome_table
+build	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  def self.build
 bulk_update	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/preferences_controller.rb	  def bulk_update
+caption	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  attr_accessor :objects, :partial, :caption, :columns, :table_headers
+category_name	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def category_name
+change_log_link	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def change_log_link
 change_logger_store	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/change_logger.rb	  def self.change_logger_store
+check_for_spam	/home/dan/workspace/rails3/fml_clone/app/models/comment.rb	  def check_for_spam
 children	/home/dan/workspace/rails3/fml_clone/app/models/comment.rb	  def children
 clear_published_at	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def clear_published_at
+column	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  def column
 column_type	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	        def column_type
+columns	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  attr_accessor :objects, :partial, :caption, :columns, :table_headers
+comment_counter	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def comment_counter
 controller_name	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/change_logger.rb	  def self.controller_name
 controller_name	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/change_logger.rb	  def self.controller_name
 count	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	        def count
@@ -168,6 +192,7 @@ create	/home/dan/workspace/rails3/fml_clone/app/controllers/comments_controller.
 create	/home/dan/workspace/rails3/fml_clone/app/controllers/favorites_controller.rb	  def create
 create	/home/dan/workspace/rails3/fml_clone/app/controllers/password_controller.rb	  def create
 create	/home/dan/workspace/rails3/fml_clone/app/controllers/posts_controller.rb	  def create
+create	/home/dan/workspace/rails3/fml_clone/app/controllers/profiles_controller.rb	  def create
 create	/home/dan/workspace/rails3/fml_clone/app/controllers/user_sessions_controller.rb	  def create
 create	/home/dan/workspace/rails3/fml_clone/app/controllers/users_controller.rb	  def create
 create	/home/dan/workspace/rails3/fml_clone/app/controllers/votes_controller.rb	  def create
@@ -190,6 +215,7 @@ destroy	/home/dan/workspace/rails3/fml_clone/app/controllers/favorites_controlle
 destroy	/home/dan/workspace/rails3/fml_clone/app/controllers/user_sessions_controller.rb	  def destroy
 display_name	/home/dan/workspace/rails3/fml_clone/app/helpers/posts_helper.rb	  def display_name
 display_name	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def display_name
+display_published_at	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def display_published_at
 display_result	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def display_result
 do_activate	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def do_activate
 do_delete	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def do_delete
@@ -224,6 +250,9 @@ down	/home/dan/workspace/rails3/fml_clone/db/migrate/20100705184327_add_type_to_
 down	/home/dan/workspace/rails3/fml_clone/db/migrate/20100705195948_add_moderator_votes_counter_to_posts.rb	  def self.down
 down	/home/dan/workspace/rails3/fml_clone/db/migrate/20100705213942_create_paper_trail_versions_db.rb	  def self.down
 down	/home/dan/workspace/rails3/fml_clone/db/migrate/20100717075004_create_change_logger.rb	  def self.down
+down	/home/dan/workspace/rails3/fml_clone/db/migrate/20100926110648_add_disable_to_preferences.rb	  def self.down
+down	/home/dan/workspace/rails3/fml_clone/db/migrate/20100926123406_create_profiles.rb	  def self.down
+down	/home/dan/workspace/rails3/fml_clone/db/migrate/20100926150107_add_additional_user_agent_columns_to_comments.rb	  def self.down
 down_vote	/home/dan/workspace/rails3/fml_clone/app/controllers/moderators_controller.rb	  def down_vote
 down_vote	/home/dan/workspace/rails3/fml_clone/app/controllers/posts_controller.rb	  def down_vote
 edit	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/categories_controller.rb	  def edit
@@ -242,6 +271,8 @@ error_message_on	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_for
 error_messages	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	        def error_messages
 error_messages_for	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	      def error_messages_for
 errors	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	    def errors
+execute	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	  def execute
+export	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/preferences_controller.rb	  def export
 facebook_this_link	/home/dan/workspace/rails3/fml_clone/app/helpers/posts_helper.rb	  def facebook_this_link
 favorite?	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def favorite?
 favorite_posts	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def favorite_posts
@@ -262,7 +293,9 @@ get_post	/home/dan/workspace/rails3/fml_clone/app/controllers/comments_controlle
 get_preferences	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def get_preferences
 get_short_url	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/posts_controller.rb	  def get_short_url
 get_short_url	/home/dan/workspace/rails3/fml_clone/app/models/Bitly.rb	  def self.get_short_url
+get_user	/home/dan/workspace/rails3/fml_clone/app/controllers/profiles_controller.rb	  def get_user
 has_errors?	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def has_errors?
+http_headers	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	  def http_headers
 id	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	        def id
 ignore	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/change_logger/acts_as_change_logger.rb	        cattr_accessor :ignore
 included	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/app/controllers/controller.rb	    def self.included
@@ -281,12 +314,16 @@ index	/home/dan/workspace/rails3/fml_clone/app/controllers/favorites_controller.
 index	/home/dan/workspace/rails3/fml_clone/app/controllers/moderators_controller.rb	  def index
 index	/home/dan/workspace/rails3/fml_clone/app/controllers/posts_controller.rb	  def index
 index	/home/dan/workspace/rails3/fml_clone/app/controllers/search_controller.rb	  def index
+initialize	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  def initialize
+initialize	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	  def initialize
 input	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/lib/action_view/helpers/dynamic_form.rb	      def input
 last_child?	/home/dan/workspace/rails3/fml_clone/app/models/comment.rb	  def last_child?
 link_to_user	/home/dan/workspace/rails3/fml_clone/app/helpers/users_helper.rb	  def link_to_user
 local_request?	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def local_request?
-log_names	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/users_controller.rb	  def log_names
 logged_in?	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def logged_in?
+mark_as_ham!	/home/dan/workspace/rails3/fml_clone/app/models/comment.rb	  def mark_as_ham!
+mark_as_spam!	/home/dan/workspace/rails3/fml_clone/app/models/comment.rb	  def mark_as_spam!
+mock_profile	/home/dan/workspace/rails3/fml_clone/spec/controllers/profiles_controller_spec.rb	  def mock_profile
 new	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/categories_controller.rb	  def new
 new	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/pages_controller.rb	  def new
 new	/home/dan/workspace/rails3/fml_clone/app/controllers/password_controller.rb	  def new
@@ -297,10 +334,15 @@ new_activation_email	/home/dan/workspace/rails3/fml_clone/app/controllers/users_
 new_password	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def new_password
 number_of_comments	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def number_of_comments
 number_of_posts	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def number_of_posts
+objects	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  attr_accessor :objects, :partial, :caption, :columns, :table_headers
 owner?	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def owner?
 owns_changes	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/change_logger/acts_as_change_logger.rb	      def owns_changes
+paginate	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  def paginate
+paginate?	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  def paginate?
 parent_comments	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def parent_comments
+partial	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  attr_accessor :objects, :partial, :caption, :columns, :table_headers
 password_reset_email	/home/dan/workspace/rails3/fml_clone/app/mailers/user_mailer.rb	  def password_reset_email
+path_to	/home/dan/workspace/rails3/fml_clone/features/support/paths.rb	  def path_to
 persisted?	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	        def persisted?
 post_result	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def post_result
 post_times	/home/dan/workspace/rails3/fml_clone/app/helpers/posts_helper.rb	  def post_times
@@ -312,6 +354,8 @@ random	/home/dan/workspace/rails3/fml_clone/app/controllers/posts_controller.rb	
 recently_activated?	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def recently_activated?
 record_changes	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/change_logger/acts_as_change_logger.rb	      def record_changes
 redirect_back_or_default	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def redirect_back_or_default
+register_table	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  def self.register_table
+reject	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/comments_controller.rb	  def reject
 remove_published_at	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def remove_published_at
 render_error	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def render_error
 render_not_found	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def render_not_found
@@ -321,8 +365,10 @@ request	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dy
 request_forgery_protection_token	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	  attr_accessor :request_forgery_protection_token, :form_authenticity_token
 require_no_user	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def require_no_user
 require_user	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def require_user
+required_cant_be_disabled	/home/dan/workspace/rails3/fml_clone/app/models/preference.rb	  def required_cant_be_disabled
 reset_password	/home/dan/workspace/rails3/fml_clone/app/controllers/users_controller.rb	  def reset_password
 scheduled_to_be_published?	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def scheduled_to_be_published?
+set_caption	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  def set_caption
 set_change_log_activity_info	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/app/controllers/controller.rb	    def set_change_log_activity_info
 set_change_log_whodunnit	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/app/controllers/controller.rb	    def set_change_log_whodunnit
 set_date	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def set_date
@@ -336,18 +382,18 @@ show	/home/dan/workspace/rails3/fml_clone/app/controllers/categories_controller.
 show	/home/dan/workspace/rails3/fml_clone/app/controllers/pages_controller.rb	  def show
 show	/home/dan/workspace/rails3/fml_clone/app/controllers/posts_controller.rb	  def show
 show	/home/dan/workspace/rails3/fml_clone/app/controllers/users_controller.rb	  def show
-show_admin_status	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def show_admin_status
-show_full_name	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def show_full_name
-show_id	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def show_id
-show_login	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def show_login
 siblings	/home/dan/workspace/rails3/fml_clone/app/models/comment.rb	  def siblings
 slugify	/home/dan/workspace/rails3/fml_clone/config/initializers/slugify.rb	  def slugify
+spam?	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	  def self.spam?
 stop_bad_admin_transistion	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def stop_bad_admin_transistion
 stop_bad_delete	/home/dan/workspace/rails3/fml_clone/app/models/user.rb	  def stop_bad_delete
 store_location	/home/dan/workspace/rails3/fml_clone/app/controllers/application_controller.rb	  def store_location
+submit_ham	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	  def self.submit_ham
+submit_spam	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	  def self.submit_spam
 suspend	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/users_controller.rb	  def suspend
 suspend_button	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def suspend_button
 suspend_delete_buttons	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def suspend_delete_buttons
+table_headers	/home/dan/workspace/rails3/fml_clone/app/models/awesome_table.rb	  attr_accessor :objects, :partial, :caption, :columns, :table_headers
 test_default_form_builder_no_instance_variable	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	  def test_default_form_builder_no_instance_variable
 test_default_form_builder_with_dynamic_form_helpers	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	  def test_default_form_builder_with_dynamic_form_helpers
 test_error_for_block	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	  def test_error_for_block
@@ -423,6 +469,9 @@ up	/home/dan/workspace/rails3/fml_clone/db/migrate/20100705184327_add_type_to_vo
 up	/home/dan/workspace/rails3/fml_clone/db/migrate/20100705195948_add_moderator_votes_counter_to_posts.rb	  def self.up
 up	/home/dan/workspace/rails3/fml_clone/db/migrate/20100705213942_create_paper_trail_versions_db.rb	  def self.up
 up	/home/dan/workspace/rails3/fml_clone/db/migrate/20100717075004_create_change_logger.rb	  def self.up
+up	/home/dan/workspace/rails3/fml_clone/db/migrate/20100926110648_add_disable_to_preferences.rb	  def self.up
+up	/home/dan/workspace/rails3/fml_clone/db/migrate/20100926123406_create_profiles.rb	  def self.up
+up	/home/dan/workspace/rails3/fml_clone/db/migrate/20100926150107_add_additional_user_agent_columns_to_comments.rb	  def self.up
 up_vote	/home/dan/workspace/rails3/fml_clone/app/controllers/moderators_controller.rb	  def up_vote
 up_vote	/home/dan/workspace/rails3/fml_clone/app/controllers/posts_controller.rb	  def up_vote
 update	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/categories_controller.rb	  def update
@@ -433,9 +482,12 @@ update	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/preferences_co
 update	/home/dan/workspace/rails3/fml_clone/app/controllers/admin/users_controller.rb	  def update
 update	/home/dan/workspace/rails3/fml_clone/app/controllers/comments_controller.rb	  def update
 update	/home/dan/workspace/rails3/fml_clone/app/controllers/password_controller.rb	  def update
+update	/home/dan/workspace/rails3/fml_clone/app/controllers/profiles_controller.rb	  def update
 update	/home/dan/workspace/rails3/fml_clone/app/controllers/users_controller.rb	  def update
 url_for	/home/dan/workspace/rails3/fml_clone/vendor/plugins/dynamic_form/test/dynamic_form_test.rb	  def url_for
 user_result	/home/dan/workspace/rails3/fml_clone/app/helpers/application_helper.rb	  def user_result
+valid_key?	/home/dan/workspace/rails3/fml_clone/lib/akismetor.rb	  def self.valid_key?
+votes_counter	/home/dan/workspace/rails3/fml_clone/app/models/post.rb	  def votes_counter
 whodunnit	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/app/controllers/controller.rb	    def whodunnit
 whodunnit	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/change_logger.rb	  def self.whodunnit
 whodunnit	/home/dan/workspace/rails3/fml_clone/vendor/plugins/change_logger/lib/change_logger.rb	  def self.whodunnit
