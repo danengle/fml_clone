@@ -6,7 +6,7 @@ class Admin::PostsController < ApplicationController
   # GET /posts.xml
   def index
     @new_posts = Post.need_review.all
-    @posts = Post.visible.reviewed.paginate(:page => params[:page], :per_page => 10)
+    @posts2 = Post.visible.reviewed.paginate(:page => params[:page], :per_page => 20)
     @future_posts = Post.future_posts.all
     
     respond_to do |format|

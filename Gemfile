@@ -22,7 +22,7 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # end
 gem "authlogic", :git => "git://github.com/odorcicd/authlogic.git", :branch => "rails3"
 gem 'aasm', :git => "git://github.com/rubyist/aasm.git"
-gem 'will_paginate', '~> 3.0.pre'
+gem 'will_paginate', '~> 3.0.pre2'
 gem 'compass', ">= 0.10.1"
 gem 'thinking-sphinx', :require => 'thinking_sphinx', :branch => 'rails3'
 # gem 'paperclip', ">= 2.3.3"

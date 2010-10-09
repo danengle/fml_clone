@@ -1,15 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+# =begin
+# one:
+  # user_id: 1
+  # category_id: 1
+  # body: MyString
+  # published: false
+  # published_at: 2010-02-08 20:53:21
 
-one:
-  user_id: 1
-  category_id: 1
-  body: MyString
-  published: false
-  published_at: 2010-02-08 20:53:21
-
-two:
-  user_id: 1
-  category_id: 1
-  body: MyString
-  published: false
-  published_at: 2010-02-08 20:53:21
+# two:
+  # user_id: 1
+  # category_id: 1
+  # body: MyString
+  # published: false
+  # published_at: 2010-02-08 20:53:21

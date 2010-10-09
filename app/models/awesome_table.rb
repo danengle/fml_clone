@@ -4,7 +4,7 @@ class AwesomeTable
   
   @@tables = {}
   
-  attr_accessor :objects, :partial, :caption, :columns, :table_headers
+  attr_accessor :objects, :partial, :caption, :columns, :table_headers, :headers, :row
   
   def self.register_table(table_name, &block)
     @@tables[table_name] = block
@@ -19,12 +19,16 @@ class AwesomeTable
     @table_headers = []
     @columns = []
     @objects = objects
-    @partial = "admin/awesome_tables/base"
+    @partial = "admin/awesome_tables/base2"
     AwesomeTable.build(self, table_type)
   end
   
   def set_caption(text)
     @caption = text
+  end
+  
+  def caption?
+    !@caption.blank?
   end
   
   def column(header, method, options = {})
@@ -49,10 +53,18 @@ class AwesomeTable
     @paginate
   end
   
+  def headers_path(path)
+    @headers = path
+  end
+  
+  def row_path(path)
+    @row = path
+  end
+  
   register_table :posts2 do |t|
     t.set_caption 'Posts'
-    t.headers 'admin/awesome_tables/posts/headers'
-    t.row 'admin/awesome_tables/posts/row'
+    t.headers_path 'admin/awesome_tables/posts/headers'
+    t.row_path 'admin/awesome_tables/posts/row'
     t.paginate
   end
   

@@ -1,9 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  deployed: false
+# one:
+  # name: MyString
+  # deployed: false
 
-two:
-  name: MyString
-  deployed: false
+# two:
+  # name: MyString
+  # deployed: false
