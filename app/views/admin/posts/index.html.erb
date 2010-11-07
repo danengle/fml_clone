@@ -1,4 +1,5 @@
 <h2>Posts Management</h2>
 
-<%= awesome_table :posts2 %>
+<%= awesome_table :posts, @posts %>
 
+<%= will_paginate :form => true %>

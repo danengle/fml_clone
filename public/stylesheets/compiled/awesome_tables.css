@@ -1,0 +1,34 @@
+/* line 13, ../../../app/stylesheets/awesome_tables.scss */
+.awesome_tables {
+  width: 100%;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 18, ../../../app/stylesheets/awesome_tables.scss */
+.awesome_tables caption {
+  margin-left: 8px;
+  background-color: #bbbbbb;
+  padding: 3px;
+  width: 25%;
+  text-align: center;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+/* line 29, ../../../app/stylesheets/awesome_tables.scss */
+.awesome_tables tr td:first-child, .awesome_tables tr th:first-child {
+  padding-left: 5px;
+}
+/* line 32, ../../../app/stylesheets/awesome_tables.scss */
+.awesome_tables tr td {
+  border-bottom: 1px solid #e4e4e4;
+}
+/* line 36, ../../../app/stylesheets/awesome_tables.scss */
+.awesome_tables tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+/* line 39, ../../../app/stylesheets/awesome_tables.scss */
+.awesome_tables tr:nth-child(even) {
+  background-color: white;
+}

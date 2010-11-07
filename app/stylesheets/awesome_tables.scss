@@ -1,0 +1,42 @@
+$darkgrey: #464646;
+$darkgrey2: #333;
+$lightgrey: #E4E4E4;
+$lightgrey2: #BBB;
+$lightestgrey: #F9F9F9;
+$blue: #21759B;
+$orange: #D54E21;
+$white: #FFF;
+$off-white: #f9f9f9;
+$black: #000;
+$nav-width: 145px;
+
+.awesome_tables {
+	width:100%;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	caption {
+		margin-left:8px;
+		background-color: $lightgrey2;
+		padding:3px;
+		width:25%;
+		text-align:center;
+		-moz-border-radius: 5px 5px 0 0;
+		-webkit-border-radius: 5px 5px 0 0;
+		border-radius: 5px 5px 0 0;
+	}
+	tr {
+		td:first-child, th:first-child {
+			padding-left:5px;
+		}
+		td {
+			border-bottom:1px solid $lightgrey;
+		}
+	}
+	tr:nth-child(odd) {
+		background-color:$off-white;
+	}
+	tr:nth-child(even) {
+		background-color:$white;
+	}
+}

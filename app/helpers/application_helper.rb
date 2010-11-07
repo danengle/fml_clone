@@ -1,5 +1,4 @@
 module ApplicationHelper
-  
   #TODO make this work
   # def posts_pagination_helper(obj)
     # content_tag(:div, :id => 'paginate' do
@@ -91,9 +90,35 @@ module ApplicationHelper
     end
   end
   
-  def awesome_table(table_type, data = nil)
-    data = eval("@#{table_type.to_s}") if data.nil?
-    awesome_table = AwesomeTable.new(table_type, data)
-    render :partial => awesome_table.partial, :locals => { :table => awesome_table }
+  AwesomeTables.register :posts do |t|
+    t.set_caption "Posts"
+    t.column :published_at, :display_published_at
+    t.column :post, :partial => 'awesome_tables/posts/body'
+    t.column :comment_count, :comment_counter, :header_image => 'comment-grey-bubble.png'
+  end
+  
+  AwesomeTables.register :users do |t|
+    t.set_caption "Users"
+    t.column :id
+    # I can't figure out how to get content_tag and other helper methods to
+    # get used correctly when used inside blocks. For now, passing in reference
+    # to self that has those methods defined.
+    t.column :full_name do |obj, c|
+      obj.full_name +
+      c.content_tag(:div, :class => 'actions') do
+        c.link_to("Edit", c.edit_admin_user_path(obj))
+      end
+    end
+    t.column :login
+    t.column :email
+    t.column :state
+  end
+  
+  AwesomeTables.register :categories do |t|
+    t.set_caption "Categories"
+    t.column :id
+    t.column :name, :partial => 'awesome_tables/categories/name'
+    t.column :slug
+    t.column :posts, :partial => 'awesome_tables/categories/posts'
   end
 end

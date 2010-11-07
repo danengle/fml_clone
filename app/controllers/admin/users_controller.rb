@@ -7,6 +7,7 @@ class Admin::UsersController < ApplicationController
   
   def index
     @users = User.not_deleted.paginate(:page => params[:page], :per_page => 10)
+    logger.info { "**@* #{@users.class}" }
   end
   
   def show

@@ -11,8 +11,11 @@
     <% table.objects.each do |object| %>
       <tr>
         <% table.columns.each do |column| %>
+          <% logger.info { "column: #{column.inspect}" } %>
           <td<%= " class=#{column[:class]}" unless column[:class].blank? %>>
-            <% if !column[:method].blank? && object.respond_to?(column[:method]) %>
+            <% if column[:method].is_a? Proc %>
+                <%= column[:method].call(object) %>
+            <% elsif !column[:method].blank? && object.respond_to?(column[:method]) %>
               <%= object.send(column[:method]) %>
             <% else %>
               <%= render :partial => column[:partial], :locals => { :obj => object } %>

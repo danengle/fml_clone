@@ -16,7 +16,7 @@ module ChangeLogger
         
         has_many :change_logs, :as => :item, :order => 'created_at desc'
         # belongs_to :user, :foreign_key => 'whodunnit'
-        before_update :record_changes
+        after_update :record_changes
       end
       
       def owns_changes(options = {})

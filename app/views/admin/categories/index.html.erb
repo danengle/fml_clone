@@ -2,27 +2,3 @@
 <%= link_to 'New category', new_admin_category_path, :class => 'new_obj_link awesome_button' %>
 
 <%= awesome_table :categories %>
-
-<table class="small_round">
-  <caption class="medium_round_top">Categories</caption>
-  <tr>
-    <th class="first_column">ID</th>
-    <th>Name</th>
-    <th>Slug</th>
-    <th>Posts</th>
-  </tr>
-
-<% @categories.each do |category| %>
-  <tr class="border_bottom <%= cycle('odd', 'even') %>">
-    <td class="first_column"><%= category.id %></td>
-    <td>
-      <%= category.name %>
-      <div class="actions">
-        <%= link_to "Edit", edit_admin_category_path(category) %>
-      </div>
-    </td>
-    <td><%= category.slug %></td>
-    <td><%= link_to category.posts.size, "#" %></td>
-  </tr>
-<% end %>
-</table>

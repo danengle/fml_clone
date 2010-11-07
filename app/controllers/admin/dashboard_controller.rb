@@ -4,7 +4,7 @@ class Admin::DashboardController < ApplicationController
   layout 'admin'
   
   def index
-    @changes = ChangeLog.order('created_at desc').paginate(:page => params[:page], :per_page => 50)
+    @changes = ChangeLog.order('created_at desc').paginate(:page => params[:page], :per_page => 1)
     respond_with(@changes)
   end
 end

@@ -1,7 +1,11 @@
+# require 'awesome_table/outputter'
+=begin
 class AwesomeTable
   include ActionView::Helpers
   include ActionView::Rendering
-  
+  include ActionView
+  # include AwesomePrint
+  BASE_TEMPLATE = 'admin/awesome_tables/base'
   @@tables = {}
   
   attr_accessor :objects, :partial, :caption, :columns, :table_headers, :headers, :row
@@ -15,11 +19,12 @@ class AwesomeTable
     @@tables[table_type].call(obj)
   end
 
-  def initialize(table_type, objects)
+  def initialize(table_type, objects, options = {})
     @table_headers = []
     @columns = []
     @objects = objects
-    @partial = "admin/awesome_tables/base2"
+    @partial = BASE_TEMPLATE
+    # @output = AwesomeTable::Outputter
     AwesomeTable.build(self, table_type)
   end
   
@@ -36,6 +41,8 @@ class AwesomeTable
     if method.is_a? Hash
       raise "column requires a partial" if method[:partial].blank?
       @columns << {:partial => method[:partial] }
+    elsif method.is_a? Proc
+      @columns << {:method => method}
     else
       @columns << {:method => method, :class => options[:class]}
       unless options[:as_image].blank?
@@ -68,18 +75,7 @@ class AwesomeTable
     t.paginate
   end
   
-  register_table :posts do |t|
-    t.set_caption "Posts"
-    t.column 'ID', :id
-    t.column 'Post', :partial => "admin/awesome_tables/posts/body"
-    # t.column 'Author', link_to_or_text(post.display_name, edit_admin_user_path(post.user))
-    t.column 'Author', :display_name
-    t.column 'Category', :category_name
-    t.column 'Votes', :votes_counter, :class => 'centered'
-    t.column 'Comment Count', :comment_counter, :class => 'centered', :as_image => 'comment-grey-bubble.png'
-    t.column 'Published At', :display_published_at
-    t.paginate
-  end
+
   
   register_table :new_posts do |t|
     t.set_caption "Posts Needing Review"
@@ -136,3 +132,4 @@ class AwesomeTable
     t.column 'Body', :partial => 'admin/awesome_tables/comments/body'
   end
 end
+=end
